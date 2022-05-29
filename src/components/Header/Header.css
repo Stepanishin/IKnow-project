@@ -1,0 +1,12 @@
+.Header {
+    min-height: 80px;
+    padding: 30px 10px;
+    border-bottom: 2px solid #000;
+}
+
+.Header_nav__list {
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
