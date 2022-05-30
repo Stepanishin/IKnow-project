@@ -11,23 +11,42 @@ const List: FC = () => {
 
     async function getTokens() {
 
-        const url = "https://api-mainnet.magiceden.dev/v2/launchpad/collections?offset=0&limit=500"
+        const url = "https://api-mainnet.magiceden.dev/v2/launchpad/collections?offset=0&limit=499"
 
         let requestOptions: RequestInit = {
             method: 'GET',
             redirect: 'follow',
-            headers : { 
-                'Content-Type': 'text/plain',
-                'Accept': 'application/json',
-               }
+            // credentials: "include",
+            
+            // mode: 'no-cors',
+            // headers : { 
+                // 'Content-Type': 'text/plain',
+                // "content-type": 'application/json',
+                // 'Access-Control-Allow-Origin': '*',
+                // 'Accept': 'application/json',
+            //    }
           };
           
-        await fetch(url,  requestOptions)
-            .then((response) => {
-                const result = response.json();
-                return result
-            })
-            .then((data) => {
+        await fetch(url, requestOptions)
+            // .then((response) => {
+            //     const result = response.json();
+            //     return result
+            // })
+            // .then((data) => {
+            //     let results = []
+            //     let date = new Date().toDateString();
+            //     for (let i = 0; i < data.length; i++) {
+            //         if (Date.parse(data[i].launchDatetime) > Date.parse(date))  {
+            //             results.push(data[i])
+            //         }
+            //     }
+            //     const sortedResults = results.sort((a, b) => Date.parse(a.launchDatetime) - Date.parse(b.launchDatetime) )
+            //     setCollections(sortedResults)
+            // })
+            .then(response => response.text())
+            .then(result => {
+                console.log(JSON.parse(result))
+                let data = JSON.parse(result)
                 let results = []
                 let date = new Date().toDateString();
                 for (let i = 0; i < data.length; i++) {
