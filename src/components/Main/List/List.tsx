@@ -11,17 +11,14 @@ const List: FC = () => {
 
     async function getTokens() {
 
-        let url =  "https://api-mainnet.magiceden.dev/v2/collections?offset=0&limit=10"
-        // let url = "https://api-devnet.magiceden.dev/v2/collections?offset=0&limit=200"
-        // let url = "https://api-mainnet.magiceden.dev/v2/collections/:symbol/listings?offset=0&limit=20"
-        // let url = "https://api-mainnet.magiceden.dev/v2/collections/:symbol/activities?offset=0&limit=100"
+        const url = "https://api-mainnet.magiceden.dev/v2/launchpad/collections?offset=0&limit=500"
 
         let requestOptions: RequestInit = {
             method: 'GET',
             redirect: 'follow',
             headers : { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Content-Type': 'text/plain',
+                'Accept': 'application/json',
                }
           };
           
@@ -31,11 +28,16 @@ const List: FC = () => {
                 return result
             })
             .then((data) => {
-                // console.log(data)
-                setCollections(data)
+                let results = []
+                let date = new Date().toDateString();
+                for (let i = 0; i < data.length; i++) {
+                    if (Date.parse(data[i].launchDatetime) > Date.parse(date))  {
+                        results.push(data[i])
+                    }
+                }
+                const sortedResults = results.sort((a, b) => Date.parse(a.launchDatetime) - Date.parse(b.launchDatetime) )
+                setCollections(sortedResults)
             })
-            // .then(response => response.text())
-            // .then(result => console.log(result))
             .catch(error => console.log('error', error));
     }
 
@@ -43,20 +45,22 @@ const List: FC = () => {
 
     return (
         <div className='list'>
-            Lists
-            <button onClick={getTokens}>GET</button>
+            <div className='list_card_container'>
             {
                 collections.map(item => {
                     return (
-                        <div key={item.name} >
+                        <div key={item.name} className='list_card' >
                             <h2>{item.name}</h2>
+                            <p>Data: {item.launchDatetime}</p>
+                            <p>Price: {item.price} Sol</p>
                             <p>{item.description}</p>
                             <p>{item.twitter}</p>
-                            <img src={item.image} alt="" />
+                            <img src={item.image} alt="" width="50" height="50" />
                         </div>
                     )
                 })
             }
+            </div>
         </div>
     );
 };
