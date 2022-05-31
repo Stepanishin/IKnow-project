@@ -11,11 +11,20 @@ const List: FC = () => {
 
     async function getTokens() {
 
-        const url = "https://api-mainnet.magiceden.dev/v2/launchpad/collections?offset=0&limit=499"
+        // const url = "https://api-mainnet.magiceden.dev/v2/launchpad/collections?offset=0&limit=499"
+        const url = "/v2/launchpad/collections?offset=0&limit=499"
 
-        let requestOptions: RequestInit = {
+        // "proxy": "https://api-mainnet.magiceden.dev",
+        // "homegape": "http://get-cw.xyz/",
+
+        let requestOptions: any= {
             method: 'GET',
             redirect: 'follow',
+            // mode: 'cors',
+            // contentType: "application/json; charset=utf-8",
+            // requireHeader: ['origin', 'x-requested-with'],
+            // removeHeaders: ['cookie', 'cookie2'],
+            // crossdomain: true,
             // credentials: "include",
             
             // mode: 'no-cors',
@@ -24,6 +33,7 @@ const List: FC = () => {
                 // "content-type": 'application/json',
                 // 'Access-Control-Allow-Origin': '*',
                 // 'Accept': 'application/json',
+                // contentType: "application/json; charset=utf-8",
             //    }
           };
           
