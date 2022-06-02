@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import './List.css'
+import avatar from './img/img.gif'
+import { Link } from 'react-router-dom';
 
 
 const List:FC = () => {
@@ -43,8 +45,93 @@ const List:FC = () => {
     return (
         <div className='list'>
             <div className='List_wrap'>
+                
                 <div className='card'>
-                    
+                    <div className='card_info_wrap'>
+                        <img src={avatar} alt="" width="100" height="100" />
+                        <div>
+                            <h3 className='card_title'>Project 1</h3>
+                            <p>Price: 2 sol</p>
+                            <p>Date of mint: 13.07.24 17-30 CET</p>
+                        </div>
+                        <div>
+                            <Link className='card_links' to="#">Twitter</Link> <br />
+                            <Link className='card_links' to="#">Discord</Link>
+                            <p>Items: 666</p>
+                        </div>
+                    </div>
+                    <div className='card_btn_wrap'>
+                        <button>Price will be 1 sol - 2 sol</button>
+                        <button>Price will be 0 sol - 1 sol</button>
+                        <button>Price will be 2 sol - 4 sol</button>
+                        <button>Price will be 4 or higher</button>
+                    </div>
+                </div>
+
+                <div className='card'>
+                    <div className='card_info_wrap'>
+                        <img src={avatar} alt="" width="100" height="100" />
+                        <div>
+                            <h3 className='card_title'>Project 1</h3>
+                            <p>Price: 2 sol</p>
+                            <p>Date of mint: 13.07.24 17-30 CET</p>
+                        </div>
+                        <div>
+                            <Link className='card_links' to="#">Twitter</Link> <br />
+                            <Link className='card_links' to="#">Discord</Link>
+                            <p>Items: 666</p>
+                        </div>
+                    </div>
+                    <div className='card_btn_wrap'>
+                        <button>Price will be 1 sol - 2 sol</button>
+                        <button>Price will be 0 sol - 1 sol</button>
+                        <button>Price will be 2 sol - 4 sol</button>
+                        <button>Price will be 4 or higher</button>
+                    </div>
+                </div>
+
+                <div className='card'>
+                    <div className='card_info_wrap'>
+                        <img src={avatar} alt="" width="100" height="100" />
+                        <div>
+                            <h3 className='card_title'>Project 1</h3>
+                            <p>Price: 2 sol</p>
+                            <p>Date of mint: 13.07.24 17-30 CET</p>
+                        </div>
+                        <div>
+                            <Link className='card_links' to="#">Twitter</Link> <br />
+                            <Link className='card_links' to="#">Discord</Link>
+                            <p>Items: 666</p>
+                        </div>
+                    </div>
+                    <div className='card_btn_wrap'>
+                        <button>Price will be 1 sol - 2 sol</button>
+                        <button>Price will be 0 sol - 1 sol</button>
+                        <button>Price will be 2 sol - 4 sol</button>
+                        <button>Price will be 4 or higher</button>
+                    </div>
+                </div>
+
+                <div className='card'>
+                    <div className='card_info_wrap'>
+                        <img src={avatar} alt="" width="100" height="100" />
+                        <div>
+                            <h3 className='card_title'>Project 1</h3>
+                            <p>Price: 2 sol</p>
+                            <p>Date of mint: 13.07.24 17-30 CET</p>
+                        </div>
+                        <div>
+                            <Link className='card_links' to="#">Twitter</Link> <br />
+                            <Link className='card_links' to="#">Discord</Link>
+                            <p>Items: 666</p>
+                        </div>
+                    </div>
+                    <div className='card_btn_wrap'>
+                        <button>Price will be 1 sol - 2 sol</button>
+                        <button>Price will be 0 sol - 1 sol</button>
+                        <button>Price will be 2 sol - 4 sol</button>
+                        <button>Price will be 4 or higher</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,13 +2,52 @@
     min-height: calc(100vh - 132px);
 }
 
-.list_card_container {
-    margin: 0 auto;
-    max-width: 900px;
+.card  {
+    border-radius: 10px;
+    width: 900px;
+    heigth: 400px;
+    padding: 20px;
+    color: #ffffff;
+    margin: 50px auto;
+    background-color: #1F0439 ;
+    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
+    background-color: #eeeeee11;
+
 }
 
-.list_card {
-    border: 2px solid black;
-    margin: 20px;
-    padding: 20px;
+.card_info_wrap {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+.card_links {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.card_links:hover {
+    color: #FFC700;
+}
+
+.card_btn_wrap {
+    padding: 10px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.card_btn_wrap button {
+    border-radius: 10px;
+    background-color: #1F0439 ;
+    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
+    background-color: #eeeeee11;
+    padding: 10px;
+}
+
+.card_btn_wrap button:hover {
+    color: #FFC700;
+}
+
+
