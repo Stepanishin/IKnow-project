@@ -1,4 +1,37 @@
+@font-face {
+    font-family: "Bakemon"; 
+    src: url("./Fonts/Bakemono.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+@font-face {
+    font-family: "TT bold"; 
+    src: url("./Fonts/TT\ Norms\ Pro\ Bold.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+@font-face {
+    font-family: "TT regular"; 
+    src: url("./Fonts/TT\ Norms\ Pro\ Regular.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
 body {
     font-size: 16px;
     line-height: 20px;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,4,57,1) 57%);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "TT regular", sans-serif;
+    font-weight: bold;
+}
+
+* {
+    font-family: "TT bold", sans-serif;
+    font-weight: 400;
 }

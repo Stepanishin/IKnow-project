@@ -1,18 +1,29 @@
 .home {
     min-height: calc(100vh - 132px);
+    /* max-width: 1400; */
 }
 
 .home_wrap {
     margin: 30px auto;
-    max-width: 900px;
+    width: 1300px;
 }
 
 .home_title {
     text-align: center;
+    color: #ffc700;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.RoadMap_title {
+    margin-top: 70px;
 }
 
 .home_wrap p {
     padding: 20px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .home_roadMap {
@@ -22,6 +33,9 @@
 
 .home_roadMap li {
     padding: 10px 5px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.4;
 }
 
 .home_roadMap li::marker {

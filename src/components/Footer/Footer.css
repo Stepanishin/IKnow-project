@@ -1,14 +1,25 @@
 .footer {
-    border-top: 2px solid #000;
     display: flex;
     justify-content: center;
     padding: 10px;
     height: 50px;
+    margin-top: 70px;
 }
 
 .footer_nav__list {
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
     gap: 40px;
+}
+
+.footer_links {
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.67;
+    font-weight: 900;
+    cursor: point;
+}
+
+.footer_links:hover {
+    color: #FFC700;
 }
