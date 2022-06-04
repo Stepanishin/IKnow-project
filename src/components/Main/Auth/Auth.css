@@ -1,3 +1,77 @@
 .auth {
     min-height: calc(100vh - 132px);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.aith_container {
+    /* margin: 0 auto; */
+    width: 1100px;
+}
+
+.auth_title {
+    text-align: center;
+    color: #ffc700;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.stats_list {
+    margin-top: 50px;
+    display: flex;
+    justify-content: start;
+    gap: 50px;
+}
+
+.stats_list_item button {
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #1F0439 ;
+    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
+    background-color: #eeeeee11;
+    cursor: pointer;
+}
+
+.stats_list_item button:hover {
+    color: #FFC700;
+}
+
+.stats_wrap {
+    width: 1000px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #1F0439 ;
+    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
+    background-color: #eeeeee11;
+    padding: 10px;
+}
+
+.stats_container {
+    padding: 20px 40px;
+}
+
+.stats_item {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.active_bets {
+    display: block;
+}
+
+.paste_bets {
+    display: none;
+}
+
+.your_stats {
+    display: none;
+}
+.win {
+    color:green;
+}
+
+.lose {
+    color:red;
 }

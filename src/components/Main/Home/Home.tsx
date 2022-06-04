@@ -1,4 +1,5 @@
 import React from 'react';
+import FAQ from './FAQ';
 import './Home.css'
 
 const Home = () => {
@@ -30,6 +31,8 @@ const Home = () => {
                         Если сбор средств путем продажи нашей коллекции будет успешен, то необходим полноценный запуск нашего сервиса, чтобы люди начали делать ставки.
                     </li>
                 </ol>
+                <h1 className='home_title'>FAQ</h1>
+                <FAQ />
             </div>
         </main>
     );

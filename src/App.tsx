@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import WalletsWindow from './components/Main/Auth/WalletsWindow';
 import { MainRoutes } from './router';
 
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <WalletsWindow />
       <Routes>
         {
           MainRoutes.map(route => 

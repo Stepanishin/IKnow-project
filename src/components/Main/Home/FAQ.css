@@ -1,0 +1,23 @@
+.FAQ_container {
+    border-radius: 10px;
+    background-color: #1F0439; 
+    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
+    background-color: #eeeeee11;
+    padding: 20px;
+    
+}
+
+.FAQ_item {
+    margin-top: 30px;
+    color: #ffffff !important;
+    border-bottom: none !important  ;
+}
+
+.FAQ_item_description {
+    /* display: none; */
+    
+}
+.dn {
+    display: inline;
+    transition: all 0.7s ease-in-out;
+}
