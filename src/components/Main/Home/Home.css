@@ -15,6 +15,12 @@
     line-height: 1.2;
 }
 
+.home_descr {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
 .RoadMap_title {
     margin-top: 70px;
 }

@@ -13,11 +13,21 @@
     border-bottom: none !important  ;
 }
 
-.FAQ_item_description {
-    /* display: none; */
-    
+.ant-collapse > .ant-collapse-item > .ant-collapse-header:hover {
+    color: #FFC700;
 }
+
 .dn {
     display: inline;
     transition: all 0.7s ease-in-out;
 }
+
+
+
+
+
+
+
+
+
+

@@ -26,11 +26,15 @@
 
 .stats_list_item button {
     color: #ffffff;
-    border-radius: 10px;
-    background-color: #1F0439 ;
-    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* background-color: #1F0439 ;
+    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px; */
     background-color: #eeeeee11;
     cursor: pointer;
+    padding: 8px 8px 15px 8px;
+    margin-left: 20px;
+    margin-bottom: 0px;
 }
 
 .stats_list_item button:hover {
@@ -41,8 +45,8 @@
     width: 1000px;
     height: 300px;
     border-radius: 10px;
-    background-color: #1F0439 ;
-    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
+    /* background-color: #1F0439 ;
+    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px; */
     background-color: #eeeeee11;
     padding: 10px;
 }
