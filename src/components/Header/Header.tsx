@@ -1,8 +1,17 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css'
 
 const Header: FC = () => {
+
+    let burgerMenu: any
+    let toggle: any
+
+    useEffect(() => {
+        burgerMenu = document.querySelector('.nav')
+        toggle = document.querySelector("#toggle")
+    }, [])  
+
     const showWallets = () => {   
         const walletsWrap: any = document.querySelector('.WalletsWindow_wrap')
         const modalBg: any = document.querySelector('.WalletsWindow')
@@ -12,6 +21,12 @@ const Header: FC = () => {
         modalBg.classList.add('modalBg')
     }
 
+    const deleteBurgerMenu = () => {
+        burgerMenu.classList.add("dn")
+        toggle.checked = false
+        burgerMenu.classList.remove("dn")
+    }
+
 
     return (
         <header className='Header'>
@@ -19,9 +34,26 @@ const Header: FC = () => {
                 <div className='Header_logo'>OUR LOGO</div>
                 <nav className='Header_nav'>
                     <ul className='Header_nav__list'>
-                        <Link to={'/'}><li><b>Home</b></li></Link>
-                        <Link to={'./List'}><li><b>List</b></li></Link>
-                        <Link to={'./Auth'}><li><b>Auth</b></li></Link>
+                        <Link className='nav__list_link' to={'/'}><li><b>Home</b></li></Link>
+                        <Link className='nav__list_link' to={'./List'}><li><b>List</b></li></Link>
+                        <Link className='nav__list_link' to={'./Auth'}><li><b>Auth</b></li></Link>
+                    </ul>
+                    <ul className='Header_nav__list_mobile'>
+                    <input id="toggle" type="checkbox"></input>
+                            <label htmlFor="toggle" className="hamburger">
+                                <div className="top-bun"></div>
+                                <div className="meat"></div>
+                                <div className="bottom-bun"></div>
+                            </label>
+                            <div className="nav">
+                                <div className="nav-wrapper">
+                                    <nav className='header_nav_mobile'>
+                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile_1' to={'/'}><li className='header_nav_item'>Home</li></Link>
+                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/List'}><li className='header_nav_item'>List</li></Link>
+                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Auth'}><li className='header_nav_item'>Auth</li></Link>
+                                    </nav>
+                                </div>
+                            </div>
                     </ul>
                 </nav>
                 <button onClick={showWallets} className='Header_btn'>Connect wallet</button>
