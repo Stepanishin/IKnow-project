@@ -37,6 +37,7 @@ const Header: FC = () => {
                         <Link className='nav__list_link' to={'/'}><li><b>Home</b></li></Link>
                         <Link className='nav__list_link' to={'./List'}><li><b>List</b></li></Link>
                         <Link className='nav__list_link' to={'./Auth'}><li><b>Auth</b></li></Link>
+                        <Link className='nav__list_link' to={'./Train'}><li><b>Train</b></li></Link>
                     </ul>
                     <ul className='Header_nav__list_mobile'>
                     <input id="toggle" type="checkbox"></input>
@@ -51,6 +52,7 @@ const Header: FC = () => {
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile_1' to={'/'}><li className='header_nav_item'>Home</li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/List'}><li className='header_nav_item'>List</li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Auth'}><li className='header_nav_item'>Auth</li></Link>
+                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Train'}><li className='header_nav_item'>Train</li></Link>
                                     </nav>
                                 </div>
                             </div>
