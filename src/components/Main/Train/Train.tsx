@@ -22,7 +22,7 @@ import { clusterApiUrl, Transaction, SystemProgram, Keypair, LAMPORTS_PER_SOL, P
 import { FC, ReactNode, useMemo, useCallback, useState } from 'react';
 
 
-import { actions, utils, programs, NodeWallet, Connection} from '@metaplex/js'; 
+import { actions, utils, programs, NodeWallet, Connection} from '@metaplex/js';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
@@ -34,48 +34,51 @@ let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 const Train = () => {
 
     return (
-    <Context>
-        <Content />
-    </Context>
+        <>
+        {/* <Context> */}
+            <Content />
+        {/* </Context> */}
+        {/* <Train2 /> */}
+        </>
     );
 };
 
 export default Train;
 
-const Context: FC<{ children: ReactNode }> = ({ children }) => {
-    // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-    const network = WalletAdapterNetwork.Mainnet;
+// const Context: FC<{ children: ReactNode }> = ({ children }) => {
+//     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
+//     const network = WalletAdapterNetwork.Mainnet;
 
-    // You can also provide a custom RPC endpoint.
-    const endpoint = useMemo(() => clusterApiUrl(network), [network]);
+//     // You can also provide a custom RPC endpoint.
+//     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
-    // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking and lazy loading --
-    // Only the wallets you configure here will be compiled into your application, and only the dependencies
-    // of wallets that your users connect to will be loaded.
-    const wallets = useMemo(
-        () => [
-            new LedgerWalletAdapter(),
-            new PhantomWalletAdapter(),
-            new GlowWalletAdapter(),
-            new SlopeWalletAdapter(),
-            new SolletExtensionWalletAdapter(), 
-            new SolletWalletAdapter(),
-            new SolflareWalletAdapter({ network }),
-            new TorusWalletAdapter(),
-        ],
-        [network]
-    );
+//     // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking and lazy loading --
+//     // Only the wallets you configure here will be compiled into your application, and only the dependencies
+//     // of wallets that your users connect to will be loaded.
+//     const wallets = useMemo(
+//         () => [
+//             new LedgerWalletAdapter(),
+//             new PhantomWalletAdapter(),
+//             new GlowWalletAdapter(),
+//             new SlopeWalletAdapter(),
+//             new SolletExtensionWalletAdapter(), 
+//             new SolletWalletAdapter(),
+//             new SolflareWalletAdapter({ network }),
+//             new TorusWalletAdapter(),
+//         ],
+//         [network]
+//     );
 
    
 
-    return (
-        <ConnectionProvider endpoint={endpoint}>
-            <WalletProvider wallets={wallets} autoConnect>
-                <WalletModalProvider>{children}</WalletModalProvider>
-            </WalletProvider>
-        </ConnectionProvider>
-    );
-};
+//     return (
+//         <ConnectionProvider endpoint={endpoint}>
+//             <WalletProvider wallets={wallets} autoConnect>
+//                 <WalletModalProvider>{children}</WalletModalProvider>
+//             </WalletProvider>
+//         </ConnectionProvider>
+//     );
+// };
 
 const Content: FC = () => {
     let [lamports, setLamports] = useState(.1);
@@ -127,10 +130,11 @@ function setTheWallet(e: any){
     setWallet(e.target.value)
     theWallet = e.target.value;
 }
+
     return (
         <div className="App">
     
-            <WalletMultiButton />
+            {/* <WalletMultiButton /> */}
             <input value={lamports} type="number" onChange={(e) => setTheLamports(e)}></input>
             <br></br>
             <button className='btn' onClick={onClick}>Send Sol </button>

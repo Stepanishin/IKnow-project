@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ConnectWallet from './ConnectWallet';
 import './Header.css'
 
 const Header: FC = () => {
@@ -58,7 +59,8 @@ const Header: FC = () => {
                             </div>
                     </ul>
                 </nav>
-                <button onClick={showWallets} className='Header_btn'>Connect wallet</button>
+                {/* <button onClick={showWallets} className='Header_btn'>Connect wallet</button> */}
+                <ConnectWallet />
             </div>
         </header>
     );
