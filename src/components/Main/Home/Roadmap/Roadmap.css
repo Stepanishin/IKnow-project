@@ -1,3 +1,37 @@
+.RoadMap_title {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 70px;
+  line-height: 82px;
+  display: flex;
+  justify-content: center;
+}
+
+.Roadmap {
+  background: #0C0C18;
+}
+
+.Roadmap_container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.Roadmap_Ellipse3 {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  left: 0;
+}
+
+.Roadmap_Ellipse4 {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  right: 0;
+}
+
+
+
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable */
@@ -38,21 +72,21 @@
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: #ffc700;
+    /* background-color: #ffc700; */
     border: 2px solid transparent;
     border-radius: 100px;
   }
   .ant-timeline-item-head-blue {
-    color: #1890ff;
-    border-color: #1890ff;
+    color: grey;
+    border-color: grey;
   }
   .ant-timeline-item-head-red {
     color: #ff4d4f;
     border-color: #ff4d4f;
   }
   .ant-timeline-item-head-green {
-    color: #52c41a;
-    border-color: #52c41a;
+    color: grey;
+    border-color: grey;
   }
   .ant-timeline-item-head-gray {
     color: rgba(0, 0, 0, 0.25);

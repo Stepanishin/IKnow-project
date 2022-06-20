@@ -1,19 +1,22 @@
 .Header {
-    height: 80px;
+    height: 100px;
     padding: 30px 10px;
-    opacity: 0.8;
-    background-color: #1e0033;
     display: flex;
     justify-content: center;
-    max-width: 1400;
+    background: #000000;
+    /* opacity: 0.5; */
+    backdrop-filter: blur(20px);
 }
 
 .Header_wrap {
+    max-width: 1300px;
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: 0 auto;
     align-items: center;
+    padding: 0 7px;
+
 }
 
 .Header_logo {
@@ -27,13 +30,16 @@
 }
 
 .nav__list_link {
-    color: #ffffff;
-    font-size: 12px;
-    line-height: 1.67;
-    font-weight: 900;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 22px;
+    text-align: center; 
+    color: #FFFFFF;
+    /* line-height: 1.67; */
     text-transform: uppercase;
     background-position: center center;
-    border-color: transparent;
+    /* border-color: transparent; */
     border-style: solid;
     position:relative;
     vertical-align: middle;
@@ -46,13 +52,11 @@
     cursor: pointer;
     -webkit-transition:0.5s;
     border: 2px solid rgba(0,160,80,0);
-    color: #fff;
 }
 
 .nav__list_link::before, .nav__list_link::after {
     width: 100%;
     height:100%;
-    /* z-index: 3; */
     content:'';
     position: absolute;
     top:0;
@@ -67,11 +71,13 @@
   }
 
 .nav__list_link:hover {
-    color: #FFC700;
+    background: linear-gradient(90deg, #FF008A -12.91%, #00FFFF 106.45%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav__list_link::before {
-    border-bottom: 3px solid #FFC700;
+    border-bottom: 3px solid linear-gradient(90deg, #FF008A -12.91%, #00FFFF 106.45%);
     border-left: 0;
     -webkit-transform-origin: 0% 100%;
   }
@@ -85,7 +91,7 @@
 .Header_btn {
     font-weight: 700;
     color: black;
-    background-color: #FFC700;
+    background-color: #FF00D6;
     text-decoration: none;
     height: 30px;
     width: 150px;

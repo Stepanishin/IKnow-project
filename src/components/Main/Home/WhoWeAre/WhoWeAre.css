@@ -1,0 +1,62 @@
+.WhoWeAre {
+    height: 943px;
+    background: rgba(22, 22, 34, 0.5);
+    width: 100%;
+    padding-top: 60px;
+}
+
+.WhoWeAre_container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.WhoWeAre_title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 82px;
+    display: flex;
+    justify-content: center;
+}
+
+.WhoWeAre_content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+    /* gap: 100px; */
+}
+
+.WhoWeAre_content_title {
+    /* font-family: 'Spartan'; */
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: rgba(217, 217, 217, 0.5);
+    opacity: 0.5;
+    transform: rotate(-90deg);
+}
+
+.WhoWeAre_content_description_container {
+    max-width: 598px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.WhoWeAre_Ellipse1 {
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    left: 0;
+    /* top: 50%; */
+}
+
+.WhoWeAre_Ellipse2 {
+    position: absolute;
+    width: 1000px;
+    height: 1000px;
+    right: 0;
+    /* top: 50%; */
+}

@@ -22,8 +22,10 @@
 body {
     font-size: 16px;
     line-height: 20px;
-    background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,4,57,1) 57%);
+    color: #FFFFFF;
+    background: #0C0C18;
+    /* background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(31,4,57,1) 57%); */
 }
 
 h1,h2,h3,h4,h5,h6 {

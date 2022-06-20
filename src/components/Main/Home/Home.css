@@ -1,37 +1,19 @@
 .home {
     min-height: calc(100vh - 132px);
-    /* max-width: 1400; */
-    padding: 20px 20px;
+    /* padding: 0px 20px; */
+    /* background: #0C0C18; */
+    width: 100%;
+    background: #0C0C18;
 }
 
 .home_wrap {
-    margin: 30px auto;
-    /* width: 1300px; */
-}
-
-.home_title {
-    text-align: center;
-    color: #ffc700;
-    font-size: 48px;
-    line-height: 1.2;
-}
-
-.home_descr {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
+    margin: 0 auto;
 }
 
 .RoadMap_title {
     margin-top: 70px;
 }
 
-.home_wrap p {
-    padding: 20px;
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 1.4;
-}
 
 .home_roadMap {
     margin-top: 20px;
@@ -47,12 +29,4 @@
 
 .home_roadMap li::marker {
     margin-left: 30px;
-}
-
-
-
-@media screen and (min-width: 1440px) {
-    .home_wrap {
-        width: 1300px;
-    }
 }
