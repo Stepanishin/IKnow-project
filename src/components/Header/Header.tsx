@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../UI/Logo';
 import ConnectWallet from './ConnectWallet';
 import './Header.css'
 
@@ -32,7 +33,9 @@ const Header: FC = () => {
     return (
         <header className='Header'>
             <div className='Header_wrap'>
-                <div className='Header_logo'>OUR LOGO</div>
+                {/* <div className='Header_logo'> */}
+                    <Logo />
+                {/* </div> */}
                 <nav className='Header_nav'>
                     <ul className='Header_nav__list'>
                         <Link className='nav__list_link' to={'/'}><li><b>Home</b></li></Link>

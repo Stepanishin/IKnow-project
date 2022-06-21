@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       <Header />
       <WalletsWindow />
-      <Routes>
+      {/* <Routes>
         {
           MainRoutes.map(route => 
             <Route 
@@ -41,7 +41,7 @@ function App() {
           )
         }
       </Routes>
-      <Footer />
+      <Footer /> */}
     </div>
     </Context>
   );

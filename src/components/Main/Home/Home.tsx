@@ -12,7 +12,7 @@ const Home = () => {
                 <OpenPage />
                 <WhoWeAre />
                 <Roadmap />
-                <FAQ />
+                {/* <FAQ /> */}
             </div>
         </main>
     );

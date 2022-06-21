@@ -3,6 +3,7 @@ import React from 'react';
 import './FAQ.css'
 import { Collapse } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
+import Ellipse5 from './img/Ellipse5.png'
 
 
 
@@ -12,9 +13,38 @@ const FAQ: React.FC<{}>= () => {
 
     return (
         <div className='FAQ'>
-            <div className='FAQ_container'>
-                <h1 className='FAQ_title'>Frequently Asked Questions</h1>
-                <Collapse
+            <img className='FAQ_Ellipse5' src={Ellipse5} alt="" />
+                <h3 className='FAQ_title'>Frequently Asked Questions</h3>
+                <div>
+                    <div>
+                        <p>What is “I know”?</p>
+                        
+                    </div>
+                    
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+                {/* <Collapse
                 bordered={false}
                 expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
                 className="FAQ_collapse"
@@ -59,8 +89,7 @@ const FAQ: React.FC<{}>= () => {
                     <Panel header="How do I find out the rarity of my NFT? Does it affect anything?" key="8" className="FAQ_item">
                     <p>The rarity of the NFTs will be available as soon as possible after the mint on our website. There will also be an NFT rarity check by its number on the website. You will just have to enter the number of the NFT, and you will see its traits and Global Ranking. We will also provide official information on rarity to all popular services as soon as possible after the mint.</p>
                     </Panel>
-                </Collapse>
-            </div>
+                </Collapse> */}
         </div>
     );
 };

@@ -27,7 +27,7 @@ const Content: FC = () => {
     const { publicKey, sendTransaction } = useWallet();
 
     return (
-        <div className="App">   
+        <div className="WalletMultiButton">   
             <WalletMultiButton />
         </div>
     );

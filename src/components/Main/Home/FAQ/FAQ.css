@@ -1,26 +1,12 @@
 .FAQ {
     max-width: 1300px;
     margin: 0 auto;
-}
-
-.FAQ_container {
-    
     display: flex;
     justify-content: space-around;
     margin-top: 100px;
-    /* border-radius: 10px;
-    background-color: #1F0439; 
-    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
-    background-color: #eeeeee11;
-    padding: 20px;   */
-}
-
-.FAQ_collapse {
-    border: 1px solid red;
 }
 
 .FAQ_title {
-    border: 1px solid red;
     font-style: normal;
     font-weight: 900;
     font-size: 60px;
@@ -29,6 +15,10 @@
     color: #FFFFFF;
     opacity: 0.5;
     transform: rotate(-90deg);
+    margin-top: 150px;
+    display: block;
+    height: 300px;
+    width: 600px;
 }
 
 .FAQ_item {
@@ -45,6 +35,15 @@
     display: inline;
     transition: all 0.7s ease-in-out;
 }
+
+.FAQ_Ellipse5 {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  left: 0;  
+   /* top: 0; */
+} 
+
 
 
 
@@ -75,6 +74,7 @@
     border: 1px solid #d9d9d9;
     border-bottom: 0;
     border-radius: 2px;
+    /* margin-right: 300px;   */
   }
   .ant-collapse > .ant-collapse-item {
     border-bottom: 1px solid #d9d9d9;
@@ -135,6 +135,7 @@
     color: rgba(0, 0, 0, 0.85);
     background-color: #fff;
     border-top: 1px solid #d9d9d9;
+    max-width: 450px;
   }
   .ant-collapse-content > .ant-collapse-content-box {
     padding: 16px;
