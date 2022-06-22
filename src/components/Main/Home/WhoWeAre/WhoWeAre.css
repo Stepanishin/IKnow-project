@@ -59,3 +59,70 @@
     right: 0;
     /* top: 50%; */
 }
+
+@media screen and (max-width: 1400px) {
+    .WhoWeAre_content {
+        flex-direction: column;
+        align-items:center;
+        margin-top: 50px;
+        gap: 30px;
+    }  
+    .WhoWeAre_content_title {
+        /* transform: rotate(-90deg); */
+        transform: none;
+    }
+    .WhoWeAre_Ellipse1 {
+        width: 800px;
+        height: 800px;   
+    }
+    .WhoWeAre_Ellipse2 {
+        width: 800px;
+        height: 800px;
+    }
+}
+
+@media screen and (max-width: 1001px) {
+    .WhoWeAre_Ellipse1 {
+        width: 500px;
+        height: 500px;   
+    }
+    .WhoWeAre_Ellipse2 {
+        width: 500px;
+        height: 500px;
+    } 
+}
+
+@media screen and (max-width: 650px) {
+    .WhoWeAre_title {
+        font-size: 50px;
+    }
+    .WhoWeAre_content_title {
+        font-size: 50px;
+    }
+    .WhoWeAre_content {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 501px) {
+    .WhoWeAre_Ellipse1 {
+        width: 150px;
+        height: 150px;   
+    }
+    .WhoWeAre_Ellipse2 {
+        width: 150px;
+        height: 150px;
+    } 
+}
+
+@media screen and (max-width: 451px) {
+    .WhoWeAre_title {
+        font-size: 30px;
+    }
+    .WhoWeAre_content_title {
+        font-size: 30px;
+    }
+    .WhoWeAre_content {
+        margin-top: 20px;
+    }  
+}

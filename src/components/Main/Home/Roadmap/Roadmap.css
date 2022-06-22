@@ -268,3 +268,57 @@
     right: calc(50% + 14px);
     text-align: right;
   }
+
+/* //////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////// */
+@media screen and (max-width: 1400px) {
+  .Roadmap_Ellipse3 {
+    width: 800px;
+    height: 800px;
+  }
+  
+  .Roadmap_Ellipse4 {
+    width: 800px;
+    height: 800px;
+  }
+}
+
+@media screen and (max-width: 1001px) {
+  .Roadmap_Ellipse3 {
+      width: 500px;
+      height: 500px;   
+  }
+  .Roadmap_Ellipse4 {
+      width: 500px;
+      height: 500px;
+  } 
+}
+
+@media screen and (max-width: 530px) {
+  .Roadmap_Ellipse3 {
+      width: 150px;
+      height: 150px;   
+  }
+  .Roadmap_Ellipse4 {
+      width: 150px;
+      height: 150px;
+  } 
+  .Roadmap {
+    margin-top: 150px;
+  }
+  .RoadMap_title {
+    font-size: 50px;
+}
+}
+
+@media screen and (max-width: 451px) {
+  .RoadMap_title {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .Roadmap {
+    margin-top: 350px;
+  }
+}

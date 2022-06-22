@@ -27,3 +27,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@media screen and (max-width: 700px) {
+    .footer {
+        height: 100%;
+    }
+    .footer_nav__list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo {
+        padding-left: 100px;
+    }
+}

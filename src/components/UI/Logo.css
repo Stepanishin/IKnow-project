@@ -1,6 +1,7 @@
 .Logo {
-    font-family: 'Lobster', cursive;
-    text-transform: uppercase;
+    /* font-family: 'Lobster', cursive; */
+    font-family: 'Caveat Brush', cursive;
+    /* text-transform: uppercase; */
 }
 
 .Logo {
@@ -9,9 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    /* width: 50%; */
     width: 200px;
-    /* height: 50%; */
+    /* height: 40px; */
     background-image: radial-gradient(
       ellipse 50% 35% at 50% 50%,
       #6b1839,
@@ -22,20 +23,27 @@
     /* left: 50%;
     top: 50%; */
     /* font-family: "Clip"; */
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 2em;
     /* font-size: 22px; */
     color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    /* color: green; */
+    /* text-shadow: 0 0 0.6rem #00FFFF; */
+      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
       -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+      0 -0.5rem 2rem #00FFFF, 0 0.5rem 3rem #00FFFF;
+      /* text-shadow:0 0 0.6rem linear-gradient(91.16deg, #AF0086 4.85%, rgba(0, 135, 135, 0.74) 109.2%); */
     animation: shine 2s forwards, flicker 3s infinite;
   }
 
 .Logo a {
   text-decoration: none;
-  font-family: 'Lobster', cursive;
-    text-transform: uppercase;
+  /* font-family: 'Lobster', cursive; */
+  /* text-transform: uppercase; */
+  color: #ff2483;
+  font-family: 'Caveat Brush', cursive;
+  /* font-weight:200; */
+  font-size: 50px;
 }
 
 .Logo a:active {
@@ -47,10 +55,12 @@
     22%,
     36%,
     75% {
-      color: #ffe6ff;
-      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      /* color: #ffe6ff; */
+      color: #7df7f7;
+      /* text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
         -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483; */
+        /* text-shadow: linear-gradient(91.16deg, #AF0086 4.85%, rgba(0, 135, 135, 0.74) 109.2%); */
     }
     28%,
     33% {
@@ -66,10 +76,12 @@
   
   .flicker {
     animation: shine 2s forwards, blink 3s 2s infinite;
+    font-family: 'Caveat Brush', cursive;
   }
   
   .fast-flicker {
     animation: shine 2s forwards, blink 10s 1s infinite;
+    font-family: 'Caveat Brush', cursive;
   }
   
   @keyframes shine {
@@ -78,10 +90,12 @@
       text-shadow: none;
     }
     100% {
-      color: #ffe6ff;
-      text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      /* color: #ffe6ff; */
+      color: #00FFFF;
+      /* text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
         -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483; */
+        /* text-shadow: linear-gradient(91.16deg, #AF0086 4.85%, rgba(0, 135, 135, 0.74) 109.2%); */
     }
   }
   
@@ -210,3 +224,18 @@
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 800px) {
+
+    .Logo {
+      z-index: 5;
+    }
+}
+
+
+  @media screen and (max-width: 460px) {
+
+    .Logo {
+      width: 100px;
+    }
+}

@@ -2,7 +2,12 @@ import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../UI/Logo';
 import ConnectWallet from './ConnectWallet';
+import ConnectWalletMobile from './ConnectWalletMobile';
 import './Header.css'
+
+type Props = {
+    [key: string]: any;
+};
 
 const Header: FC = () => {
 
@@ -55,6 +60,7 @@ const Header: FC = () => {
                                     <nav className='header_nav_mobile'>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile_1' to={'/'}><li className='header_nav_item'>Home</li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/List'}><li className='header_nav_item'>Bets</li></Link>
+                                        <ConnectWalletMobile />
                                         {/* <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Auth'}><li className='header_nav_item'>Auth</li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Train'}><li className='header_nav_item'>Train</li></Link> */}
                                     </nav>

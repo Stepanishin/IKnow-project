@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
@@ -10,15 +10,20 @@ import { Connection} from '@metaplex/js';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
-const ConnectWallet = () => {
+const ConnectWalletMobile = () => {
     return (   
         <Content /> 
     );
 };
 
-export default ConnectWallet;
+export default ConnectWalletMobile;
 
 const Content: FC = () => {
+
+    let burgerMenu: any
+    let toggle: any
+
+
     let [lamports, setLamports] = useState(.1);
     let [wallet, setWallet] = useState("8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH");
 
@@ -26,8 +31,14 @@ const Content: FC = () => {
     const connection = new Connection(clusterApiUrl("mainnet-beta"))
     const { publicKey, sendTransaction } = useWallet();
 
+    const deleteBurgerMenu = () => {
+        burgerMenu.classList.add("dn")
+        toggle.checked = false
+        burgerMenu.classList.remove("dn")
+    }
+
     return (
-        <div className="WalletMultiButton">   
+        <div className="WalletMultiButtonMobile"  onClick={deleteBurgerMenu} >   
             <div className='WalletBorderContainer'>
                 <WalletMultiButton />
             </div>
