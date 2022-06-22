@@ -9,7 +9,8 @@ const WhoWeAre = () => {
             <img className='WhoWeAre_Ellipse1' src={Ellipse1} alt="" />
             <img className='WhoWeAre_Ellipse2' src={Ellipse2} alt="" />
             <div className='WhoWeAre_container'>
-                <h2 className='WhoWeAre_title'>bett + think = earn</h2>
+                {/* <h2 className='WhoWeAre_title'>bett + think = earn</h2> */}
+                <h2 className='WhoWeAre_title'>Almost Moon. Almost free mint. Almost DAO. Almost like others. Or not.</h2>
                 <div className='WhoWeAre_content'>
                     <h3 className='WhoWeAre_content_title'>who we are</h3>
                     <div className='WhoWeAre_content_description_container'>

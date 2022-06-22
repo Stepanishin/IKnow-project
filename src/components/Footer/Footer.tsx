@@ -9,9 +9,9 @@ const Footer = () => {
             <nav className='footer_nav'>
                 <ul className='footer_nav__list'>
                     <Logo />
-                    <Link to="#" className='footer_btn'><li className='footer_links'>Home</li></Link>
-                    <Link to="#" className='footer_btn'><li className='footer_links'>Bets</li></Link>
-                    <Link to="#" className='footer_btn'><li className='footer_links'>Twitter</li></Link>
+                    <Link to="/" className='footer_btn'><li className='footer_links'>Home</li></Link>
+                    <Link to="/List" className='footer_btn'><li className='footer_links'>Court</li></Link>
+                    <a href="https://twitter.com/rektvillenft" className='footer_btn'><li className='footer_links'>Twitter</li></a>
                     <Link to="#" className='footer_btn'><li className='footer_links'>Discord</li></Link>
                 </ul>
             </nav>

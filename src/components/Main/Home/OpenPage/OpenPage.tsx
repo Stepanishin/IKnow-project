@@ -1,18 +1,17 @@
 import React from 'react';
 import './OpenPage.css'
-import Rectville from '.././img/rektville.gif'
+import Rektville from '.././img/rektville.gif'
 
 const OpenPage = () => {
     return (
         <div className='home_openPage'>
             <div className='openPage_wrap'>
                 <div className='openPage_description'>
-                    <h1 className='home_title'>Discover exclusive capabilities in the digital <span className='home_title_NFT'>NFT</span></h1>
-                    <p className='home_descr'>The world's largets digital market place for crypto collectibles and non-fungible tokens (NFT's)</p>
-                    <button className='home_descr_btn home_descr_btn_deks'>explore more</button>
+                    <p className='home_descr'>Is it Rug City? Scam Valley? <br></br> <span>No, it's just...</span></p>
+                    <button className='home_descr_btn home_descr_btn_deks'>Judge!</button>
                 </div>
-                <img className='openPage_wrap_image' src={Rectville} alt="" />
-                <button className='home_descr_btn home_descr_btn_mobile'>explore more</button>
+                <img className='openPage_wrap_image' src={Rektville} alt="" />
+                <button className='home_descr_btn home_descr_btn_mobile'>Judge!</button>
             </div>
         </div>
     );

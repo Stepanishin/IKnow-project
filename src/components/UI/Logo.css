@@ -1,24 +1,21 @@
 .Logo {
-    /* font-family: 'Lobster', cursive; */
-    font-family: 'Caveat Brush', cursive;
-    /* text-transform: uppercase; */
+    font-family: 'Caveat', cursive;
 }
 
 .Logo {
-  margin-top: 20px;
-    /* position: absolute; */
+    /* margin-top: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;
     /* width: 50%; */
-    width: 200px;
+    /* width: 200px; */
     /* height: 40px; */
     background-image: radial-gradient(
       ellipse 50% 35% at 50% 50%,
       #6b1839,
       transparent
     );
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     letter-spacing: 2;
     /* left: 50%;
     top: 50%; */
@@ -34,6 +31,7 @@
       0 -0.5rem 2rem #00FFFF, 0 0.5rem 3rem #00FFFF;
       /* text-shadow:0 0 0.6rem linear-gradient(91.16deg, #AF0086 4.85%, rgba(0, 135, 135, 0.74) 109.2%); */
     animation: shine 2s forwards, flicker 3s infinite;
+    /* margin-left: 50px; */
   }
 
 .Logo a {

@@ -44,7 +44,11 @@ const Header: FC = () => {
                 <nav className='Header_nav'>
                     <ul className='Header_nav__list'>
                         <Link className='nav__list_link' to={'/'}><li><b>Home</b></li></Link>
-                        <Link className='nav__list_link' to={'./List'}><li><b>Bets</b></li></Link>
+                        <Link className='nav__list_link' to={'./List'}><li><b>Court</b></li></Link>
+                        <a className='nav__list_link' href='#'><li><b>About us</b></li></a>
+                        <Link className='nav__list_link' to={'./RoadMap'}><li><b>Road map</b></li></Link>
+                        <a className='nav__list_link' href='#'><li><b>FAQ</b></li></a>
+                        <a className='nav__list_link' href='#'><li><b>???</b></li></a>
                         {/* <Link className='nav__list_link' to={'./Auth'}><li><b>FAQ</b></li></Link>
                         <Link className='nav__list_link' to={'./Train'}><li><b>Train</b></li></Link> */}
                     </ul>
@@ -59,7 +63,7 @@ const Header: FC = () => {
                                 <div className="nav-wrapper">
                                     <nav className='header_nav_mobile'>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile_1' to={'/'}><li className='header_nav_item'>Home</li></Link>
-                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/List'}><li className='header_nav_item'>Bets</li></Link>
+                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/List'}><li className='header_nav_item'>Court</li></Link>
                                         <ConnectWalletMobile />
                                         {/* <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Auth'}><li className='header_nav_item'>Auth</li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Train'}><li className='header_nav_item'>Train</li></Link> */}
