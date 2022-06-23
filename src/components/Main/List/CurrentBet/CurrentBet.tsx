@@ -1,20 +1,5 @@
 import React, { FC } from 'react';
-import CurrentBet from './CurrentBet/CurrentBet';
-
-
-// import { Link } from 'react-router-dom';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-// Default theme
-import '@splidejs/react-splide/css';
-
-// or other themes
-// import '@splidejs/react-splide/css/skyblue';
-// import '@splidejs/react-splide/css/sea-green';
-
-// or only core styles
-// import '@splidejs/react-splide/css/core';
-import './List.css'
-
+import './CurrentBet.css'
 
 interface Card {
     name?: string,
@@ -54,48 +39,17 @@ const data: Array<Card> = [
         discord: 'www.yandex.ru',
         quantity: 666,
     },
-    {
-        name: 'BadBoy1',
-        price: 1.2,
-        date: '15.7.2022',
-        avatar: 'https://ltdfoto.ru/images/2022/06/23/img.gif',
-        twitter: 'www.google.com',
-        discord: 'www.yandex.ru',
-        quantity: 666,
-    },
-    {
-        name: 'BadBoys2',
-        price: 1.2,
-        date: '15.7.2022',
-        avatar: 'https://ltdfoto.ru/images/2022/06/23/img.gif',
-        twitter: 'www.google.com',
-        discord: 'www.yandex.ru',
-        quantity: 666,
-    },
 ]
 
-
-const List:FC = () => {
-    
-
+const CurrentBet: FC = () => {
     return (
         <div className='list'>
-            <Splide aria-label="My Favorite Images"
-                options={ {
-                    wheel: true,
-                    rewind: true,
-                    start:0,
-                    speed: 1000,
-                    dragMinThreshold: {
-                            mouse: 1,
-                            touch: 10,
-                        },
-                  } }
-            >
-            {
+            {/* <h2 className='List_title'>Current Judge</h2> */}
+            <div className='List_wrap'>
+                {
                     data.map(card => {
                         return (
-                            <SplideSlide className='card' key={card.name}>
+                            <div className='card' key={card.name}>
                                 {/* <div className='card_info_wrap'> */}
                                     <img className='card_avatar' src={card.avatar} alt="" />
                                     {/* <img src={require(card.avatar).default} alt="" width="100" height="100" />  */}
@@ -112,16 +66,13 @@ const List:FC = () => {
                                     <button>Price will be 1 sol - 2 sol</button>
                                     <button>Price will be 4 or higher</button>
                                 </div>
-                            </SplideSlide>
+                            </div>
                         )
                     })
                 }
-            
-            </Splide>
+            </div>
         </div>
     );
-    
 };
 
-
-export default List;
+export default CurrentBet;

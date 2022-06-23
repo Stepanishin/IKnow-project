@@ -1,8 +1,8 @@
 .WhoWeAre {
-    height: 943px;
-    background: rgba(22, 22, 34, 0.5);
+    background: #0C0C18;
     width: 100%;
     padding-top: 60px;
+    padding-bottom: 100px;
 }
 
 .WhoWeAre_container {
@@ -26,7 +26,6 @@
 }
 
 .WhoWeAre_content_title {
-    /* font-family: 'Spartan'; */
     font-style: normal;
     font-weight: 900;
     font-size: 60px;
@@ -42,22 +41,26 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    padding: 0 30px;
 }
 
 .WhoWeAre_Ellipse1 {
     position: absolute;
-    width: 1000px;
-    height: 1000px;
+    width: 500px;
+    height: 500px;
     left: 0;
-    /* top: 50%; */
+    /* top: 1; */
+    bottom: -100%;
+    pointer-events: none;
 }
 
 .WhoWeAre_Ellipse2 {
     position: absolute;
-    width: 1000px;
-    height: 1000px;
+    width: 700px;
+    height: 700px;
     right: 0;
-    /* top: 50%; */
+    top: 80%;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 1400px) {
@@ -68,16 +71,21 @@
         gap: 30px;
     }  
     .WhoWeAre_content_title {
-        /* transform: rotate(-90deg); */
         transform: none;
     }
     .WhoWeAre_Ellipse1 {
-        width: 800px;
-        height: 800px;   
+        width: 700px;
+        height: 700px;   
     }
     .WhoWeAre_Ellipse2 {
-        width: 800px;
-        height: 800px;
+        width: 700px;
+        height: 700px;
+    }
+    .WhoWeAre_title {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        padding: 0 50px;
     }
 }
 
@@ -106,12 +114,12 @@
 
 @media screen and (max-width: 501px) {
     .WhoWeAre_Ellipse1 {
-        width: 150px;
-        height: 150px;   
+        width: 300px;
+        height: 300px;   
     }
     .WhoWeAre_Ellipse2 {
-        width: 150px;
-        height: 150px;
+        width: 300px;
+        height: 300px;
     } 
 }
 
