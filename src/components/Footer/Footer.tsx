@@ -11,9 +11,9 @@ const Footer = () => {
                     <Logo />
                     <Link to="/" className='footer_btn footer_links_dn'><li className='footer_links'>Home</li></Link>
                     <Link to="/List" className='footer_btn footer_links_dn'><li className='footer_links'>Court</li></Link>
-                    <Link to="#" className='footer_btn footer_links_dn'><li className='footer_links'>About us</li></Link>
-                    <Link to="/RoadMap" className='footer_btn footer_links_dn'><li className='footer_links'>Road map</li></Link>
-                    <Link to="#" className='footer_btn footer_links_dn'><li className='footer_links'>FAQ</li></Link>
+                    {/* <Link to="#" className='footer_btn footer_links_dn'><li className='footer_links'>About us</li></Link> */}
+                    {/* <Link to="/RoadMap" className='footer_btn footer_links_dn'><li className='footer_links'>Road map</li></Link> */}
+                    {/* <Link to="#" className='footer_btn footer_links_dn'><li className='footer_links'>FAQ</li></Link> */}
                     <Link to="#" className='footer_btn footer_links_dn'><li className='footer_links'>???</li></Link>
                     <a href="https://twitter.com/rektvillenft" className='footer_btn'><li className='footer_links'>Twitter</li></a>
                     <Link to="#" className='footer_btn'><li className='footer_links'>Discord</li></Link>

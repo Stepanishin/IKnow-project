@@ -9,17 +9,19 @@ import { ConnectionProvider, WalletProvider, useConnection, useWallet } from '@s
 
 interface SendSolanaBtn_props {
     borderPrice?: number,
-    descr?: string
+    descr?: string,
+    wallet?: string,
 }
 
 let thelamports = 0;
-let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
+// let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 
-const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr}) => {
+const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
 
     // let [lamports, setLamports] = useState(price);
     let lamports: any = borderPrice
-    let [wallet, setWallet] = useState("8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH");
+    // let [wallet, setWallet] = useState("8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH");
+    let theWallet:any= wallet
 
     const connection = new Connection(clusterApiUrl("mainnet-beta"))
     const { publicKey, sendTransaction } = useWallet();

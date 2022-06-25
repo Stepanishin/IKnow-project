@@ -1,8 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../UI/Logo';
-import ConnectWallet from './ConnectWallet';
-import ConnectWalletMobile from './ConnectWalletMobile';
+import ConnectWallet from '../UI/ConnectWallet/ConnectWallet';
 import './Header.css'
 
 type Props = {
@@ -49,17 +48,15 @@ const Header: FC = () => {
     return (
         <header className='Header'>
             <div className='Header_wrap'>
-                {/* <div className='Header_logo'> */}
                     <Logo />
-                {/* </div> */}
                 <nav className='Header_nav'>
                     <ul className='Header_nav__list'>
                         <Link className='nav__list_link' to={'/'}><li><b>Home</b></li></Link>
                         <Link className='nav__list_link' to={'./List'}><li><b>Court</b></li></Link>
-                        <a className='nav__list_link' href='#'><li><b>About us</b></li></a>
-                        <Link className='nav__list_link' to={'./RoadMap'}><li><b>Road map</b></li></Link>
-                        <a className='nav__list_link' href='#'><li><b>FAQ</b></li></a>
-                        <a className='nav__list_link' href='#'><li><b>???</b></li></a>
+                        {/* <a className='nav__list_link' href='#'><li><b>About us</b></li></a> */}
+                        {/* <Link className='nav__list_link' to={'./RoadMap'}><li><b>Road map</b></li></Link> */}
+                        {/* <a className='nav__list_link' href='#'><li><b>FAQ</b></li></a> */}
+                        <Link className='nav__list_link' to={'./Secret'}><li><b>???</b></li></Link>
 
                     </ul>
                     <ul className='Header_nav__list_mobile'>
@@ -74,17 +71,17 @@ const Header: FC = () => {
                                     <nav className='header_nav_mobile'>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile_1' to={'/'}><li className='header_nav_item'>Home</li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/List'}><li className='header_nav_item'>Court</li></Link>
-                                        <a onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' href='#'><li><b>About us</b></li></a>
-                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'./RoadMap'}><li><b>Road map</b></li></Link>
-                                        <a onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' href='#'><li><b>FAQ</b></li></a>
-                                        <a onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' href='#'><li><b>???</b></li></a>
-                                        <ConnectWalletMobile />
+                                        {/* <a onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' href='#'><li><b>About us</b></li></a> */}
+                                        {/* <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'./RoadMap'}><li><b>Road map</b></li></Link> */}
+                                        {/* <a onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' href='#'><li><b>FAQ</b></li></a> */}
+                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'./Secret'} ><li><b>???</b></li></Link>
+                                        <ConnectWallet className={"WalletMultiButtonMobile"} classNameBorder={'WalletBorderContainerMobile'} />
                                     </nav>
                                 </div>
                             </div>
                     </ul>
                 </nav>
-                <ConnectWallet />
+                <ConnectWallet className={"WalletMultiButton"} classNameBorder={'WalletBorderContainer'} />
             </div>
         </header>
     );

@@ -14,6 +14,7 @@ import '@splidejs/react-splide/css';
 // import '@splidejs/react-splide/css/core';
 import './List.css'
 import SendSolanaBtn from '../../UI/SendSolanaBtn/SendSolanaBtn';
+import Timer from '../../UI/Timer/Timer';
 
 
 interface Card {
@@ -25,6 +26,8 @@ interface Card {
     twitter?: string,
     discord?: string,
     borderPrice?: number,
+    walletForMore?: string,
+    walletForLess?: string,
 };
 
 const data: Array<Card> = [
@@ -37,6 +40,8 @@ const data: Array<Card> = [
         discord: 'www.yandex.ru',
         quantity: 666,
         borderPrice: 0.1,
+        walletForMore: '8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH',
+        walletForLess: 'A8grZ1aaL9Hm8sC7mtVyiAqdkFf4mB63aBpfq2WR9drt',
     },
 ]
 
@@ -66,12 +71,10 @@ const List = () => {
                                         <a className='card_links' href={card.discord}>Discord</a>
                                         <p>Items: {card.quantity}</p>
                                     </div>
-                                <div className='card_timer'>
-                                    00:00:00
-                                </div>
+                                <Timer Timerclass={'card_timer'} />
                                 <div className='card_btn_wrap'>
-                                    <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be more '}  />
-                                    <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be less '}  />
+                                    <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be more '} wallet={card.walletForMore}  />
+                                    <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be less '} wallet={card.walletForLess} />
                                 </div>
                             </SplideSlide>
                         )

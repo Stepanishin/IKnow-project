@@ -3,6 +3,7 @@
     width: 100%;
     padding-top: 60px;
     padding-bottom: 100px;
+    height: 100vh;
 }
 
 .WhoWeAre_container {
@@ -22,7 +23,7 @@
 .WhoWeAre_content {
     display: flex;
     justify-content: space-around;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .WhoWeAre_content_title {
