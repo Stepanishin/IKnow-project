@@ -13,10 +13,12 @@ const Header: FC = () => {
 
     let burgerMenu: any
     let toggle: any
+    let splide: any
 
     useEffect(() => {
         burgerMenu = document.querySelector('.nav')
         toggle = document.querySelector("#toggle")
+        splide = document.querySelector('.splide')
     }, [])  
 
     const showWallets = () => {   
@@ -32,7 +34,16 @@ const Header: FC = () => {
         burgerMenu.classList.add("dn")
         toggle.checked = false
         burgerMenu.classList.remove("dn")
+        splide.classList.remove("dn")
     }
+
+    const showSplide = () => {
+        splide = document.querySelector('.splide')
+        splide.classList.toggle("dn")
+    }
+
+
+
 
 
     return (
@@ -49,11 +60,10 @@ const Header: FC = () => {
                         <Link className='nav__list_link' to={'./RoadMap'}><li><b>Road map</b></li></Link>
                         <a className='nav__list_link' href='#'><li><b>FAQ</b></li></a>
                         <a className='nav__list_link' href='#'><li><b>???</b></li></a>
-                        {/* <Link className='nav__list_link' to={'./Auth'}><li><b>FAQ</b></li></Link>
-                        <Link className='nav__list_link' to={'./Train'}><li><b>Train</b></li></Link> */}
+
                     </ul>
                     <ul className='Header_nav__list_mobile'>
-                    <input id="toggle" type="checkbox"></input>
+                    <input onClick={showSplide} id="toggle" type="checkbox" className='toggle' ></input>
                             <label htmlFor="toggle" className="hamburger">
                                 <div className="top-bun"></div>
                                 <div className="meat"></div>
@@ -64,15 +74,16 @@ const Header: FC = () => {
                                     <nav className='header_nav_mobile'>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile_1' to={'/'}><li className='header_nav_item'>Home</li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/List'}><li className='header_nav_item'>Court</li></Link>
+                                        <a onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' href='#'><li><b>About us</b></li></a>
+                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'./RoadMap'}><li><b>Road map</b></li></Link>
+                                        <a onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' href='#'><li><b>FAQ</b></li></a>
+                                        <a onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' href='#'><li><b>???</b></li></a>
                                         <ConnectWalletMobile />
-                                        {/* <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Auth'}><li className='header_nav_item'>Auth</li></Link>
-                                        <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'/Train'}><li className='header_nav_item'>Train</li></Link> */}
                                     </nav>
                                 </div>
                             </div>
                     </ul>
                 </nav>
-                {/* <button onClick={showWallets} className='Header_btn'>Connect wallet</button> */}
                 <ConnectWallet />
             </div>
         </header>

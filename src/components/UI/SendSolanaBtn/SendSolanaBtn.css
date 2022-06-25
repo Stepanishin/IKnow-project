@@ -1,0 +1,12 @@
+.SendSolanaBtn_container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.SendSolanaBtn {
+    background: #00FFFF;
+    border-radius: 16px;
+    padding: 15px;
+    margin-top: 10px;
+}
