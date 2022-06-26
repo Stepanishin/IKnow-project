@@ -114,6 +114,10 @@
     
     }
 
+    .home_descr {
+        margin-top: 0;
+    }
+
     .openPage_description {
         display: flex;
         flex-direction: column;

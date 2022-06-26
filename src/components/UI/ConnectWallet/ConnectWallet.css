@@ -42,5 +42,6 @@
     background: linear-gradient(91.54deg, #FF00D6 31.51%, #00FFFF 92.1%) !important;
     border-radius: 8px !important;
     padding: 2px !important; 
-    width: 202px !important;
+    /* width: 170.5px !important; */
+    width: fit-content;
   }

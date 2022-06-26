@@ -6,7 +6,8 @@
     /* margin-top: 100px; */
     background: #101010;
     align-items: center;
-    margin-bottom: 0;
+    /* margin-bottom: 0; */
+    margin-top: 10px;
 }
 
 .footer_nav__list {
