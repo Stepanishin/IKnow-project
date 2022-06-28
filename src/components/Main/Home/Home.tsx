@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './Home.css'
 import OpenPage from './OpenPage/OpenPage';
 import WhoWeAre from './WhoWeAre/WhoWeAre';
 
-const Home = () => {
+const Home: FC = () => {
     return (
         <main className='home'>
             <div className='home_wrap'>

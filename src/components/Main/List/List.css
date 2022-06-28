@@ -5,7 +5,134 @@
     margin: 0 auto;
 }
 
-.List_title {
+.List_cards {
+    border: 1px solid red;
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid green;
+    background: #181935;
+    border-radius: 30px;
+    height: 600px;
+    padding: 30px 30px;
+    max-width: 390px;
+    margin-left: 45px;
+}
+
+.card_avatar {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    height: 210px;
+    width: 210px;
+    border-radius: 30px;
+}
+
+.card_description {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #9E9E9E;
+    padding: 20px 0 0 50px;
+}
+
+.card_description a {
+    text-decoration: none;
+    color: #9E9E9E;
+    cursor: pointer;
+}
+
+.card_title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2AD5F8;
+}
+
+.card_btn_wrap {
+    padding: 20px 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .List_title {
     padding-top: 50px;
     font-style: normal;
     font-weight: 800;
@@ -24,14 +151,6 @@
 }
 
 .card  {
-    /* border-radius: 10px;
-    width: 900px;
-    padding: 20px;
-    color: #ffffff;
-    margin: 50px auto;
-    background-color: #1F0439 ;
-    box-shadow: rgb(255 255 255 / 3%) 0px 0px 0px 3px;
-    background-color: #eeeeee11; */
     background: #181935;
     border-radius: 30px;
     height: 600px;
@@ -80,15 +199,9 @@
     padding: 20px 0 0 0;
 }
 
-/* .card_btn_wrap button {
-    background: #00FFFF;
-    border-radius: 16px;
-    padding: 15px;
-    margin-top: 10px;
-} */
-
 .splide {
-    z-index: 0;
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .splide__list {
@@ -100,5 +213,5 @@
         height: 650px;
     }
 
-}   
+}    */
 

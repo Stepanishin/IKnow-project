@@ -36,6 +36,9 @@ const Timer:FC<TimerProps> = ({Timerclass}) => {
         timer();
     }
 
+
+
+
     return (
         <div className={Timerclass} id='timer'>
             
