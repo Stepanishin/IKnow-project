@@ -80,26 +80,42 @@ const List: FC = () => {
         });
     }
 
-    const lala = () => {
-        console.log(cards)
-    }
-
     return (
         <div className='list'>
-            <h2>Active Judge</h2>
-            <button onClick={lala}>Push me</button>
+            <h2 className='List_container_title'>Active Judge</h2>
             <div className='List_cards'>
                 {
                     cards.map(card => {
+                        if (card[1].state === 'active') {
                         return (
-                            <div className='card' key={card[1].name}>
-                                <Link to={`/allTheft/${card[1].name}`} >
-                                    <img className='card_avatar' src={card[1].avatar} alt="" />
-                                    <h3 className='card_title'>{card[1].name}</h3>
+                            <div className='list_card' key={card[1].name}>
+                                <Link to={`/List/${card[1].name}`} >
+                                    <img className='list_avatar' src={card[1].avatar} alt="" />
+                                    <h3 className='list_title'>{card[1].name}</h3>
                                 </Link>
                             </div>
-                            // <div></div>
                         )
+                        }
+                    })
+                }
+            </div>
+
+
+
+            <h2 className='List_container_title'>Past Judge</h2>
+            <div className='List_cards'>
+                {
+                    cards.map(card => {
+                        if (card[1].state === 'past') {
+                        return (
+                            <div className='list_card' key={card[1].name}>
+                                <Link to={`/List/${card[1].name}`} >
+                                    <img className='list_avatar' src={card[1].avatar} alt="" />
+                                    <h3 className='list_title'>{card[1].name}</h3>
+                                </Link>
+                            </div>
+                        )
+                        }
                     })
                 }
             </div>

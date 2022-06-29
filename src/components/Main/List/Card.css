@@ -1,0 +1,45 @@
+.card  {
+    background: #181935;
+    border-radius: 30px;
+    height: 600px;
+    padding: 30px 30px;
+    max-width: 390px;
+    margin: 30px auto;
+    
+}
+
+.card_avatar {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    height: 210px;
+    width: 210px;
+    border-radius: 30px;
+}
+
+.card_description {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #9E9E9E;
+    padding: 20px 0 0 50px;
+}
+
+.card_description a {
+    text-decoration: none;
+    color: #9E9E9E;
+    cursor: pointer;
+}
+
+.card_title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2AD5F8;
+}
+
+.card_btn_wrap {
+    padding: 20px 0 0 0;
+}
