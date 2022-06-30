@@ -45,6 +45,13 @@
     padding: 0 30px;
 }
 
+.description_title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 150%;
+}
+
 .WhoWeAre_Ellipse1 {
     position: absolute;
     width: 500px;
