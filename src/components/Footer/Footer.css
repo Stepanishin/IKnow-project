@@ -8,6 +8,7 @@
     align-items: center;
     /* margin-bottom: 0; */
     margin-top: 10px;
+    flex: 0 0 auto
 }
 
 .footer_nav__list {

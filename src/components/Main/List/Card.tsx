@@ -60,7 +60,12 @@ const Card: FC = () => {
                 <a className='card_links' href={card.discord}>Discord</a>
                 <p>Items: {card.quantity}</p>
             </div>
-            <Timer Timerclass={'card_timer'} DateToMint={card.date} />
+            {
+                card.date
+                ?   <Timer Timerclass={'card_timer'} DateToMint={card.date} />
+                :   'Loading...'
+            }
+            {/* <Timer Timerclass={'card_timer'} DateToMint={card.date} /> */}
             <div className='card_btn_wrap'>
                 <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be more '} wallet={card.walletForMore}  />
                 <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be less '} wallet={card.walletForLess} />

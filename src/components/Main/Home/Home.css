@@ -4,6 +4,8 @@
     /* background: #0C0C18; */
     width: 100%;
     background: #0C0C18;
+    flex: 1 0 auto;
+    height: 100%;
 }
 
 .home_wrap {
