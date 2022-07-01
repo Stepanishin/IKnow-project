@@ -7,6 +7,9 @@ import { actions, utils, programs, NodeWallet, Connection} from '@metaplex/js';
 import { WalletAdapterNetwork, WalletNotConnectedError } from '@solana/wallet-adapter-base';
 import { ConnectionProvider, WalletProvider, useConnection, useWallet } from '@solana/wallet-adapter-react';
 
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { termsAndConditionsSlice } from '../../../store/reducers/getTermsAndConditionsReducer';
+
 interface SendSolanaBtn_props {
     borderPrice?: number,
     descr?: string,
@@ -18,6 +21,12 @@ let thelamports = 0;
 
 const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
 
+    const {isDisabled} = useAppSelector(state => state.termsAndConditionsSlice)
+    const {termsAndConditions} = termsAndConditionsSlice.actions
+    const dispatch = useAppDispatch()
+
+    
+
     // let [lamports, setLamports] = useState(price);
     let lamports: any = borderPrice
     // let [wallet, setWallet] = useState("8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH");
@@ -26,12 +35,26 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
     const connection = new Connection(clusterApiUrl("mainnet-beta"))
     const { publicKey, sendTransaction } = useWallet();
 
+
     const onClick = useCallback( async () => {
 
-        if (!publicKey) throw new WalletNotConnectedError();
+
+        
+
+        if (!publicKey) {
+            let wl: HTMLElement = document.querySelector('.wallet-adapter-button')!
+            if (wl instanceof HTMLElement) {
+                    wl.click()         
+            }
+            
+        }
+
+        if (!publicKey) throw new WalletNotConnectedError('connect wallet123');
+        
+
+
         connection.getBalance(publicKey).then((bal) => {
             console.log(bal/LAMPORTS_PER_SOL);
-
         });
 
         let lamportsI = LAMPORTS_PER_SOL*lamports;
@@ -50,9 +73,12 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
         await connection.confirmTransaction(signature, 'processed');
     }, [publicKey, sendTransaction, connection]);
 
+    
+    
+
     return (
         <div className='SendSolanaBtn_container'>
-            <button onClick={onClick} className='SendSolanaBtn'>
+            <button onClick={onClick} className='SendSolanaBtn' disabled={isDisabled}>
               {descr} {borderPrice} Sol
             </button>
         </div>

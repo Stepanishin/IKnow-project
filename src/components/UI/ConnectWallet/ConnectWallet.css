@@ -45,3 +45,15 @@
     /* width: 170.5px !important; */
     width: fit-content;
   }
+
+@media screen and (max-width: 320px) {
+  .wallet-adapter-button-trigger {
+    font-size: 17px !important; 
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .wallet-adapter-button-trigger {
+    font-size: 15px !important; 
+  }
+}

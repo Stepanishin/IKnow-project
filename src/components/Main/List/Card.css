@@ -1,11 +1,10 @@
 .card  {
     background: #181935;
     border-radius: 30px;
-    height: 600px;
+    height: 650px;
     padding: 30px 30px;
     max-width: 390px;
-    margin: 30px auto;
-    
+    margin: 30px auto;   
 }
 
 .card_avatar {

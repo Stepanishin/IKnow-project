@@ -4,6 +4,7 @@ import { getDatabase, ref, get, child } from "firebase/database";
 import './Card.css'
 import Timer from '../../UI/Timer/Timer';
 import SendSolanaBtn from '../../UI/SendSolanaBtn/SendSolanaBtn';
+import TermsAndConditions from '../../UI/TermsAndConditions/TermsAndConditions';
 
 interface ICard {
     name?: string,
@@ -45,10 +46,6 @@ const Card: FC = () => {
         });
     }
 
-    const lala = () => {
-        console.log(card)
-    }
-
     return (
         <div className='card'>
             <img className='card_avatar' src={card.avatar} alt="" />
@@ -66,6 +63,10 @@ const Card: FC = () => {
                 :   'Loading...'
             }
             {/* <Timer Timerclass={'card_timer'} DateToMint={card.date} /> */}
+            {/* <input type="checkbox" name="conditions" id="conditions">I accept Terms & conditions</input> */}
+
+            <TermsAndConditions />
+
             <div className='card_btn_wrap'>
                 <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be more '} wallet={card.walletForMore}  />
                 <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be less '} wallet={card.walletForLess} />

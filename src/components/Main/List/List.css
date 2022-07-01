@@ -28,7 +28,7 @@
     height: 300px;
     padding: 30px 30px;
     max-width: 390px;
-    margin-left: 45px;
+    /* margin-left: 45px; */
 }
 
 .list_avatar {
@@ -48,6 +48,17 @@
     color: #2AD5F8;
     text-align: center;
     margin-top: 15px;
+}
+
+@media screen and (max-width: 733px) {
+
+    .List_cards {
+        justify-content: center;
+    }
+
+    .list_card {
+        margin-left: 0;
+    }
 }
 
 @media screen and (max-width: 400px) {

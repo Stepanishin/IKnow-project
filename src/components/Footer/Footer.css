@@ -38,11 +38,11 @@
 }
 
 @media screen and (max-width: 700px) {
-    .footer {
+    /* .footer {
         height: 100%;
         padding-top: 50px;
         padding-bottom: 50px;
-    }
+    } */
     .footer_nav__list {
         /* flex-direction: column; */
         justify-content: center;

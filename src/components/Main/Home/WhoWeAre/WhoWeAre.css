@@ -35,6 +35,7 @@
     color: rgba(217, 217, 217, 0.5);
     opacity: 0.5;
     transform: rotate(-90deg);
+    margin-left: 20px;
 }
 
 .WhoWeAre_content_description_container {
@@ -80,6 +81,8 @@
     }  
     .WhoWeAre_content_title {
         transform: none;
+        margin-left: 0px;
+        margin-left: 0px;
     }
     .WhoWeAre_Ellipse1 {
         width: 700px;
