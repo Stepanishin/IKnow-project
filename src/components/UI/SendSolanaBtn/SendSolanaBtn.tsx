@@ -25,6 +25,8 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
     const {termsAndConditions} = termsAndConditionsSlice.actions
     const dispatch = useAppDispatch()
 
+    const alarmTerms = document.querySelector('.alarm_terms')!
+
     
 
     // let [lamports, setLamports] = useState(price);
@@ -37,9 +39,18 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
 
 
     const onClick = useCallback( async () => {
-
-
         
+        if (isDisabled) {
+            console.log('dfa')
+            alarmTerms.classList.add('alarm_terms_display')
+
+            const closeAlarm =() => {
+                alarmTerms.classList.remove('alarm_terms_display')
+            }
+
+            setTimeout(closeAlarm, 3000)
+            return false
+        }
 
         if (!publicKey) {
             let wl: HTMLElement = document.querySelector('.wallet-adapter-button')!
@@ -78,9 +89,12 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
 
     return (
         <div className='SendSolanaBtn_container'>
-            <button onClick={onClick} className='SendSolanaBtn' disabled={isDisabled}>
+            <button onClick={onClick} className='SendSolanaBtn' 
+                // disabled={isDisabled}
+            >
               {descr} {borderPrice} Sol
             </button>
+            <div className='alarm_terms'>Accept terms and conditions!</div>
         </div>
     );
 };

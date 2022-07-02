@@ -46,6 +46,8 @@ const Card: FC = () => {
         });
     }
 
+    
+
     return (
         <div className='card'>
             <img className='card_avatar' src={card.avatar} alt="" />

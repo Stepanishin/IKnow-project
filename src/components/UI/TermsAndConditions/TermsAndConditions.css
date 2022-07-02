@@ -1,4 +1,47 @@
 .TermsAndConditions {
     margin-top: 15px;
-    padding-left: 30px;
+    padding-left: 60px;
+    font-size: 14px;
+}
+
+.TermsAndConditions_info {
+    margin-left: 5px;
+}
+
+.TermsAndConditions_modalWrap {
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    background-color: black;
+    opacity: 0.95;
+    display: none;
+    z-index: 100;
+    top:0;
+    left: 0;
+    min-height: 100vh;
+}
+
+.TermsAndConditions_modalWrap_display {
+    display: block;
+}
+
+.modalWrap_container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 100px 50px;
+    background: #181935;
+    border-radius: 30px;
+}
+
+.modalWrap_container_title {
+    text-align: center;
+}
+
+.modalWrap_container_closeBtn {
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
+    background: #00FFFF;
+    border-radius: 16px;
+    padding: 15px;
 }

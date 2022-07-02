@@ -10,3 +10,20 @@
     padding: 15px;
     margin-top: 10px;
 }
+
+.alarm_terms {
+    color: white;
+    background: rgba(235,55,66,.7);
+    width: 200px;
+    height: 70px;
+    /* position: absolute; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    padding: 10px;
+}
+
+.alarm_terms_display {
+    display: block;
+}
