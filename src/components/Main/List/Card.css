@@ -39,6 +39,10 @@
     color: #2AD5F8;
 }
 
+.card_links:hover {
+    color: #00FFFF;
+}
+
 .card_btn_wrap {
     padding: 20px 0 0 0;
 }

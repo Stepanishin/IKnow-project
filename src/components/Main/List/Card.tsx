@@ -28,6 +28,7 @@ const Card: FC = () => {
 
     useEffect(() => {
         getCard()
+        window.scroll(0,0);
     }, [])
 
     const getCard = ( ) => {
@@ -55,8 +56,8 @@ const Card: FC = () => {
                 <h3 className='card_title'>{card.name}</h3>
                 <p>Price: {card.price} sol</p>
                 <p>Date of mint: {card.date}</p>
-                <a className='card_links' href={card.twitter}>Twitter</a> <br />
-                <a className='card_links' href={card.discord}>Discord</a>
+                <a rel='noreferrer' target="_blank" className='card_links' href={card.twitter}>Twitter</a> <br />
+                <a rel='noreferrer' target="_blank" className='card_links' href={card.discord}>Discord</a>
                 <p>Items: {card.quantity}</p>
             </div>
             {
@@ -64,8 +65,6 @@ const Card: FC = () => {
                 ?   <Timer Timerclass={'card_timer'} DateToMint={card.date} />
                 :   'Loading...'
             }
-            {/* <Timer Timerclass={'card_timer'} DateToMint={card.date} /> */}
-            {/* <input type="checkbox" name="conditions" id="conditions">I accept Terms & conditions</input> */}
 
             <TermsAndConditions />
 

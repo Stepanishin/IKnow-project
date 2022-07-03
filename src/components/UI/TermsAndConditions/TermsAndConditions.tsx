@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { termsAndConditionsSlice } from '../../../store/reducers/getTermsAndConditionsReducer';
 import './TermsAndConditions.css'
-import info from './img/info2.png'
+import info from './img/info.png'
 
 const TermsAndConditions: FC = () => {
 

@@ -55,7 +55,8 @@ const List: FC = () => {
     let [cards, setCards] = useState<any[]>([])
 
     useEffect(() => {
-        getCards()
+        window.scroll(0,0);
+        getCards() 
     }, [])
 
     const getCards = ( ) => {

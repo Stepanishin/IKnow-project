@@ -9,6 +9,7 @@
     border-radius: 16px;
     padding: 15px;
     margin-top: 10px;
+    min-width: 270px;
 }
 
 .alarm_terms {
@@ -16,7 +17,6 @@
     background: rgba(235,55,66,.7);
     width: 200px;
     height: 70px;
-    /* position: absolute; */
     position: fixed;
     top: 0;
     right: 0;
@@ -26,4 +26,11 @@
 
 .alarm_terms_display {
     display: block;
+}
+
+@media screen and (max-width: 330px) {
+    .SendSolanaBtn {
+        font-size: 15px;
+        width: 240px;
+    }
 }
