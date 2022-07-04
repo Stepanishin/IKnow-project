@@ -5,6 +5,7 @@ import './Card.css'
 import Timer from '../../UI/Timer/Timer';
 import SendSolanaBtn from '../../UI/SendSolanaBtn/SendSolanaBtn';
 import TermsAndConditions from '../../UI/TermsAndConditions/TermsAndConditions';
+import ReturnButton from '../../UI/ReturnButton/ReturnButton';
 
 interface ICard {
     name?: string,
@@ -18,6 +19,9 @@ interface ICard {
     walletForMore?: string,
     walletForLess?: string,
     state?: string,
+    SolForLess?: number,
+    SolForMore?: number,
+    judgePrice?: number,
 };
 
 const Card: FC = () => {
@@ -51,6 +55,7 @@ const Card: FC = () => {
 
     return (
         <div className='card'>
+            <ReturnButton />
             <img className='card_avatar' src={card.avatar} alt="" />
             <div className='card_description'>
                 <h3 className='card_title'>{card.name}</h3>
@@ -65,13 +70,42 @@ const Card: FC = () => {
                 ?   <Timer Timerclass={'card_timer'} DateToMint={card.date} />
                 :   'Loading...'
             }
-
-            <TermsAndConditions />
-
-            <div className='card_btn_wrap'>
-                <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be more '} wallet={card.walletForMore}  />
-                <SendSolanaBtn borderPrice={card.borderPrice} descr={'Floor will be less '} wallet={card.walletForLess} />
-            </div>     
+            {
+                card.state === 'active'
+                ?
+                <TermsAndConditions />
+                :
+                <></>
+            }
+            {
+                card.state === 'active'
+                ?
+                <div className='card_btn_wrap'>
+                    <SendSolanaBtn 
+                        borderPrice={card.borderPrice} 
+                        judgePrice={card.judgePrice}
+                        descr={'Floor will be more '} 
+                        wallet={card.walletForMore} 
+                        classN={'SendSolanaBtn_more'}  
+                        descr2={'You can get ' + (((card.SolForLess * 0.8) + card.SolForMore + card.judgePrice) / ((card.SolForMore + card.price) / card.price))}
+                        name={card.name}
+                    />
+                    <SendSolanaBtn 
+                        borderPrice={card.borderPrice} 
+                        judgePrice={card.judgePrice}
+                        descr={'Floor will be less '} 
+                        wallet={card.walletForLess} 
+                        classN={'SendSolanaBtn_less'}
+                        descr2={'You can get ' + ((card.SolForLess + (card.SolForMore * 0.8) + card.judgePrice) / ((card.SolForLess + card.price) / card.price))} 
+                        name={card.name}
+                    />
+                </div> 
+                :
+                <div className='card_description'>
+                    <p>Price after  1h  was : 1 Sol</p>
+                </div>
+                
+            }
         </div>
     );
 };

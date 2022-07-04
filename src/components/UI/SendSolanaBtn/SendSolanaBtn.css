@@ -4,8 +4,16 @@
     margin: 0 auto;
 }
 
-.SendSolanaBtn {
+.SendSolanaBtn_more {
     background: #00FFFF;
+    border-radius: 16px;
+    padding: 15px;
+    margin-top: 10px;
+    min-width: 270px;
+}
+
+.SendSolanaBtn_less {
+    background: #ff65bd;
     border-radius: 16px;
     padding: 15px;
     margin-top: 10px;

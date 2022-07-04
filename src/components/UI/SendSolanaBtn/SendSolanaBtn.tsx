@@ -9,18 +9,24 @@ import { ConnectionProvider, WalletProvider, useConnection, useWallet } from '@s
 
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { termsAndConditionsSlice } from '../../../store/reducers/getTermsAndConditionsReducer';
+import { getDatabase, ref, get, child, push, update } from "firebase/database";
 
 interface SendSolanaBtn_props {
     borderPrice?: number,
     descr?: string,
     wallet?: string,
+    classN?: string,
+    descr2?: string,
+    judgePrice?: number, 
+    name?: string,
 }
 
 let thelamports = 0;
 // let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 
-const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
+const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN, descr2, judgePrice,name}) => {
 
+    const db = getDatabase();
     const {isDisabled} = useAppSelector(state => state.termsAndConditionsSlice)
     const {termsAndConditions} = termsAndConditionsSlice.actions
     const dispatch = useAppDispatch()
@@ -30,7 +36,7 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
     
 
     // let [lamports, setLamports] = useState(price);
-    let lamports: any = borderPrice
+    let lamports: any = judgePrice
     // let [wallet, setWallet] = useState("8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH");
     let theWallet:any= wallet
 
@@ -41,7 +47,6 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
     const onClick = useCallback( async () => {
         
         if (isDisabled) {
-            console.log('dfa')
             alarmTerms.classList.add('alarm_terms_display')
 
             const closeAlarm =() => {
@@ -82,17 +87,44 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet}) => {
         const signature = await sendTransaction(transaction, connection);
 
         await connection.confirmTransaction(signature, 'processed');
+
+        
     }, [publicKey, sendTransaction, connection]);
+
+    const updateDb = () => {
+        const dbRef = ref(getDatabase());
+                get(child(dbRef,  `/Judges/${name}`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                    let arr = snapshot.val()
+                    console.log(arr)
+
+
+                    const newPostKey = push(child(ref(db), `${localStorage.getItem('WalletKey')}/`)).key;
+                    const updates:any = {};
+                    updates[`/Judges/${name}` + '/SolForMore/'] = judgePrice + arr.SolForMore;
+                    return update(ref(db), updates);
+                            
+                        
+                    
+                } else {
+                    console.log("No data available");
+                }
+                }).catch((error) => {
+                console.error(error);
+                });
+    }
+    updateDb()
 
     
     
 
     return (
         <div className='SendSolanaBtn_container'>
-            <button onClick={onClick} className='SendSolanaBtn' 
+            <button onClick={onClick} className={classN}
                 // disabled={isDisabled}
             >
-              {descr} {borderPrice} Sol
+              {descr} {borderPrice} Sol <br />
+              {descr2} Sol
             </button>
             <div className='alarm_terms'>Accept terms and conditions!</div>
         </div>
