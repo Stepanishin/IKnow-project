@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FC, ReactNode, useMemo, useCallback, useState } from 'react';
 import './SendSolanaBtn.css'
 
@@ -26,14 +26,16 @@ let thelamports = 0;
 
 const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN, descr2, judgePrice,name}) => {
 
+    let alarmTerms: any
+    useEffect(() => {
+        alarmTerms = document.querySelector('.alarm_terms')!
+    }, [])
+
     const db = getDatabase();
     const {isDisabled} = useAppSelector(state => state.termsAndConditionsSlice)
     const {termsAndConditions} = termsAndConditionsSlice.actions
     const dispatch = useAppDispatch()
 
-    const alarmTerms = document.querySelector('.alarm_terms')!
-
-    
 
     // let [lamports, setLamports] = useState(price);
     let lamports: any = judgePrice
@@ -45,7 +47,7 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
 
 
     const onClick = useCallback( async () => {
-        
+        alarmTerms = document.querySelector('.alarm_terms')!
         if (isDisabled) {
             alarmTerms.classList.add('alarm_terms_display')
 
@@ -70,12 +72,12 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
 
 
         connection.getBalance(publicKey).then((bal) => {
-            console.log(bal/LAMPORTS_PER_SOL);
+            // console.log(bal/LAMPORTS_PER_SOL);
         });
 
         let lamportsI = LAMPORTS_PER_SOL*lamports;
-        console.log(publicKey.toBase58());
-        console.log("lamports sending: {}", thelamports)
+        // console.log(publicKey.toBase58());
+        // console.log("lamports sending: {}", thelamports)
         const transaction = new Transaction().add(
             SystemProgram.transfer({
                 fromPubkey: publicKey,
@@ -88,32 +90,30 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
 
         await connection.confirmTransaction(signature, 'processed');
 
-        
-    }, [publicKey, sendTransaction, connection]);
-
-    const updateDb = () => {
-        const dbRef = ref(getDatabase());
-                get(child(dbRef,  `/Judges/${name}`)).then((snapshot) => {
-                if (snapshot.exists()) {
-                    let arr = snapshot.val()
-                    console.log(arr)
-
-
-                    const newPostKey = push(child(ref(db), `${localStorage.getItem('WalletKey')}/`)).key;
-                    const updates:any = {};
-                    updates[`/Judges/${name}` + '/SolForMore/'] = judgePrice + arr.SolForMore;
-                    return update(ref(db), updates);
+        const updateDb = () => {
+            const dbRef = ref(getDatabase());
+                    get(child(dbRef,  `/Judges/${name}`)).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        let arr = snapshot.val()
+                        // console.log(arr)
+    
+    
+                        const newPostKey = push(child(ref(db), `${localStorage.getItem('WalletKey')}/`)).key;
+                        const updates:any = {};
+                        updates[`/Judges/${name}` + '/SolForMore/'] = judgePrice + arr.SolForMore;
+                        return update(ref(db), updates);
+                                
                             
                         
-                    
-                } else {
-                    console.log("No data available");
-                }
-                }).catch((error) => {
-                console.error(error);
-                });
-    }
-    updateDb()
+                    } else {
+                        console.log("No data available");
+                    }
+                    }).catch((error) => {
+                    console.error(error);
+                    });
+        }
+        updateDb() 
+    }, [publicKey, sendTransaction, connection]);
 
     
     
@@ -124,7 +124,7 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
                 // disabled={isDisabled}
             >
               {descr} {borderPrice} Sol <br />
-              {descr2} Sol
+              <span className='SendSolanaBtn_info' >You send {judgePrice} Sol. {descr2} Sol</span>
             </button>
             <div className='alarm_terms'>Accept terms and conditions!</div>
         </div>

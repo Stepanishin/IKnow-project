@@ -9,32 +9,9 @@ interface TimerProps {
 
 const Timer:FC<TimerProps> = ({Timerclass, DateToMint}) => {
 
-    let mintTime: any
-    let a0:number
-    let a1:number
-    let a2:number
-    let a3:number
-    let a4:number
-    let a5:number
-
-    // if (DateToMint && typeof DateToMint === 'string') {
-    //     mintTime = DateToMint.split(',')
-    //     a0 = +mintTime[0]
-    //     a1 = +mintTime[1]
-    //     a2 = +mintTime[2]
-    //     a3 = +mintTime[3]
-    //     a4 = +mintTime[4]
-    //     a5 = +mintTime[5]
-        
-    // }
-
     useEffect(() => {
         timer();
     }, [])
-
-    
-
-    
 
     async function timer() {
         // console.log(a3)
@@ -63,24 +40,12 @@ const Timer:FC<TimerProps> = ({Timerclass, DateToMint}) => {
         timer();
     }
 
-    // const lala = () => {
-    //     var nowDate:any = new Date();
-    //     console.log(DateToMint)
-    //     console.log(nowDate)
-    //     if (DateToMint) {
-    //         // console.log(DateToMint - nowDate)
-    //         console.log('mintTime: ' + mintTime)
-    //     }
-        
-    // }
-
 
     return (
         <div>
             <div className={Timerclass} id='timer'>
             
             </div>
-            {/* <button onClick={lala} >lalallalala</button> */}
         </div>
         
     );

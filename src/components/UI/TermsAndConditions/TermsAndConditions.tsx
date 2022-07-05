@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { termsAndConditionsSlice } from '../../../store/reducers/getTermsAndConditionsReducer';
 import './TermsAndConditions.css'
@@ -6,11 +6,16 @@ import info from './img/info.png'
 
 const TermsAndConditions: FC = () => {
 
+    let modalWrap: any
+    useEffect(() => {
+        modalWrap = document.querySelector('.TermsAndConditions_modalWrap')!
+    }, [])
+
     const {isChecked} = useAppSelector(state => state.termsAndConditionsSlice)
     const {termsAndConditions} = termsAndConditionsSlice.actions
     const dispatch = useAppDispatch()
 
-    const modalWrap = document.querySelector('.TermsAndConditions_modalWrap')!
+    // const modalWrap = document.querySelector('.TermsAndConditions_modalWrap')!
 
    const handleCheckBox = () => {
         dispatch(termsAndConditions())
@@ -18,10 +23,12 @@ const TermsAndConditions: FC = () => {
     }
 
     const showModal = () => {
+        modalWrap = document.querySelector('.TermsAndConditions_modalWrap')!
         modalWrap.classList.add('TermsAndConditions_modalWrap_display')
     }
 
     const closeModal =() => {
+        modalWrap = document.querySelector('.TermsAndConditions_modalWrap')!
         modalWrap.classList.remove('TermsAndConditions_modalWrap_display')
     }
 

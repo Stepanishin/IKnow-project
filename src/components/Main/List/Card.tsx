@@ -28,8 +28,7 @@ const Card: FC = () => {
 
     let [card, setCard] = useState<ICard | any>([])
     const params = useParams()
-    console.log(params)
-
+    
     useEffect(() => {
         getCard()
         window.scroll(0,0);
@@ -41,7 +40,6 @@ const Card: FC = () => {
         get(child(dbRef, `/Judges/${params.name}`)).then((snapshot) => {
         if (snapshot.exists()) {
             let arr: any = snapshot.val()
-            console.log(arr)
             setCard(arr)
         } else {
             console.log("No data available");
@@ -87,7 +85,7 @@ const Card: FC = () => {
                         descr={'Floor will be more '} 
                         wallet={card.walletForMore} 
                         classN={'SendSolanaBtn_more'}  
-                        descr2={'You can get ' + (((card.SolForLess * 0.8) + card.SolForMore + card.judgePrice) / ((card.SolForMore + card.price) / card.price))}
+                        descr2={'You can get ' + (((card.SolForLess * 0.8) + card.SolForMore + card.judgePrice) / ((card.SolForMore + card.judgePrice) / card.judgePrice)).toFixed(2)}
                         name={card.name}
                     />
                     <SendSolanaBtn 
@@ -96,7 +94,7 @@ const Card: FC = () => {
                         descr={'Floor will be less '} 
                         wallet={card.walletForLess} 
                         classN={'SendSolanaBtn_less'}
-                        descr2={'You can get ' + ((card.SolForLess + (card.SolForMore * 0.8) + card.judgePrice) / ((card.SolForLess + card.price) / card.price))} 
+                        descr2={'You can get ' + ((card.SolForLess + (card.SolForMore * 0.8) + card.judgePrice) / ((card.SolForLess + card.judgePrice) / card.judgePrice)).toFixed(2)} 
                         name={card.name}
                     />
                 </div> 

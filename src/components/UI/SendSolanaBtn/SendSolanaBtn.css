@@ -36,6 +36,11 @@
     display: block;
 }
 
+.SendSolanaBtn_info {
+    /* color: grey; */
+    font-size: 10px;
+}
+
 @media screen and (max-width: 330px) {
     .SendSolanaBtn {
         font-size: 15px;
