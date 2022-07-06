@@ -19,12 +19,13 @@ interface SendSolanaBtn_props {
     descr2?: string,
     judgePrice?: number, 
     name?: string,
+    SolForWhat?: string,
 }
 
 let thelamports = 0;
 // let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 
-const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN, descr2, judgePrice,name}) => {
+const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN, descr2, judgePrice,name,SolForWhat}) => {
 
     let alarmTerms: any
     useEffect(() => {
@@ -100,7 +101,7 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
     
                         const newPostKey = push(child(ref(db), `${localStorage.getItem('WalletKey')}/`)).key;
                         const updates:any = {};
-                        updates[`/Judges/${name}` + '/SolForMore/'] = judgePrice + arr.SolForMore;
+                        updates[`/Judges/${name}` + `/${SolForWhat}/`] = judgePrice + arr.SolForMore;
                         return update(ref(db), updates);
                                 
                             

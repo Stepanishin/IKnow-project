@@ -22,6 +22,7 @@ interface ICard {
     SolForLess?: number,
     SolForMore?: number,
     judgePrice?: number,
+    solForWhat?: string,
 };
 
 const Card: FC = () => {
@@ -87,6 +88,7 @@ const Card: FC = () => {
                         classN={'SendSolanaBtn_more'}  
                         descr2={'You can get ' + (((card.SolForLess * 0.8) + card.SolForMore + card.judgePrice) / ((card.SolForMore + card.judgePrice) / card.judgePrice)).toFixed(2)}
                         name={card.name}
+                        SolForWhat={'SolForMore'}
                     />
                     <SendSolanaBtn 
                         borderPrice={card.borderPrice} 
@@ -96,6 +98,7 @@ const Card: FC = () => {
                         classN={'SendSolanaBtn_less'}
                         descr2={'You can get ' + ((card.SolForLess + (card.SolForMore * 0.8) + card.judgePrice) / ((card.SolForLess + card.judgePrice) / card.judgePrice)).toFixed(2)} 
                         name={card.name}
+                        SolForWhat={'SolForLess'}
                     />
                 </div> 
                 :

@@ -66,6 +66,26 @@ const List: FC = () => {
             </div>
 
 
+                {
+                    cards.map(card => {
+                        if (card[1].state === 'wait') {
+                        return (
+                            <>
+                            <h2 className='List_container_title'>Waiting for results </h2>
+                            <div className='List_cards'>
+                            <div className='list_card' key={card[1].name}>
+                                <Link to={`/List/${card[1].name}`} >
+                                    <img className='list_avatar' src={card[1].avatar} alt="" />
+                                    <h3 className='list_title'>{card[1].name}</h3>
+                                </Link>
+                            </div>
+                            </div>
+                            </>
+                        )
+                        }
+                    })
+                }
+
 
             <h2 className='List_container_title'>Past Judge</h2>
             <div className='List_cards'>
