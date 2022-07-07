@@ -19,7 +19,6 @@ const TermsAndConditions: FC = () => {
 
    const handleCheckBox = () => {
         dispatch(termsAndConditions())
-        console.log(isChecked)
     }
 
     const showModal = () => {

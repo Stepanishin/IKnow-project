@@ -36,6 +36,22 @@
     display: block;
 }
 
+.alarm_sendSucces {
+    color: white;
+    background: rgba(11,156,49,.7);
+    width: 200px;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    padding: 10px 10px 10px 30px;
+}
+
+.alarm_sendSucces_display {
+    display: block;
+}
+
 .SendSolanaBtn_info {
     /* color: grey; */
     font-size: 10px;

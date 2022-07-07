@@ -24,6 +24,10 @@ const List: FC = () => {
 
     let [cards, setCards] = useState<any[]>([])
 
+    let quantityActive = 0
+    let quantityWait = 0
+    let quantityPast = 0
+
     useEffect(() => {
         window.scroll(0,0);
         getCards() 
@@ -43,14 +47,16 @@ const List: FC = () => {
         console.error(error);
         });
     }
+    
+    
 
     return (
         <div className='list'>
-            <h2 className='List_container_title'>Active Judge</h2>
 
+            <h2 className='List_container_title List_container_title_active'>Active Judge</h2>
             <div className='List_cards'>
                 {
-                    cards.map(card => {
+                    cards.map(card => {   
                         if (card[1].state === 'active') {
                         return (
                             <div className='list_card' key={card[1].name}>
@@ -65,27 +71,23 @@ const List: FC = () => {
                 }
             </div>
 
-
+            <h2 className='List_container_title List_container_title_wait'>Waiting for results </h2>
+            <div className='List_cards'>
                 {
                     cards.map(card => {
                         if (card[1].state === 'wait') {
                         return (
-                            <>
-                            <h2 className='List_container_title'>Waiting for results </h2>
-                            <div className='List_cards'>
                             <div className='list_card' key={card[1].name}>
                                 <Link to={`/List/${card[1].name}`} >
                                     <img className='list_avatar' src={card[1].avatar} alt="" />
                                     <h3 className='list_title'>{card[1].name}</h3>
                                 </Link>
                             </div>
-                            </div>
-                            </>
                         )
                         }
                     })
                 }
-
+            </div>
 
             <h2 className='List_container_title'>Past Judge</h2>
             <div className='List_cards'>

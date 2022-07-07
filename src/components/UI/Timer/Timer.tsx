@@ -1,6 +1,8 @@
 import { type } from 'os';
 import React, { FC, useEffect } from 'react';
 import './Timer.css'
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { timerAndDisableBtnSlice } from '../../../store/reducers/getTimerAndDisablebtnReducer';
 
 interface TimerProps {
     Timerclass?: string,
@@ -9,20 +11,22 @@ interface TimerProps {
 
 const Timer:FC<TimerProps> = ({Timerclass, DateToMint}) => {
 
+    const {isTimeToDisable} = useAppSelector(state => state.timerAndDisableBtnSlice)
+    const {timerAndDisableBtn} = timerAndDisableBtnSlice.actions
+    const dispatch = useAppDispatch()
+
     useEffect(() => {
         timer();
     }, [])
 
     async function timer() {
-        // console.log(a3)
         var nowDate:any = new Date();
-        // var achiveDate:any = new Date(2022,8,28,17,8,8); //Задаем дату, к которой будет осуществляться обратный отсчет
-        // var achiveDate:any = new Date(a0,a1,a2,a3,a4,a5);
         var achiveDate:any = new Date(DateToMint as any);
         var result:any = (achiveDate - nowDate)+1000;
         if (result < 0) {
             var elmnt:any = document.getElementById('timer');
             elmnt.innerHTML = 'has already passed';
+            dispatch(timerAndDisableBtn())
             return undefined;
         }
         var seconds:any = Math.floor((result/1000)%60);

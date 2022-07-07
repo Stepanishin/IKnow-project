@@ -6,6 +6,10 @@ import Timer from '../../UI/Timer/Timer';
 import SendSolanaBtn from '../../UI/SendSolanaBtn/SendSolanaBtn';
 import TermsAndConditions from '../../UI/TermsAndConditions/TermsAndConditions';
 import ReturnButton from '../../UI/ReturnButton/ReturnButton';
+import { timerAndDisableBtnSlice } from '../../../store/reducers/getTimerAndDisablebtnReducer';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+
+
 
 interface ICard {
     name?: string,
@@ -29,10 +33,17 @@ const Card: FC = () => {
 
     let [card, setCard] = useState<ICard | any>([])
     const params = useParams()
+    const {isTimeToDisable} = useAppSelector(state => state.timerAndDisableBtnSlice)
+    const {timerAndDisableBtn} = timerAndDisableBtnSlice.actions
+    const dispatch = useAppDispatch()
+
     
     useEffect(() => {
         getCard()
         window.scroll(0,0);
+        if (isTimeToDisable) {
+            dispatch(timerAndDisableBtn())
+        }
     }, [])
 
     const getCard = ( ) => {
@@ -103,7 +114,7 @@ const Card: FC = () => {
                 </div> 
                 :
                 <div className='card_description'>
-                    <p>Price after  1h  was : 1 Sol</p>
+                    <p>Price after  1h  was : {card.judgeResult} </p>
                 </div>
                 
             }

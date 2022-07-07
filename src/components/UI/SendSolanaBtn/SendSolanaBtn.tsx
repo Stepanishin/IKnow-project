@@ -10,6 +10,7 @@ import { ConnectionProvider, WalletProvider, useConnection, useWallet } from '@s
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { termsAndConditionsSlice } from '../../../store/reducers/getTermsAndConditionsReducer';
 import { getDatabase, ref, get, child, push, update } from "firebase/database";
+import { timerAndDisableBtnSlice } from '../../../store/reducers/getTimerAndDisablebtnReducer';
 
 interface SendSolanaBtn_props {
     borderPrice?: number,
@@ -28,6 +29,7 @@ let thelamports = 0;
 const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN, descr2, judgePrice,name,SolForWhat}) => {
 
     let alarmTerms: any
+    let alarm_sendSucces : any
     useEffect(() => {
         alarmTerms = document.querySelector('.alarm_terms')!
     }, [])
@@ -35,6 +37,8 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
     const db = getDatabase();
     const {isDisabled} = useAppSelector(state => state.termsAndConditionsSlice)
     const {termsAndConditions} = termsAndConditionsSlice.actions
+    const {isTimeToDisable} = useAppSelector(state => state.timerAndDisableBtnSlice)
+    const {timerAndDisableBtn} = timerAndDisableBtnSlice.actions
     const dispatch = useAppDispatch()
 
 
@@ -49,6 +53,12 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
 
     const onClick = useCallback( async () => {
         alarmTerms = document.querySelector('.alarm_terms')!
+        alarm_sendSucces = document.querySelector('.alarm_sendSucces')!
+
+        if (isTimeToDisable) {
+            return false
+        }
+
         if (isDisabled) {
             alarmTerms.classList.add('alarm_terms_display')
 
@@ -96,21 +106,34 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
                     get(child(dbRef,  `/Judges/${name}`)).then((snapshot) => {
                     if (snapshot.exists()) {
                         let arr = snapshot.val()
-                        // console.log(arr)
-    
-    
+
                         const newPostKey = push(child(ref(db), `${localStorage.getItem('WalletKey')}/`)).key;
                         const updates:any = {};
-                        updates[`/Judges/${name}` + `/${SolForWhat}/`] = judgePrice + arr.SolForMore;
+
+                        let solQuantity:any = 0;
+                        if (SolForWhat === 'SolForMore') {
+                            solQuantity = arr.SolForMore
+                        } else if (SolForWhat === 'SolForLess') {
+                            solQuantity = arr.SolForLess
+                        }
+
+                        updates[`/Judges/${name}` + `/${SolForWhat}/`] = judgePrice + solQuantity;
+
+                        alarm_sendSucces.classList.add('alarm_sendSucces_display')
+                        const closeAlarmSucces =() => {
+                            alarm_sendSucces.classList.remove('alarm_sendSucces_display')
+                        }
+                        setTimeout(closeAlarmSucces, 5000)
+
                         return update(ref(db), updates);
-                                
+                             
                             
                         
                     } else {
                         console.log("No data available");
                     }
                     }).catch((error) => {
-                    console.error(error);
+                    console.error('dfadfadfasd' + error);
                     });
         }
         updateDb() 
@@ -121,13 +144,12 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
 
     return (
         <div className='SendSolanaBtn_container'>
-            <button onClick={onClick} className={classN}
-                // disabled={isDisabled}
-            >
+            <button onClick={onClick} className={classN}>
               {descr} {borderPrice} Sol <br />
               <span className='SendSolanaBtn_info' >You send {judgePrice} Sol. {descr2} Sol</span>
             </button>
             <div className='alarm_terms'>Accept terms and conditions!</div>
+            <div className='alarm_sendSucces'>Sending successful!</div>
         </div>
     );
 };
