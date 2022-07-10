@@ -19,7 +19,7 @@ const Footer = () => {
                     {/* <Link to="#" className='footer_btn footer_links_dn'><li className='footer_links'>About us</li></Link> */}
                     {/* <Link to="/RoadMap" className='footer_btn footer_links_dn'><li className='footer_links'>Road map</li></Link> */}
                     {/* <Link to="#" className='footer_btn footer_links_dn'><li className='footer_links'>FAQ</li></Link> */}
-                    <Link to="/Secret" className='footer_btn footer_links_dn'><li className='footer_links'>???</li></Link>
+                    {/* <Link to="/Secret" className='footer_btn footer_links_dn'><li className='footer_links'>???</li></Link> */}
                     <a rel='noreferrer' target="_blank" href="https://twitter.com/rektvillenft" className='footer_btn'><li className='footer_links'>Twitter</li></a>
                     <a rel='noreferrer' target="_blank" href="https://magiceden.io/marketplace/rektville" className='footer_btn'><li className='footer_links'>Magiceden</li></a>
                     {/* <Link to="#" className='footer_btn'><li className='footer_links'>Discord</li></Link> */}

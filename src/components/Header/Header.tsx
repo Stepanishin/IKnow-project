@@ -60,7 +60,7 @@ const Header: FC = () => {
                     <ul className='Header_nav__list'>
                         <Link className='nav__list_link' to={'/'}><li><b>Home</b></li></Link>
                         <Link className='nav__list_link' to={'./List'}><li><b>Court</b></li></Link>
-                        <Link className='nav__list_link' to={'./Secret'}><li><b>???</b></li></Link>
+                        {/* <Link className='nav__list_link' to={'./Secret'}><li><b>???</b></li></Link> */}
 
                     </ul>
                     <ul className='Header_nav__list_mobile'>
@@ -78,7 +78,7 @@ const Header: FC = () => {
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link header_nav_link_mobile' to={'./Secret'} ><li><b>???</b></li></Link> */}
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'/'}><li><b>Home</b></li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./List'}><li><b>Court</b></li></Link>
-                                        <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./Secret'}><li><b>???</b></li></Link>
+                                        {/* <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./Secret'}><li><b>???</b></li></Link> */}
                                         <ConnectWallet className={"WalletMultiButtonMobile"} classNameBorder={'WalletBorderContainerMobile'} />
                                     </nav>
                                 </div>

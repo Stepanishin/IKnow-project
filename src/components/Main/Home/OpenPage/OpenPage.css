@@ -42,6 +42,7 @@
     color: #FFFFFF;
     margin-left: 40px;
     margin-right: 40px;
+    width: 400px;
 }
 
 .home_descr span {
@@ -123,6 +124,7 @@
 
     .home_descr {
         margin-top: 0;
+        width: auto;
     }
 
     .openPage_description {

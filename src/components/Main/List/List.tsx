@@ -62,6 +62,7 @@ const List: FC = () => {
                                         <Link to={`/List/${card[1].name}`} >
                                             <img className='list_avatar' src={card[1].avatar} alt="" />
                                             <h3 className='list_title'>{card[1].name}</h3>
+                                            <p className='list_title' >{card[1].borderPrice} Sol after 1h</p>
                                         </Link>
                                     </div>
                                 </div>
@@ -84,6 +85,7 @@ const List: FC = () => {
                                     <Link to={`/List/${card[1].name}`} >
                                         <img className='list_avatar' src={card[1].avatar} alt="" />
                                         <h3 className='list_title'>{card[1].name}</h3>
+                                        <p className='list_title' >{card[1].borderPrice} Sol after 1h</p>
                                     </Link>
                                 </div>
                                 </div>
@@ -104,6 +106,7 @@ const List: FC = () => {
                                 <Link to={`/List/${card[1].name}`} >
                                     <img className='list_avatar' src={card[1].avatar} alt="" />
                                     <h3 className='list_title'>{card[1].name}</h3>
+                                    <p className='list_title' >{card[1].borderPrice} Sol after 1h</p>
                                 </Link>
                             </div>
                         )
