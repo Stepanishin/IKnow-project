@@ -6,7 +6,6 @@ const Logo = () => {
     return (
         <div className='Logo'>
             <Link to="/"><span className="fast-flicker">R</span>ek<span className="flicker">t</span>ville</Link>
-            {/* <span className="fast-flicker">r</span>ect<span className="flicker">v</span>ille */}
         </div>
     );
 };

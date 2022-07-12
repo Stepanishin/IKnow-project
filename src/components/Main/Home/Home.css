@@ -1,7 +1,5 @@
 .home {
     min-height: calc(100vh - 132px);
-    /* padding: 0px 20px; */
-    /* background: #0C0C18; */
     width: 100%;
     background: #0C0C18;
     flex: 1 0 auto;

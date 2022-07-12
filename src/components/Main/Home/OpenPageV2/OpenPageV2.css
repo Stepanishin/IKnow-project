@@ -8,7 +8,7 @@
 
 .openPageV2_img_rekt {
     width: 100%;
-    height: 100px;
+    height: 200px;
 }
 
 .openPageV2_container_descr {
@@ -52,10 +52,7 @@
     line-height: 26px;
     text-transform: uppercase;
     color: #0C0C18;
-    /* margin-left: 40px; */
     margin: 50px auto 0 auto;
-    /* z-index: 100; */
-
 }
 
 .openPageV2_home_descr_btn:hover {
@@ -78,10 +75,18 @@
     }
 }
 
+@media screen and (max-width: 769px) {
+    .openPageV2_img_rekt {
+        width: 100%;
+        height: 100px;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .openPageV2_container_descr {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 5vw;
     }
     .openPageV2_home_descr_btn {
         height: 62px;

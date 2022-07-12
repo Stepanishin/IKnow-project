@@ -3,10 +3,8 @@
     justify-content: center;
     padding: 10px;
     height: 150px;
-    /* margin-top: 100px; */
     background: #101010;
     align-items: center;
-    /* margin-bottom: 0; */
     margin-top: 10px;
     flex: 0 0 auto
 }
@@ -38,18 +36,9 @@
 }
 
 @media screen and (max-width: 700px) {
-    /* .footer {
-        height: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-    } */
     .footer_nav__list {
-        /* flex-direction: column; */
         justify-content: center;
         align-items: center;
-    }
-    .logo {
-        /* padding-left: 100px; */
     }
 }
 

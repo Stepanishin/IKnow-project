@@ -83,12 +83,9 @@ const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN
 
 
         connection.getBalance(publicKey).then((bal) => {
-            // console.log(bal/LAMPORTS_PER_SOL);
         });
 
         let lamportsI = LAMPORTS_PER_SOL*lamports;
-        // console.log(publicKey.toBase58());
-        // console.log("lamports sending: {}", thelamports)
         const transaction = new Transaction().add(
             SystemProgram.transfer({
                 fromPubkey: publicKey,

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import WalletsWindow from './components/Main/Auth/WalletsWindow';
+// import WalletsWindow from './components/Main/Auth/WalletsWindow';
 import { MainRoutes } from './router/index';
 
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
@@ -44,7 +44,6 @@ function App() {
     <Context>
     <div className="App">
       <Header />
-      <WalletsWindow />
       <Routes>
         {
           MainRoutes.map(route => 

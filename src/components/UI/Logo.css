@@ -3,44 +3,27 @@
 }
 
 .Logo {
-    /* margin-top: 20px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 50%; */
-    /* width: 200px; */
-    /* height: 40px; */
     background-image: radial-gradient(
       ellipse 50% 35% at 50% 50%,
       #6b1839,
       transparent
     );
-    /* transform: translate(-50%, -50%); */
     letter-spacing: 2;
-    /* left: 50%;
-    top: 50%; */
-    /* font-family: "Clip"; */
-    /* text-transform: uppercase; */
     font-size: 2em;
-    /* font-size: 22px; */
     color: #ffe6ff;
-    /* color: green; */
-    /* text-shadow: 0 0 0.6rem #00FFFF; */
       text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
       -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
       0 -0.5rem 2rem #00FFFF, 0 0.5rem 3rem #00FFFF;
-      /* text-shadow:0 0 0.6rem linear-gradient(91.16deg, #AF0086 4.85%, rgba(0, 135, 135, 0.74) 109.2%); */
     animation: shine 2s forwards, flicker 3s infinite;
-    /* margin-left: 50px; */
   }
 
 .Logo a {
   text-decoration: none;
-  /* font-family: 'Lobster', cursive; */
-  /* text-transform: uppercase; */
   color: #ff2483;
   font-family: 'Caveat Brush', cursive;
-  /* font-weight:200; */
   font-size: 50px;
 }
 
@@ -53,12 +36,7 @@
     22%,
     36%,
     75% {
-      /* color: #ffe6ff; */
       color: #7df7f7;
-      /* text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483; */
-        /* text-shadow: linear-gradient(91.16deg, #AF0086 4.85%, rgba(0, 135, 135, 0.74) 109.2%); */
     }
     28%,
     33% {
@@ -88,12 +66,7 @@
       text-shadow: none;
     }
     100% {
-      /* color: #ffe6ff; */
       color: #00FFFF;
-      /* text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-        -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-        0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483; */
-        /* text-shadow: linear-gradient(91.16deg, #AF0086 4.85%, rgba(0, 135, 135, 0.74) 109.2%); */
     }
   }
   

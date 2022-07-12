@@ -15,8 +15,6 @@ const TermsAndConditions: FC = () => {
     const {termsAndConditions} = termsAndConditionsSlice.actions
     const dispatch = useAppDispatch()
 
-    // const modalWrap = document.querySelector('.TermsAndConditions_modalWrap')!
-
    const handleCheckBox = () => {
         dispatch(termsAndConditions())
     }
