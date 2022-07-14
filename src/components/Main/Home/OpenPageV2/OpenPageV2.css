@@ -1,0 +1,103 @@
+.home_openPageV2 {
+    min-height: calc(100vh - 100px);
+    background: #0C0C18;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 50px;
+}
+
+.openPageV2_img_rekt {
+    width: 100%;
+    height: 200px;
+}
+
+.openPageV2_container_descr {
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 48px;
+    width: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.openPageV2_container_descr p:nth-child(2) {
+    margin-top: 40px;
+}
+
+.openPageV2_container_descr p:nth-child(3) {
+    margin-top: 0px;
+}
+
+.openPageV2_container_descr span {
+    display: block;
+    text-align: center;
+}
+
+.openPageV2_container_descr p:nth-child(4) {
+    margin-top: 40px;
+}
+
+.openPageV2_home_descr_btn {
+    background: linear-gradient(90deg, #FF008A -12.91%, #00FFFF 106.45%);
+    border-radius: 20px;
+    height: 82px;
+    width: 332px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #0C0C18;
+    margin: 50px auto 0 auto;
+}
+
+.openPageV2_home_descr_btn:hover {
+    box-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+    -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+    0 -0.5rem 2rem #00FFFF, 0 0.5rem 3rem #00FFFF;
+}
+
+.openPageV2_home_descr_btn:active {
+    background: linear-gradient(90deg, #D70062 -12.91%, #00D7D7 106.45%);
+}
+
+@media screen and (max-width: 1090px) {
+    .openPageV2_container_descr span {
+        display: inline;
+        text-align: center;
+    }
+    .openPageV2_container_descr {
+        max-width: 600px;
+        padding-top: 20px;
+    }
+    .openPageV2_container_descr p:nth-child(2) {
+        margin-top:10px ;
+    }
+    .openPageV2_container_descr p:nth-child(4) {
+        margin-top:10px ;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .openPageV2_img_rekt {
+        width: 100%;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .openPageV2_container_descr {
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 5vw;
+    }
+    .openPageV2_home_descr_btn {
+        height: 62px;
+        width: 280px;
+        font-size: 20px;
+    }
+}

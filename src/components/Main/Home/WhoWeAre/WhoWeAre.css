@@ -1,0 +1,146 @@
+.WhoWeAre {
+    background: #0C0C18;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.WhoWeAre_container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.WhoWeAre_title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 82px;
+    display: flex;
+    justify-content: center;
+}
+
+.WhoWeAre_content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.WhoWeAre_content_title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: rgba(217, 217, 217, 0.5);
+    opacity: 0.5;
+    transform: rotate(-90deg);
+    margin-left: 20px;
+}
+
+.WhoWeAre_content_description_container {
+    max-width: 598px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 30px;
+}
+
+.description_title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 150%;
+}
+
+.WhoWeAre_Ellipse1 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 0;
+    /* top: 1; */
+    bottom: -100%;
+    pointer-events: none;
+}
+
+.WhoWeAre_Ellipse2 {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    right: 0;
+    top: 80%;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 1400px) {
+    .WhoWeAre_content {
+        flex-direction: column;
+        align-items:center;
+        margin-top: 50px;
+        gap: 30px;
+    }  
+    .WhoWeAre_content_title {
+        transform: none;
+        margin-left: 0px;
+        margin-left: 0px;
+    }
+    .WhoWeAre_Ellipse1 {
+        width: 700px;
+        height: 700px;   
+    }
+    .WhoWeAre_Ellipse2 {
+        width: 700px;
+        height: 700px;
+    }
+    .WhoWeAre_title {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 40px;
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width: 1001px) {
+    .WhoWeAre_Ellipse1 {
+        width: 500px;
+        height: 500px;   
+    }
+    .WhoWeAre_Ellipse2 {
+        width: 500px;
+        height: 500px;
+    } 
+}
+
+@media screen and (max-width: 650px) {
+    .WhoWeAre_title {
+        font-size: 50px;
+    }
+    .WhoWeAre_content_title {
+        font-size: 50px;
+    }
+    .WhoWeAre_content {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 501px) {
+    .WhoWeAre_Ellipse1 {
+        width: 300px;
+        height: 300px;   
+    }
+    .WhoWeAre_Ellipse2 {
+        width: 300px;
+        height: 300px;
+    } 
+}
+
+@media screen and (max-width: 451px) {
+    .WhoWeAre_title {
+        font-size: 30px;
+    }
+    .WhoWeAre_content_title {
+        font-size: 30px;
+    }
+    .WhoWeAre_content {
+        margin-top: 20px;
+    }  
+}
