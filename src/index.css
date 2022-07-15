@@ -1,20 +1,20 @@
 @font-face {
     font-family: "Bakemon"; 
-    src: url("./Fonts/Bakemono.ttf") format("truetype"); 
+    src: url("./fonts/Bakemono.ttf") format("truetype"); 
     font-style: normal; 
     font-weight: normal; 
 } 
 
 @font-face {
     font-family: "TT bold"; 
-    src: url("./Fonts/TT\ Norms\ Pro\ Bold.otf") format("truetype"); 
+    src: url("./fonts/TT\ Norms\ Pro\ Bold.otf") format("truetype"); 
     font-style: normal; 
     font-weight: normal; 
 } 
 
 @font-face {
     font-family: "TT regular"; 
-    src: url("./Fonts/TT\ Norms\ Pro\ Regular.otf") format("truetype"); 
+    src: url("./fonts/TT\ Norms\ Pro\ Regular.otf") format("truetype"); 
     font-style: normal; 
     font-weight: normal; 
 } 
