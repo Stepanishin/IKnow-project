@@ -1,8 +1,8 @@
 import React from "react";
 import Home from "../components/Main/Home/Home";
 import Roadmap from "../components/Main/Home/Roadmap/Roadmap";
-import Card from "../components/Main/List/Card";
-import List from "../components/Main/List/List";
+import Card from "../components/Main/Court/Card";
+import CourtList from "../components/Main/Court/CourtList";
 
 export interface IRoute {
     path: string;
@@ -13,7 +13,7 @@ export interface IRoute {
 export const MainRoutes: IRoute[] = [
     {path: "/", exact: true, component: Home},
     {path: "*", exact: true, component: Home},
-    {path: "/List", exact: true, component: List},
+    {path: "/CourtList", exact: true, component: CourtList},
     {path: "/RoadMap", exact: true, component: Roadmap},
-    {path: "/List/:name", exact: true, component: Card},
+    {path: "/CourtList/:name", exact: true, component: Card},
 ]

@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import './Home.css'
-import OpenPage from './OpenPage/OpenPage';
+import AboutNFT from './OpenPage/AboutNFT';
 import OpenPageV2 from './OpenPageV2/OpenPageV2';
 import WhoWeAre from './WhoWeAre/WhoWeAre';
 
@@ -14,7 +14,7 @@ const Home: FC = () => {
         <main className='home'>
             <div className='home_wrap'>
                 <OpenPageV2 />
-                <OpenPage />
+                <AboutNFT />
                 <WhoWeAre />
             </div>
         </main>

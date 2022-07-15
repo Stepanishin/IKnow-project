@@ -8,26 +8,8 @@ import TermsAndConditions from '../../UI/TermsAndConditions/TermsAndConditions';
 import ReturnButton from '../../UI/ReturnButton/ReturnButton';
 import { timerAndDisableBtnSlice } from '../../../store/reducers/getTimerAndDisablebtnReducer';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
+import { ICard } from '../../../types/ICard';
 
-
-
-interface ICard {
-    name?: string,
-    price?: number,
-    date?: string,
-    quantity?: number,
-    avatar?: string,
-    twitter?: string,
-    discord?: string,
-    borderPrice?: number,
-    walletForMore?: string,
-    walletForLess?: string,
-    state?: string,
-    SolForLess?: number,
-    SolForMore?: number,
-    judgePrice?: number,
-    solForWhat?: string,
-};
 
 const Card: FC = () => {
 
@@ -48,7 +30,6 @@ const Card: FC = () => {
 
     const getCard = ( ) => {
         const dbRef = ref(getDatabase());
-        let table:any = []
         get(child(dbRef, `/Judges/${params.name}`)).then((snapshot) => {
         if (snapshot.exists()) {
             let arr: any = snapshot.val()

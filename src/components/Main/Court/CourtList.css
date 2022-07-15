@@ -1,29 +1,29 @@
-.list {
+.CourtList {
     max-width: 1300px;
     min-height: calc(100vh - 132px);
     padding: 20px;
     margin: 0 auto;
 }
 
-.List_container_title {
+.CourtList_container_title {
     text-align: center;
     font-size: 48px;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 
-.List_container_title:not(:first-child) {
+.CourtList_container_title:not(:first-child) {
     margin-top: 50px;
 }
 
-.List_cards {
+.CourtList_cards {
     display: flex;
     gap: 3em;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.list_card {
+.CourtList_card {
     background: #181935;
     border-radius: 30px;
     height: 350px;
@@ -33,7 +33,7 @@
     
 }
 
-.list_avatar {
+.CourtList_avatar {
     margin: 0 auto;
     display: block;
     text-align: center;
@@ -42,7 +42,7 @@
     border-radius: 30px;
 }
 
-.list_title {
+.CourtList_title {
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -54,18 +54,18 @@
 
 @media screen and (max-width: 733px) {
 
-    .List_cards {
+    .CourtList_cards {
         justify-content: center;
     }
 
-    .list_card {
+    .CourtList_card {
         margin-left: 0;
     }
 }
 
 @media screen and (max-width: 400px) {
 
-    .List_cards {
+    .CourtList_cards {
         justify-content: center;
     }
 
@@ -225,7 +225,7 @@
     margin: 0 auto;
 }
 
-.splide__list {
+.splide__CourtList {
     justify-content: space-evenly;
 }
 

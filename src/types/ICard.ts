@@ -1,0 +1,17 @@
+export interface ICard {
+    name?: string,
+    price?: number,
+    date?: string,
+    quantity?: number,
+    avatar?: string,
+    twitter?: string,
+    discord?: string,
+    borderPrice?: number,
+    walletForMore?: string,
+    walletForLess?: string,
+    state?: string,
+    SolForLess?: number,
+    SolForMore?: number,
+    judgePrice?: number,
+    solForWhat?: string,
+};

@@ -1,14 +1,14 @@
 import React from 'react';
-import './OpenPage.css'
+import './AboutNFT.css'
 import Rektville from '.././img/rektville.gif'
 import Ellipse1 from './img/Ellipse1.png'
 
-const OpenPage = () => {
+const AboutNFT = () => {
     return (
-        <div className='home_openPage'>
-            <div className='openPage_wrap'>
-                <div className='openPage_description'>
-                    <img className='openPage_Ellipse1' src={Ellipse1} alt="" />
+        <div className='home_AboutNFT'>
+            <div className='AboutNFT_wrap'>
+                <div className='AboutNFT_description'>
+                    <img className='AboutNFT_Ellipse1' src={Ellipse1} alt="" />
                     <p className='home_descr'>The first step was release 
                     of the Rektville NFT collection
                     is the initialNFT collection 
@@ -24,11 +24,11 @@ const OpenPage = () => {
                     You can buy our NFT on <a rel='noreferrer' target="_blank" href="https://magiceden.io/marketplace/rektville" className='home_descr_link'>Magiceden</a>
                     </p>
                 </div>
-                <img className='openPage_wrap_image' src={Rektville} alt="" />
+                <img className='AboutNFT_wrap_image' src={Rektville} alt="" />
                 
             </div>
         </div>
     );
 };
 
-export default OpenPage;
+export default AboutNFT;

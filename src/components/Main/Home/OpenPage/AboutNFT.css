@@ -1,4 +1,4 @@
-.home_openPage {
+.home_AboutNFT {
     min-height: calc(100vh - 100px);
     background: #0C0C18;
     width: 100%;
@@ -18,7 +18,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.openPage_wrap {
+.AboutNFT_wrap {
     max-width: 1300px;
     display: flex;
     padding-top: 48px;
@@ -80,13 +80,13 @@
     background: linear-gradient(90deg, #D70062 -12.91%, #00D7D7 106.45%);
 }
 
-.openPage_wrap_image {
+.AboutNFT_wrap_image {
     width: 440px; 
     height: 550px;
     border-radius: 30px;
 }
 
-.openPage_Ellipse1 {
+.AboutNFT_Ellipse1 {
     position: absolute;
     width: 700px;
     height: 700px;
@@ -97,11 +97,11 @@
 
 @media screen and (max-width: 1070px) {
 
-    .home_openPage {
+    .home_AboutNFT {
         padding-top: 20px;
     }
 
-    .openPage_wrap {
+    .AboutNFT_wrap {
         padding-top: 20px;
         flex-direction: column;
         align-items: center;
@@ -115,14 +115,14 @@
         width: auto;
     }
 
-    .openPage_description {
+    .AboutNFT_description {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding-right: 0;
     }
     
-    .openPage_wrap_image {
+    .AboutNFT_wrap_image {
         margin-top: 30px;
     }
 
@@ -135,14 +135,14 @@
         margin-left: 0px;
         /* z-index: 0; */
     }
-    .openPage_Ellipse1 {
+    .AboutNFT_Ellipse1 {
         width: 500px;
         height: 500px;
     }
 } 
 
 @media screen and (max-width: 982px) {
-    .openPage_wrap {
+    .AboutNFT_wrap {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -152,7 +152,7 @@
     .home_descr span {
         padding-left: 150px;
     }
-    .openPage_wrap {
+    .AboutNFT_wrap {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -170,25 +170,25 @@
     .home_descr {
         font-size: 22px;
     }
-    .openPage_wrap {
+    .AboutNFT_wrap {
         padding-left: 20px;
         padding-right: 20px;
     }
-    .openPage_Ellipse1 {
+    .AboutNFT_Ellipse1 {
         width: 300px;
         height: 300px;
     }
 }
 
 @media screen and (max-width: 490px) {
-    .openPage_wrap_image {
+    .AboutNFT_wrap_image {
         width: 352px; 
         height: 440px;
     }
 }
 
 @media screen and (max-width: 376px) {
-    .openPage_wrap_image {
+    .AboutNFT_wrap_image {
         width: 280px; 
         height: 352px;
     }
