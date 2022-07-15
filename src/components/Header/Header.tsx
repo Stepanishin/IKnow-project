@@ -1,6 +1,6 @@
 import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../UI/Logo';
+import Logo from '../UI/Logo/Logo';
 import ConnectWallet from '../UI/ConnectWallet/ConnectWallet';
 import './Header.css'
 
