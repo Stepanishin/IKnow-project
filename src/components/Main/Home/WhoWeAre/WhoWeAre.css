@@ -133,6 +133,13 @@
     } 
 }
 
+@media screen and (max-width: 480px) {
+    .WhoWeAre_content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
 @media screen and (max-width: 451px) {
     .WhoWeAre_title {
         font-size: 30px;

@@ -34,7 +34,7 @@
     margin-top: 40px;
     font-style: normal;
     font-weight: 300;
-    font-size: 24px;
+    font-size: 21px;
     line-height: 150%;
     color: #FFFFFF;
     margin-left: 40px;
@@ -143,8 +143,8 @@
 
 @media screen and (max-width: 982px) {
     .AboutNFT_wrap {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }
 
@@ -152,27 +152,15 @@
     .home_descr span {
         padding-left: 150px;
     }
-    .AboutNFT_wrap {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
     .home_descr {
         margin-left: 0px;
         margin-right: 0px;
     }
 }
 
-@media screen and (max-width: 556px) {
-    
-}
-
 @media screen and (max-width: 518px) {
     .home_descr {
         font-size: 22px;
-    }
-    .AboutNFT_wrap {
-        padding-left: 20px;
-        padding-right: 20px;
     }
     .AboutNFT_Ellipse1 {
         width: 300px;

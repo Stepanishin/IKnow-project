@@ -3,13 +3,9 @@ import React, { FC, useEffect } from 'react';
 import './Timer.css'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { timerAndDisableBtnSlice } from '../../../store/reducers/getTimerAndDisablebtnReducer';
+import { ITimerProps } from '../../../types/ITimerProps';
 
-interface TimerProps {
-    Timerclass?: string,
-    DateToMint?: string
-}
-
-const Timer:FC<TimerProps> = ({Timerclass, DateToMint}) => {
+const Timer:FC<ITimerProps> = ({Timerclass, DateToMint}) => {
 
     const {isTimeToDisable} = useAppSelector(state => state.timerAndDisableBtnSlice)
     const {timerAndDisableBtn} = timerAndDisableBtnSlice.actions

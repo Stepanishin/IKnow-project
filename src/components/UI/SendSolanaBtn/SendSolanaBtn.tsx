@@ -11,22 +11,12 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { termsAndConditionsSlice } from '../../../store/reducers/getTermsAndConditionsReducer';
 import { getDatabase, ref, get, child, push, update } from "firebase/database";
 import { timerAndDisableBtnSlice } from '../../../store/reducers/getTimerAndDisablebtnReducer';
-
-interface SendSolanaBtn_props {
-    borderPrice?: number,
-    descr?: string,
-    wallet?: string,
-    classN?: string,
-    descr2?: string,
-    judgePrice?: number, 
-    name?: string,
-    SolForWhat?: string,
-}
+import { ISendSolanaBtnProps } from '../../../types/ISendSolanaBtnProps';
 
 let thelamports = 0;
 // let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 
-const SendSolanaBtn: FC<SendSolanaBtn_props> = ({borderPrice,descr,wallet,classN, descr2, judgePrice,name,SolForWhat}) => {
+const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN, descr2, judgePrice,name,SolForWhat}) => {
 
     let alarmTerms: any
     let alarm_sendSucces : any

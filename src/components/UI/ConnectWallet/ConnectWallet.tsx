@@ -5,16 +5,12 @@ import { clusterApiUrl } from '@solana/web3.js';
 import { FC, useState } from 'react';
 import { Connection} from '@metaplex/js'; 
 import './ConnectWallet.css';
+import { IWalletProps } from '../../../types/IWalletProps';
 
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 
-interface WalletProps {
-    className?: string,
-    classNameBorder?: string
-}
-
-const ConnectWallet:FC<WalletProps> = ({className,classNameBorder}) => {
+const ConnectWallet:FC<IWalletProps> = ({className,classNameBorder}) => {
     return (   
         <Content className={className} classNameBorder={classNameBorder} /> 
     );
@@ -22,7 +18,7 @@ const ConnectWallet:FC<WalletProps> = ({className,classNameBorder}) => {
 
 export default ConnectWallet;
 
-const Content: FC<WalletProps> = ({className,classNameBorder}) => {
+const Content: FC<IWalletProps> = ({className,classNameBorder}) => {
     let [lamports, setLamports] = useState(.1);
     let [wallet, setWallet] = useState("8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH");
 

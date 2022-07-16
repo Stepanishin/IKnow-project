@@ -25,7 +25,6 @@ const AboutNFT = () => {
                     </p>
                 </div>
                 <img className='AboutNFT_wrap_image' src={Rektville} alt="" />
-                
             </div>
         </div>
     );

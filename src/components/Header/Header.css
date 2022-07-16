@@ -169,7 +169,7 @@
         position: fixed;
         width: 100%;
         height: 100vh;
-        background-color:rgba(0, 0, 0, 0.89);
+        background-color:rgba(0, 0, 0, 0.91);
         top: -100%; left: 0; right: 0; bottom: 0;
         overflow: hidden;
         transition: all 0.3s ease-in-out;
@@ -198,7 +198,7 @@
         text-decoration: none;
         color: #FFFFFF;
         font-size: 2em;
-        margin-top: 1.25em;
+        margin-top: 1em;
         transition: color 0.2s ease-in-out;
         letter-spacing: 1px;
       }

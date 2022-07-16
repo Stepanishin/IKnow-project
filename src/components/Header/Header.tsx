@@ -37,10 +37,10 @@ const Header: FC = () => {
                                 <div className="meat"></div>
                                 <div className="bottom-bun"></div>
                             </label>
-                            <div className="nav">
+                            <div test-id='zxcvbn' className="nav">
                                 <div className="nav-wrapper">
                                     <nav className='header_nav_mobile'>
-                                        <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'/'}><li><b>Home</b></li></Link>
+                                        <Link test-id='qwerty' onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'/'}><li><b>Home</b></li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./CourtList'}><li><b>Court</b></li></Link>
                                         <ConnectWallet className={"WalletMultiButtonMobile"} classNameBorder={'WalletBorderContainerMobile'} />
                                     </nav>
