@@ -58,7 +58,7 @@
     width: 332px;
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 21px;
     line-height: 26px;
     text-transform: uppercase;
     color: #0C0C18;
@@ -160,7 +160,7 @@
 
 @media screen and (max-width: 518px) {
     .home_descr {
-        font-size: 22px;
+        font-size: 21px;
     }
     .AboutNFT_Ellipse1 {
         width: 300px;
@@ -190,7 +190,7 @@
 
 @media screen and (max-width: 332px) {
     .home_descr {
-        font-size: 20px;
+        font-size: 21px;
     }
     .home_descr span {
         padding-left: 100px;
