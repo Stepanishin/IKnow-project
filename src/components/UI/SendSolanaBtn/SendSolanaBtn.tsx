@@ -120,7 +120,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN
                         console.log("No data available");
                     }
                     }).catch((error) => {
-                    console.error('dfadfadfasd' + error);
+                    console.error(error);
                     });
         }
         updateDb() 

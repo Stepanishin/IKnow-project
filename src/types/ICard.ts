@@ -14,4 +14,5 @@ export interface ICard {
     SolForMore?: number,
     judgePrice?: number,
     solForWhat?: string,
+    judgeResult?: string,
 };

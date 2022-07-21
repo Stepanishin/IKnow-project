@@ -23,10 +23,6 @@ import { FC, ReactNode, useMemo } from 'react';
 import { clusterApiUrl } from '@solana/web3.js';
 import { initializeApp } from "firebase/app";
 
-
-
-
-
 function App() {
 
   const firebaseConfig = {

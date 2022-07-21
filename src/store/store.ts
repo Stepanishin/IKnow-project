@@ -1,4 +1,5 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { firebaseApi } from "./reducers/firebase.api";
 import termsAndConditionsSlice from './reducers/getTermsAndConditionsReducer'
 import timerAndDisableBtnSlice from './reducers/getTimerAndDisablebtnReducer'

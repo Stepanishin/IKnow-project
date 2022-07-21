@@ -1,12 +1,12 @@
 import React, { FC, useEffect } from 'react';
 import './CourtList.css'
 import { Link } from 'react-router-dom';
-import { getDatabase, ref, get, child } from "firebase/database";
 import { useGetJudgesQuery } from '../../../store/reducers/firebase.api';
+import Spinner from '../../UI/Spinner/Spinner';
 
 const CourtList: FC = () => {
 
-    const {isError, isLoading, data} = useGetJudgesQuery('')
+    const { isLoading, data} = useGetJudgesQuery('')
 
     useEffect(() => {
         window.scroll(0,0); 
@@ -16,8 +16,10 @@ const CourtList: FC = () => {
         <div className='CourtList'>
             
                 {   
-                    // data.length > 0
-                    // ?
+                    isLoading
+                    ?
+                    <Spinner />
+                    :
                     data?.map(( card : any) => {   
                         if (card[1].state === 'active') {
                         return (
@@ -36,12 +38,15 @@ const CourtList: FC = () => {
                         )
                         }
                     })
-                    // : <></>
                 } 
 
 
             
-                {
+                {   
+                    isLoading
+                    ?
+                    <Spinner />
+                    :
                     data?.map(( card : any) => {
                         if (card[1].state === 'wait') {
                         return (
@@ -65,7 +70,11 @@ const CourtList: FC = () => {
 
             <h2 className='CourtList_container_title'>Past Judge</h2>
             <div className='CourtList_cards'>
-                {
+                {   
+                    isLoading
+                    ?
+                    <Spinner />
+                    :
                     data?.map(( card : any) => {
                         if (card[1].state === 'past') {
                         return (
