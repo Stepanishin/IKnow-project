@@ -1,42 +1,30 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import './CourtList.css'
 import { Link } from 'react-router-dom';
 import { getDatabase, ref, get, child } from "firebase/database";
+import { useGetJudgesQuery } from '../../../store/reducers/firebase.api';
 
 const CourtList: FC = () => {
 
-    let [cards, setCards] = useState<any[]>([])
+    const {isError, isLoading, data} = useGetJudgesQuery('')
 
     useEffect(() => {
-        window.scroll(0,0);
-        getCards() 
+        window.scroll(0,0); 
     }, [])
-
-    const getCards = ( ) => {
-        const dbRef = ref(getDatabase());
-        get(child(dbRef, '/Judges')).then((snapshot) => {
-        if (snapshot.exists()) {
-            let arr: any = Object.entries(snapshot.val())
-            setCards(Object.entries(Object.fromEntries(arr)))
-        } else {
-            console.log("No data available");
-        }
-        }).catch((error) => {
-        console.error(error);
-        });
-    }   
 
     return (
         <div className='CourtList'>
             
-                {
-                    cards.map(card => {   
+                {   
+                    // data.length > 0
+                    // ?
+                    data?.map(( card : any) => {   
                         if (card[1].state === 'active') {
                         return (
-                            <>
+                            <React.Fragment key={card[1].name}>
                                 <h2 className='CourtList_container_title CourtList_container_title_active'>Active Judge</h2>
                                 <div className='CourtList_cards'>
-                                    <div className='CourtList_card' key={card[1].name}>
+                                    <div className='CourtList_card'>
                                         <Link to={`/CourtList/${card[1].name}`} >
                                             <img className='CourtList_avatar' src={card[1].avatar} alt="" />
                                             <h3 className='CourtList_title'>{card[1].name}</h3>
@@ -44,22 +32,23 @@ const CourtList: FC = () => {
                                         </Link>
                                     </div>
                                 </div>
-                            </>
+                            </React.Fragment>
                         )
                         }
                     })
-                }
+                    // : <></>
+                } 
 
 
             
                 {
-                    cards.map(card => {
+                    data?.map(( card : any) => {
                         if (card[1].state === 'wait') {
                         return (
-                            <>
-                                <h2 className='CourtList_container_title CourtList_container_title_wait'>Waiting for results </h2>
+                            <React.Fragment key={card[1].name}>
+                                <h2 key={card[1].name} className='CourtList_container_title CourtList_container_title_wait'>Waiting for results </h2>
                                 <div className='CourtList_cards'>
-                                <div className='CourtList_card' key={card[1].name}>
+                                <div className='CourtList_card'>
                                     <Link to={`/CourtList/${card[1].name}`} >
                                         <img className='CourtList_avatar' src={card[1].avatar} alt="" />
                                         <h3 className='CourtList_title'>{card[1].name}</h3>
@@ -67,7 +56,7 @@ const CourtList: FC = () => {
                                     </Link>
                                 </div>
                                 </div>
-                            </>
+                            </React.Fragment>
                         )
                         }
                     })
@@ -77,7 +66,7 @@ const CourtList: FC = () => {
             <h2 className='CourtList_container_title'>Past Judge</h2>
             <div className='CourtList_cards'>
                 {
-                    cards.map(card => {
+                    data?.map(( card : any) => {
                         if (card[1].state === 'past') {
                         return (
                             <div className='CourtList_card' key={card[1].name}>

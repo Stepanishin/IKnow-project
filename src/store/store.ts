@@ -1,4 +1,5 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
+import { firebaseApi } from "./reducers/firebase.api";
 import termsAndConditionsSlice from './reducers/getTermsAndConditionsReducer'
 import timerAndDisableBtnSlice from './reducers/getTimerAndDisablebtnReducer'
 
@@ -6,13 +7,15 @@ import timerAndDisableBtnSlice from './reducers/getTimerAndDisablebtnReducer'
 
 const rootReducer = combineReducers({
     termsAndConditionsSlice,
-    timerAndDisableBtnSlice
+    timerAndDisableBtnSlice,
+    [firebaseApi.reducerPath]: firebaseApi.reducer
 })
 
 
 export const setupStore = () => {
     return configureStore({
         reducer: rootReducer,
+        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(firebaseApi.middleware)
     })
 }
 
