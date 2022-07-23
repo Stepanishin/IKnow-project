@@ -14,7 +14,9 @@ const CourtList: FC = () => {
 
     return (
         <div className='CourtList'>
-            
+            <h2 className='CourtList_container_title CourtList_container_title_active'>100% of our commissions will be shared among NFT Rektville holders</h2>
+            <h2 className='CourtList_container_title CourtList_container_title_active'>Active Judge</h2>
+            <div className='CourtList_cards'>
                 {   
                     isLoading
                     ?
@@ -23,22 +25,18 @@ const CourtList: FC = () => {
                     data?.map(( card : any) => {   
                         if (card[1].state === 'active') {
                         return (
-                            <React.Fragment key={card[1].name}>
-                                <h2 className='CourtList_container_title CourtList_container_title_active'>Active Judge</h2>
-                                <div className='CourtList_cards'>
-                                    <div className='CourtList_card'>
+                                    <div className='CourtList_card' key={card[1].name} >
                                         <Link to={`/CourtList/${card[1].name}`} >
                                             <img className='CourtList_avatar' src={card[1].avatar} alt="" />
                                             <h3 className='CourtList_title'>{card[1].name}</h3>
-                                            <p className='CourtList_title' >{card[1].borderPrice} Sol after 1h</p>
+                                            <p className='CourtList_title' >{card[1].cardDescr}</p>
                                         </Link>
                                     </div>
-                                </div>
-                            </React.Fragment>
                         )
                         }
                     })
-                } 
+                }
+                </div> 
 
 
             
@@ -90,6 +88,37 @@ const CourtList: FC = () => {
                     })
                 }
             </div>
+
+
+
+
+
+            <h2 className='CourtList_container_title'>Past Judge</h2>
+            <div className='CourtList_cards'>
+                {   
+                    isLoading
+                    ?
+                    <Spinner />
+                    :
+                    data?.map(( card : any) => {
+                        if (card[1].state === 'test') {
+                        return (
+                            <div className='CourtList_card' key={card[1].name}>
+                                <Link to={`/CourtList/${card[1].name}`} >
+                                    <img className='CourtList_avatar' src={card[1].avatar} alt="" />
+                                    <h3 className='CourtList_title'>{card[1].name}</h3>
+                                    <p className='CourtList_title' >{card[1].cardDescr}</p>
+                                </Link>
+                            </div>
+                        )
+                        }
+                    })
+                }
+            </div>
+
+
+
+
         </div>
     );
     

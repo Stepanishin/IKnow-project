@@ -43,28 +43,4 @@ export const firebaseApi = createApi({
 })
 
 
-// export const firebaseApi = createApi({
-//   reducerPath: 'firebaseApi',
-//   baseQuery: fakeBaseQuery(),
-  // baseQuery: fakeBaseQuery({
-  //   baseUrl: 'https://rectville-default-rtdb.europe-west1.firebasedatabase.app/'
-  // }),
-  // refetchOnFocus: true,
-  // endpoints: build => ({
-  //   getJudges: build.query<any, string>({
-  //     query: () => ({
-  //       url: `/Judges`
-  //     }),
-  //   }),
-    // getUserRepos: build.query<any, any>({
-    //   query: (username: string) => ({
-    //     url: `users/${username}/repos`
-    //   })
-    // }),
-    // createUser: build.mutation<any, void>({
-    //   query: () => ``
-    // })
-  // })
-// })
-
 export const { useGetJudgesQuery, useGetJudgeQuery } = firebaseApi

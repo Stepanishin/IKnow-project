@@ -7,4 +7,7 @@ export interface ISendSolanaBtnProps {
     judgePrice?: number, 
     name?: string,
     SolForWhat?: string,
+    currency?: string,
+    cardDescrMore?: string,
+    cardDescrLess?: string,
 }

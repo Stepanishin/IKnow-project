@@ -1,6 +1,6 @@
 export interface ICard {
     name?: string,
-    price?: number,
+    price?: string,
     date?: string,
     quantity?: number,
     avatar?: string,
@@ -15,4 +15,8 @@ export interface ICard {
     judgePrice?: number,
     solForWhat?: string,
     judgeResult?: string,
+    cardDescr?: string,
+    cardDescrMore?: string,
+    cardDescrLess?: string,
+    currency?: string,
 };

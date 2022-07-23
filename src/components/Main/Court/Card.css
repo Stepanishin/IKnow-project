@@ -1,7 +1,8 @@
 .card  {
     background: #181935;
     border-radius: 30px;
-    height: 720px;
+    /* height: 750px; */
+    height: calc(fit-content + 30px);
     padding: 30px 30px;
     max-width: 390px;
     margin: 30px auto;   
@@ -47,14 +48,53 @@
     padding: 20px 0 0 0;
 }
 
-@media screen and (max-width: 350px) {
+/* @media screen and (max-width: 350px) {
     .card  {
-        height: 720px;
+        height: 780px;
     }
 }
 
 @media screen and (max-width: 300px) {
     .card  {
-        height: 750px;
+        height: 800px;
     }
+} */
+
+.MoreLess_container {
+    position: relative;
+    margin-top: 20px;
 }
+
+.MORE {
+    position: absolute;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    background-color: #00FFFF;
+    left: 60px;
+    text-align: end;
+    /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; */
+    border-radius: 10px;
+}
+
+.LESS {
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    background-color: #ff65df;
+    left: 60px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+@media screen and (max-width: 400px) {
+    .MORE {
+        left: 30px;
+    }
+    
+    .LESS {
+        left: 30px;
+    }
+} 
