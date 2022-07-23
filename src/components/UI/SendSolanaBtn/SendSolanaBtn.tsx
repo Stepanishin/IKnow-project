@@ -16,7 +16,7 @@ import { ISendSolanaBtnProps } from '../../../types/ISendSolanaBtnProps';
 let thelamports = 0;
 // let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 
-const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN, descr2, judgePrice,name,SolForWhat}) => {
+const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wallet,classN, descr2, judgePrice,name,SolForWhat}) => {
 
     let alarmTerms: any
     let alarm_sendSucces : any
@@ -33,7 +33,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN
 
 
     // let [lamports, setLamports] = useState(price);
-    let lamports: any = judgePrice
+    // let lamports: any = judgePrice
     // let [wallet, setWallet] = useState("8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH");
     let theWallet:any= wallet
 
@@ -41,7 +41,10 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN
     const { publicKey, sendTransaction } = useWallet();
 
 
-    const onClick = useCallback( async () => {
+    const onClick = useCallback( async (e:any) => {
+
+        let judgePriceDEMO:number = +(e.target.value)
+        
         alarmTerms = document.querySelector('.alarm_terms')!
         alarm_sendSucces = document.querySelector('.alarm_sendSucces')!
 
@@ -75,7 +78,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN
         connection.getBalance(publicKey).then((bal) => {
         });
 
-        let lamportsI = LAMPORTS_PER_SOL*lamports;
+        let lamportsI = LAMPORTS_PER_SOL*e.target.value;
         const transaction = new Transaction().add(
             SystemProgram.transfer({
                 fromPubkey: publicKey,
@@ -104,7 +107,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN
                             solQuantity = arr.SolForLess
                         }
 
-                        updates[`/Judges/${name}` + `/${SolForWhat}/`] = judgePrice + solQuantity;
+                        updates[`/Judges/${name}` + `/${SolForWhat}/`] = judgePriceDEMO + solQuantity;
 
                         alarm_sendSucces.classList.add('alarm_sendSucces_display')
                         const closeAlarmSucces =() => {
@@ -113,9 +116,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN
                         setTimeout(closeAlarmSucces, 5000)
 
                         return update(ref(db), updates);
-                             
-                            
-                        
+    
                     } else {
                         console.log("No data available");
                     }
@@ -131,10 +132,30 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({borderPrice,descr,wallet,classN
 
     return (
         <div className='SendSolanaBtn_container'>
-            <button onClick={onClick} className={classN}>
-              {descr} {borderPrice} Sol <br />
+            {/* <button onClick={onClick} className={classN}>
+              {cardDescrLess} {cardDescrMore} <br />
               <span className='SendSolanaBtn_info' >You send {judgePrice} Sol. {descr2} Sol</span>
-            </button>
+            </button> */}
+
+            <div className={classN} >
+                <p style={{color: 'black', textAlign:'center'}} >{cardDescrLess} {cardDescrMore}</p>  <br />
+                <div className='btnDEMO_container' >
+                    <button value={0.1}  onClick={onClick} className='btnDEMO'>
+                        0.1 Sol
+                    </button>
+                    <button value={0.3}  onClick={onClick} className='btnDEMO'>
+                        0.3 Sol
+                    </button>
+                    <button value={0.5}  onClick={onClick} className='btnDEMO'>
+                        0.5 Sol
+                    </button>
+                    <button value={1}  onClick={onClick} className='btnDEMO'>
+                        1 Sol
+                    </button>
+                </div>               
+            </div>
+
+
             <div className='alarm_terms'>Accept terms and conditions!</div>
             <div className='alarm_sendSucces'>Sending successful!</div>
         </div>
