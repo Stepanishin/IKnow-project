@@ -14,7 +14,7 @@ const OpenPageV2 = () => {
                 And the first part of platform - “COURT”, a game that will allow you to earn on the release of <span>new NFT collections in the marketplace.</span> 
                 </p>
                 <p>Make your decision! Adjudicate! Play in court!</p>
-                <Link to={'./List'} ><button className='openPageV2_home_descr_btn'>Judge!</button></Link>
+                <Link to={'./CourtList'} ><button className='openPageV2_home_descr_btn'>Judge!</button></Link>
             </div>
         </div>
     );
