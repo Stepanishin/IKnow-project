@@ -1,0 +1,55 @@
+@font-face {
+    font-family: "Bakemon"; 
+    src: url("./fonts/Bakemono.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+@font-face {
+    font-family: "TT bold"; 
+    src: url("./fonts/TT\ Norms\ Pro\ Bold.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+@font-face {
+    font-family: "TT regular"; 
+    src: url("./fonts/TT\ Norms\ Pro\ Regular.otf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+
+body {
+    font-size: 21px;
+    line-height: 21px;
+    color: #FFFFFF;
+    background: #0C0C18;
+    display: flex;
+    flex-direction: column;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "TT regular", sans-serif;
+    font-weight: bold;
+}
+
+* {
+    font-family: "TT bold", sans-serif;
+    font-weight: 400;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+::-moz-selection{
+    background-color:#FF008A;
+    color:#191919
+}
+
+::selection{
+    background-color:#FF008A;
+    color:#191919
+}

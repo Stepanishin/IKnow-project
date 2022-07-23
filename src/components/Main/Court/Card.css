@@ -1,0 +1,100 @@
+.card  {
+    background: #181935;
+    border-radius: 30px;
+    /* height: 750px; */
+    height: calc(fit-content + 30px);
+    padding: 30px 30px;
+    max-width: 390px;
+    margin: 30px auto;   
+}
+
+.card_avatar {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    height: 210px;
+    width: 210px;
+    border-radius: 30px;
+}
+
+.card_description {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #9E9E9E;
+    padding: 20px 0 0 50px;
+}
+
+.card_description a {
+    text-decoration: none;
+    color: #9E9E9E;
+    cursor: pointer;
+}
+
+.card_title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2AD5F8;
+}
+
+.card_links:hover {
+    color: #00FFFF;
+}
+
+.card_btn_wrap {
+    padding: 20px 0 0 0;
+}
+
+/* @media screen and (max-width: 350px) {
+    .card  {
+        height: 780px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .card  {
+        height: 800px;
+    }
+} */
+
+.MoreLess_container {
+    position: relative;
+    margin-top: 20px;
+}
+
+.MORE {
+    position: absolute;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    background-color: #00FFFF;
+    left: 60px;
+    text-align: end;
+    /* border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px; */
+    border-radius: 10px;
+}
+
+.LESS {
+    padding: 10px;
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    background-color: #ff65df;
+    left: 60px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+@media screen and (max-width: 400px) {
+    .MORE {
+        left: 30px;
+    }
+    
+    .LESS {
+        left: 30px;
+    }
+} 

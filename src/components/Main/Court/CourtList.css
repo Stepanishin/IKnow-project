@@ -1,0 +1,239 @@
+.CourtList {
+    max-width: 1300px;
+    min-height: calc(100vh - 132px);
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.CourtList_container_title {
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.CourtList_container_title:not(:first-child) {
+    margin-top: 50px;
+}
+
+.CourtList_cards {
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.CourtList_card {
+    background: #181935;
+    border-radius: 30px;
+    /* height: 350px; */
+    padding: 30px 30px;
+    max-width: 390px;
+    /* max-height: 380px; */
+    /* margin-left: 45px; */
+    height: max-content;
+}
+
+.CourtList_avatar {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    height: 210px;
+    width: 210px;
+    border-radius: 30px;
+}
+
+.CourtList_title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2AD5F8;
+    text-align: center;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 733px) {
+
+    .CourtList_cards {
+        justify-content: center;
+    }
+
+    .CourtList_card {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .CourtList_cards {
+        justify-content: center;
+    }
+
+    .card {
+        margin-left: 0;
+    }
+}
+
+.title_dn {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .List_title {
+    padding-top: 50px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 82px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+.List_wrap {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card  {
+    background: #181935;
+    border-radius: 30px;
+    height: 600px;
+    padding: 30px 30px;
+    max-width: 390px;
+    margin-left: 45px;
+}
+
+.card:nth-child(1) {
+    margin-left: 0;
+}
+
+.card_avatar {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    height: 210px;
+    width: 210px;
+    border-radius: 30px;
+}
+
+.card_description {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #9E9E9E;
+    padding: 20px 0 0 50px;
+}
+
+.card_description a {
+    text-decoration: none;
+    color: #9E9E9E;
+    cursor: pointer;
+}
+
+.card_title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2AD5F8;
+}
+
+.card_btn_wrap {
+    padding: 20px 0 0 0;
+}
+
+.splide {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.splide__CourtList {
+    justify-content: space-evenly;
+}
+
+@media screen and (max-width: 320px) {
+    .card {
+        height: 650px;
+    }
+
+}    */
+

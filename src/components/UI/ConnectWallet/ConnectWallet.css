@@ -1,0 +1,59 @@
+.WalletMultiButtonMobile {
+    display: none !important;
+}
+
+@media screen and (max-width: 769px) {
+  
+    .WalletMultiButton {
+        display: none !important;
+    }
+    
+    .WalletMultiButtonMobile {
+        display: block !important;
+        margin-top: 30px !important;
+    }  
+}
+
+/* ///////////////////////////////// */
+/* Wallet css */
+.wallet-adapter-button-trigger {
+    background: #000000 !important;
+    font-family: "TT bold", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 19px !important;
+    border-radius: 8px !important; 
+  }
+  
+  .wallet-adapter-button-trigger:hover {
+    background: linear-gradient(91.54deg, #FF00D6 31.51%, #00FFFF 92.1%) !important;
+  }
+  
+  .wallet-adapter-button-trigger:active {
+    background: linear-gradient(91.16deg, #AF0086 4.85%, rgba(0, 135, 135, 0.74) 109.2%) !important;
+  }
+  
+  .WalletBorderContainer {
+    background: linear-gradient(91.54deg, #FF00D6 31.51%, #00FFFF 92.1%) !important;
+    border-radius: 8px !important;
+    padding: 2px !important; 
+  }
+
+  .WalletBorderContainerMobile {
+    background: linear-gradient(91.54deg, #FF00D6 31.51%, #00FFFF 92.1%) !important;
+    border-radius: 8px !important;
+    padding: 2px !important; 
+    /* width: 170.5px !important; */
+    width: fit-content;
+  }
+
+@media screen and (max-width: 320px) {
+  .wallet-adapter-button-trigger {
+    font-size: 17px !important; 
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .wallet-adapter-button-trigger {
+    font-size: 15px !important; 
+  }
+}
