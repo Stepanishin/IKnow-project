@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { timerAndDisableBtnSlice } from '../../../store/reducers/getTimerAndDisablebtnReducer';
 import { ITimerProps } from '../../../types/ITimerProps';
 
-const Timer:FC<ITimerProps> = ({Timerclass, DateToMint}) => {
+const Timer:FC<ITimerProps> = ({Timerclass, dateToShot}) => {
 
     const {isTimeToDisable} = useAppSelector(state => state.timerAndDisableBtnSlice)
     const {timerAndDisableBtn} = timerAndDisableBtnSlice.actions
@@ -17,7 +17,7 @@ const Timer:FC<ITimerProps> = ({Timerclass, DateToMint}) => {
 
     async function timer() {
         var nowDate:any = new Date();
-        var achiveDate:any = new Date(DateToMint as any);
+        var achiveDate:any = new Date(dateToShot as any);
         var result:any = (achiveDate - nowDate)+1000;
         if (result < 0) {
             var elmnt:any = document.getElementById('timer');

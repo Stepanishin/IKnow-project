@@ -2,6 +2,7 @@ export interface ICard {
     name?: string,
     price?: string,
     date?: string,
+    dateToShot?: string,
     quantity?: number,
     avatar?: string,
     twitter?: string,

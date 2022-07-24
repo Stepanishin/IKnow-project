@@ -82,9 +82,9 @@ const Card: FC = () => {
                     <p style={{color: '#00FFFF'}} >100% of our commissions will be shared among NFT Rektville holders</p>
                     </div>
                     {
-                        data?.date
-                        ?   <Timer Timerclass={'card_timer'} DateToMint={data?.date} />
-                        :   'Loading...'
+                        data?.dateToShot
+                        ?   <Timer Timerclass={'card_timer'} dateToShot={data?.dateToShot} />
+                        :   <></>
                     }
                     {
                         data?.state === 'active' || data?.state === 'test'
@@ -118,15 +118,22 @@ const Card: FC = () => {
                         </div> 
                         :
                         <div className='card_description'>
-                            <p>Price after  1h  was : {data?.judgeResult} </p>
+                            <p>{data?.judgeResult} </p>
                         </div>
                         
                     }
-
-                    <div className='MoreLess_container'>
-                        <div className='MORE' ></div>
-                        <div className='LESS' style={{width: widthLESS}} >{LESS}</div>
-                    </div>
+                    
+                    {
+                        data?.state === 'active' || data?.state === 'test'
+                        ?
+                        <div className='MoreLess_container'>
+                            <div className='MORE' ></div>
+                            <div className='LESS' style={{width: widthLESS}} >{LESS}</div>
+                        </div>
+                        :
+                        <></>
+                    }
+                    
                 </React.Fragment>
         }
         </div>
