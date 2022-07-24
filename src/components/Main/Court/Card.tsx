@@ -87,14 +87,14 @@ const Card: FC = () => {
                         :   <></>
                     }
                     {
-                        data?.state === 'active' || data?.state === 'test'
+                        data?.state === 'active'
                         ?
                         <TermsAndConditions />
                         :
                         <></>
                     }
                     {
-                        data?.state === 'active' || data?.state === 'test'
+                        data?.state === 'active'
                         ?
                         <div className='card_btn_wrap'>
                             <SendSolanaBtn 
@@ -124,7 +124,7 @@ const Card: FC = () => {
                     }
                     
                     {
-                        data?.state === 'active' || data?.state === 'test'
+                        data?.state === 'active'
                         ?
                         <div className='MoreLess_container'>
                             <div className='MORE' ></div>

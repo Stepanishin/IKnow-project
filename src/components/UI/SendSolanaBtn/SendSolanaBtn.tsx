@@ -16,7 +16,7 @@ import { ISendSolanaBtnProps } from '../../../types/ISendSolanaBtnProps';
 let thelamports = 0;
 // let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 
-const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wallet,classN, descr2, judgePrice,name,SolForWhat}) => {
+const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wallet,classN,name,SolForWhat}) => {
 
     let alarmTerms: any
     let alarm_sendSucces : any
@@ -43,7 +43,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
 
     const onClick = useCallback( async (e:any) => {
 
-        let judgePriceDEMO:number = +(e.target.value)
+        let judgePrice:number = +(e.target.value)
         
         alarmTerms = document.querySelector('.alarm_terms')!
         alarm_sendSucces = document.querySelector('.alarm_sendSucces')!
@@ -97,7 +97,6 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                     if (snapshot.exists()) {
                         let arr = snapshot.val()
 
-                        // const newPostKey = push(child(ref(db), `${localStorage.getItem('WalletKey')}/`)).key;
                         const updates:any = {};
 
                         let solQuantity:any = 0;
@@ -107,35 +106,27 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                             solQuantity = arr.SolForLess
                         }
 
-                        updates[`/Judges/${name}` + `/${SolForWhat}/`] = judgePriceDEMO + solQuantity;
-
-
-
-                        
-                        get(child(dbRef,  `/Judges/${name}/wallet`)).then((snapshot) => {
+                        updates[`/Judges/${name}` + `/${SolForWhat}/`] = judgePrice + solQuantity;
+        
+                        get(child(dbRef,  `/Judges/${name}/wallets/${SolForWhat}`)).then((snapshot) => {
                             if (snapshot.exists()) {
                                 let userWallet = publicKey.toBase58()
-                                // let arr = Object.entries(snapshot.val())
-                                // console.log(arr)
-                                // arr[1].push(publicKey)
-                                // console.log(arr)
-                                // updates[`/Judges/${name}/wallets/`] = userWallet
-                                set(ref(db, `/Judges/${name}/wallet/${userWallet}`), {
-                                    // {
+                                let arr = snapshot.val()
+                                if (arr.hasOwnProperty(`${userWallet}`)) {
+                                    let currentBet = arr[userWallet].bet
+                                    updates[`/Judges/${name}/wallets/${SolForWhat}/${userWallet}/bet/`] = currentBet + judgePrice
+                                    return update(ref(db), updates);
+                                } else {
+                                    set(ref(db, `/Judges/${name}/wallets/${SolForWhat}/${userWallet}`), {
                                         'userWallet': userWallet,
-                                        'bet': judgePriceDEMO,
-                                    // }
-                                  });
+                                        'bet': judgePrice,
+                                    });
+                                }
                             }
-                            // ${publicKey}
                         }).catch((error) => {
                             console.error(error);
                         });
                         
-
-
-
-
 
                         alarm_sendSucces.classList.add('alarm_sendSucces_display')
                         const closeAlarmSucces =() => {

@@ -89,12 +89,22 @@
     border-bottom-left-radius: 10px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 360px) {
     .MORE {
-        left: 30px;
+        left: 50px;
     }
     
     .LESS {
-        left: 30px;
+        left: 50px;
     }
 } 
+
+@media screen and (max-width: 340px) {
+    .MORE {
+        left: 40px;
+    }
+    
+    .LESS {
+        left: 40px;
+    }
+}
