@@ -3,6 +3,7 @@ import './CourtList.css'
 import { Link } from 'react-router-dom';
 import { useGetJudgesQuery } from '../../../store/reducers/firebase.api';
 import Spinner from '../../UI/Spinner/Spinner';
+import ShareTwitterBtn from '../../UI/ShareTwitterBtn/ShareTwitterBtn';
 
 const CourtList: FC = () => {
 
@@ -31,6 +32,7 @@ const CourtList: FC = () => {
                                             <h3 className='CourtList_title'>{card[1].name}</h3>
                                             <p className='CourtList_title' >{card[1].cardDescr}</p>
                                         </Link>
+                                        {/* <ShareTwitterBtn name={card[1].name} descr={card[1].cardDescr} /> */}
                                     </div>
                         )
                         }

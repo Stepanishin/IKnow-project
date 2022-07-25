@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { ICard } from '../../../types/ICard';
 import { useGetJudgeQuery } from '../../../store/reducers/firebase.api';
 import Spinner from '../../UI/Spinner/Spinner';
+import ShareTwitterBtn from '../../UI/ShareTwitterBtn/ShareTwitterBtn';
 
 
 const Card: FC = () => {
@@ -133,6 +134,10 @@ const Card: FC = () => {
                         :
                         <></>
                     }
+                    <div className='card_description2'>
+                    <p><ShareTwitterBtn name={data?.name} /></p>
+                    </div>
+                    
                     
                 </React.Fragment>
         }

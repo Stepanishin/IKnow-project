@@ -26,6 +26,19 @@
     padding: 20px 0 0 50px;
 }
 
+.card_description2 a {
+    display: flex;
+    justify-content: center;
+    color: #9E9E9E;
+}
+
+.card_description2 a {
+    text-decoration: none;
+    color: #9E9E9E;
+    cursor: pointer;
+}
+
+
 .card_description a {
     text-decoration: none;
     color: #9E9E9E;
@@ -63,6 +76,7 @@
 .MoreLess_container {
     position: relative;
     margin-top: 20px;
+    margin-bottom: 70px;
 }
 
 .MORE {
