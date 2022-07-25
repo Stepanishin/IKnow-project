@@ -160,16 +160,16 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                 <p style={{color: 'black', textAlign:'center'}} >{cardDescrLess} {cardDescrMore}</p>  <br />
                 <div className='btnDEMO_container' >
                     <button value={0.1}  onClick={onClick} className='btnDEMO'>
-                        0.1 Sol
+                        0.1 SOL
                     </button>
                     <button value={0.3}  onClick={onClick} className='btnDEMO'>
-                        0.3 Sol
+                        0.3 SOL
                     </button>
                     <button value={0.5}  onClick={onClick} className='btnDEMO'>
-                        0.5 Sol
+                        0.5 SOL
                     </button>
                     <button value={1}  onClick={onClick} className='btnDEMO'>
-                        1 Sol
+                        1 SOL
                     </button>
                 </div>               
             </div>

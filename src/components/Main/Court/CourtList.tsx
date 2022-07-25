@@ -93,32 +93,6 @@ const CourtList: FC = () => {
 
 
 
-            <h2 className='CourtList_container_title'>Past Judge</h2>
-            <div className='CourtList_cards'>
-                {   
-                    isLoading
-                    ?
-                    <Spinner />
-                    :
-                    data?.map(( card : any) => {
-                        if (card[1].state === 'test') {
-                        return (
-                            <div className='CourtList_card' key={card[1].name}>
-                                <Link to={`/CourtList/${card[1].name}`} >
-                                    <img className='CourtList_avatar' src={card[1].avatar} alt="" />
-                                    <h3 className='CourtList_title'>{card[1].name}</h3>
-                                    <p className='CourtList_title' >{card[1].cardDescr}</p>
-                                </Link>
-                            </div>
-                        )
-                        }
-                    })
-                }
-            </div>
-
-
-
-
         </div>
     );
     
