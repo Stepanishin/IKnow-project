@@ -20,7 +20,7 @@ const AboutNFT = () => {
                     7777 NFTs, you have to 
                     hold the "Rektville" NFT on the
                     wallet to earn digital money and 
-                    get more benefits. 
+                    get more benefits. The most interesting thing is that 100% of our fees will be shared between holders of at least 25 Rektville NFTs.
                     You can buy our NFT on <a rel='noreferrer' target="_blank" href="https://magiceden.io/marketplace/rektville" className='home_descr_link'>Magiceden</a>
                     </p>
                 </div>

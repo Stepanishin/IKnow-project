@@ -20,4 +20,5 @@ export interface ICard {
     cardDescrMore?: string,
     cardDescrLess?: string,
     currency?: string,
+    eventDescr?: string,
 };

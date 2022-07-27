@@ -19,7 +19,7 @@ const ShareTwitterBtn:FC<IShareTwitterBtnProps> = ({name} ) => {
             href={linkTwitter}
             target="_blank"
         >
-        Share on twitter  <RetweetOutlined style={{ color: '#00FFFF', marginLeft: '5px' }} /></a>
+        Share on Twitter  <RetweetOutlined style={{ color: '#00FFFF', marginLeft: '5px' }} /></a>
     );
 };
 

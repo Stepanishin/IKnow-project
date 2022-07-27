@@ -16,10 +16,11 @@ import { ISendSolanaBtnProps } from '../../../types/ISendSolanaBtnProps';
 let thelamports = 0;
 // let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 
-const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wallet,classN,name,SolForWhat}) => {
+const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wallet,classN,name,SolForWhat, SolForMore, SolForLess}) => {
 
     let alarmTerms: any
     let alarm_sendSucces : any
+    let alarm_sendError : any
     useEffect(() => {
         alarmTerms = document.querySelector('.alarm_terms')!
     }, [])
@@ -43,7 +44,10 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
 
     const onClick = useCallback( async (e:any) => {
 
-        let judgePrice:number = +(e.target.value)
+        alarm_sendError = document.querySelector('.alarm_sendError')!
+
+        try {
+            let judgePrice:number = +(e.target.value)
         
         alarmTerms = document.querySelector('.alarm_terms')!
         alarm_sendSucces = document.querySelector('.alarm_sendSucces')!
@@ -88,9 +92,9 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
         );
 
         const signature = await sendTransaction(transaction, connection);
-
+        
         await connection.confirmTransaction(signature, 'processed');
-
+        
         const updateDb = () => {
             const dbRef = ref(getDatabase());
                     get(child(dbRef,  `/Judges/${name}`)).then((snapshot) => {
@@ -143,33 +147,91 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                     console.error(error);
                     });
         }
-        updateDb() 
-    }, [publicKey, sendTransaction, connection]);
+        updateDb()
+          } catch (err) {
+            alarm_sendError.classList.add('alarm_sendError_display')
+            const closeAlarmError =() => {
+                alarm_sendError.classList.remove('alarm_sendError_display')
+            }
+            setTimeout(closeAlarmError, 5000)
+          }
+
+         
+    }, [publicKey, sendTransaction, connection ]);
 
     
     
 
     return (
         <div className='SendSolanaBtn_container'>
-            {/* <button onClick={onClick} className={classN}>
-              {cardDescrLess} {cardDescrMore} <br />
-              <span className='SendSolanaBtn_info' >You send {judgePrice} Sol. {descr2} Sol</span>
-            </button> */}
 
             <div className={classN} >
                 <p style={{color: 'black', textAlign:'center'}} >{cardDescrLess} {cardDescrMore}</p>  <br />
                 <div className='btnDEMO_container' >
                     <button value={0.1}  onClick={onClick} className='btnDEMO'>
-                        0.1 SOL
+                        0.1 SOL <br />
+                        <span style={{fontSize: '10px'}}>
+                        {
+                            SolForLess && SolForMore
+                            ?
+                            SolForWhat === 'SolForMore'
+                            ?
+                            " win " + ((SolForMore + (SolForLess * 0.8) + 0.1)  / ((SolForMore + 0.1) / 0.1)).toFixed(2) + " SOL"
+                            :
+                            " win " + ((SolForLess + (SolForMore * 0.8) + 0.1)  / ((SolForLess + 0.1) / 0.1)).toFixed(2) + " SOL"
+                            :
+                            <></>
+                        }
+                        </span>
+                        
                     </button>
                     <button value={0.3}  onClick={onClick} className='btnDEMO'>
-                        0.3 SOL
+                        0.3 SOL <br />
+                        <span style={{fontSize: '10px'}}>
+                        {
+                            SolForLess && SolForMore
+                            ?
+                            SolForWhat === 'SolForMore'
+                            ?
+                            "win " + (((SolForMore + (SolForLess * 0.8) + 0.3)  / ((SolForMore + 0.3) / 0.1)) * 3).toFixed(2) + " SOL"
+                            :
+                            "win " + (((SolForLess + (SolForMore * 0.8) + 0.3)  / ((SolForLess + 0.3) / 0.1)) * 3).toFixed(2) + " SOL"
+                            :
+                            <></>
+                        }
+                        </span>
                     </button>
                     <button value={0.5}  onClick={onClick} className='btnDEMO'>
-                        0.5 SOL
+                        0.5 SOL<br />
+                        <span style={{fontSize: '10px'}}>
+                        {
+                            SolForLess && SolForMore
+                            ?
+                            SolForWhat === 'SolForMore'
+                            ?
+                            "win " + (((SolForMore + (SolForLess * 0.8) + 0.5)  / ((SolForMore + 0.5) / 0.1)) * 5).toFixed(2) + " SOL"
+                            :
+                            "win " + (((SolForLess + (SolForMore * 0.8) + 0.5)  / ((SolForLess + 0.5) / 0.1)) * 5).toFixed(2) + " SOL"
+                            :
+                            <></>
+                        }
+                        </span>
                     </button>
                     <button value={1}  onClick={onClick} className='btnDEMO'>
-                        1 SOL
+                        1 SOL<br />
+                        <span style={{fontSize: '10px'}}>
+                        {
+                            SolForLess && SolForMore
+                            ?
+                            SolForWhat === 'SolForMore'
+                            ?
+                            "win " + (((SolForMore + (SolForLess * 0.8) + 1)  / ((SolForMore + 1) / 0.1)) * 10).toFixed(2) + " SOL"
+                            :
+                            "win " + (((SolForLess + (SolForMore * 0.8) + 1)  / ((SolForLess + 1) / 0.1)) * 10).toFixed(2) + " SOL"
+                            :
+                            <></>
+                        }
+                        </span>
                     </button>
                 </div>               
             </div>
@@ -177,6 +239,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
 
             <div className='alarm_terms'>Accept terms and conditions!</div>
             <div className='alarm_sendSucces'>Sending successful!</div>
+            <div className='alarm_sendError'>Something went wrong</div>
         </div>
     );
 };

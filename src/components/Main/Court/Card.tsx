@@ -13,6 +13,7 @@ import Spinner from '../../UI/Spinner/Spinner';
 import ShareTwitterBtn from '../../UI/ShareTwitterBtn/ShareTwitterBtn';
 
 
+
 const Card: FC = () => {
 
     const params = useParams()
@@ -56,7 +57,7 @@ const Card: FC = () => {
                             :
                             <></>
                         }
-                        <p>Date: {data?.date}</p>
+                        <p>Date of snapshot: {data?.date}</p>
                         {
                             data?.twitter
                             ?
@@ -79,8 +80,15 @@ const Card: FC = () => {
                             :
                             <></>
                         }
+                        {
+                            data?.eventDescr
+                            ?
+                            <p className='card_description_eventDescr' >{data?.eventDescr}</p>
+                            :
+                            <></>
+                        }
 
-                    <p style={{color: '#00FFFF'}} >100% of our commissions will be shared among NFT Rektville holders</p>
+                    <p style={{color: '#00FFFF'}} >100% of our fees will be shared among the Rektville NFT holders.</p>
                     </div>
                     {
                         data?.dateToShot
@@ -103,22 +111,24 @@ const Card: FC = () => {
                                 cardDescrMore={data?.cardDescrMore} 
                                 wallet={data?.walletForMore} 
                                 classN={'SendSolanaBtn_more'}  
-                                descr2={'You can get ' + (((data?.SolForLess! * 0.8) + data?.SolForMore! + data?.judgePrice!) / ((data?.SolForMore! + data?.judgePrice!) / data?.judgePrice!)).toFixed(2)}
                                 name={data?.name}
                                 SolForWhat={'SolForMore'}
+                                SolForLess ={data?.SolForLess}
+                                SolForMore = {data?.SolForMore}
                             />
                             <SendSolanaBtn 
                                 judgePrice={data?.judgePrice}
                                 cardDescrLess={data?.cardDescrLess} 
                                 wallet={data?.walletForLess} 
                                 classN={'SendSolanaBtn_less'}
-                                descr2={'You can get ' + ((data?.SolForLess! + (data?.SolForMore! * 0.8) + data?.judgePrice!) / ((data?.SolForLess! + data?.judgePrice!) / data?.judgePrice!)).toFixed(2)} 
                                 name={data?.name}
                                 SolForWhat={'SolForLess'}
+                                SolForLess ={data?.SolForLess}
+                                SolForMore = {data?.SolForMore}
                             />
                         </div> 
                         :
-                        <div className='card_description'>
+                        <div className='card_description_judgeResult'>
                             <p>{data?.judgeResult} </p>
                         </div>
                         
@@ -134,7 +144,7 @@ const Card: FC = () => {
                         :
                         <></>
                     }
-                    <div className='card_description2'>
+                    <div className='card_description_judgeResult'>
                     <p><ShareTwitterBtn name={data?.name} /></p>
                     </div>
                     

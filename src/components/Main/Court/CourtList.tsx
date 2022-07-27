@@ -15,7 +15,7 @@ const CourtList: FC = () => {
 
     return (
         <div className='CourtList'>
-            <h2 className='CourtList_container_title CourtList_container_title_active'>100% of our commissions will be shared among NFT Rektville holders</h2>
+            <h2 className='CourtList_container_title CourtList_container_title_active'>100% of our fees will be shared among the Rektville NFT holders.</h2>
             <h2 className='CourtList_container_title CourtList_container_title_active'>Active Judge</h2>
             <div className='CourtList_cards'>
                 {   
@@ -32,7 +32,6 @@ const CourtList: FC = () => {
                                             <h3 className='CourtList_title'>{card[1].name}</h3>
                                             <p className='CourtList_title' >{card[1].cardDescr}</p>
                                         </Link>
-                                        {/* <ShareTwitterBtn name={card[1].name} descr={card[1].cardDescr} /> */}
                                     </div>
                         )
                         }
