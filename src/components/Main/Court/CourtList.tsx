@@ -15,7 +15,7 @@ const CourtList: FC = () => {
 
     return (
         <div className='CourtList'>
-            <h2 className='CourtList_container_title CourtList_container_title_active'>100% of our fees will be shared among the Rektville NFT holders.</h2>
+            <h2 className='CourtList_container_title'>100% of our fees will be shared among the Rektville NFT holders.</h2>
             <h2 className='CourtList_container_title CourtList_container_title_active'>Active Judge</h2>
             <div className='CourtList_cards'>
                 {   
@@ -30,7 +30,7 @@ const CourtList: FC = () => {
                                         <Link to={`/CourtList/${card[1].name}`} >
                                             <img className='CourtList_avatar' src={card[1].avatar} alt="" />
                                             <h3 className='CourtList_title'>{card[1].name}</h3>
-                                            <p className='CourtList_title' >{card[1].cardDescr}</p>
+                                            <p className='CourtList_descr' >{card[1].cardDescr}</p>
                                         </Link>
                                     </div>
                         )
@@ -39,8 +39,14 @@ const CourtList: FC = () => {
                 }
                 </div> 
 
-
-            
+                {
+                    data && data?.filter(card => card[1].state === 'wait').length > 0
+                    ?
+                    <h2 className='CourtList_container_title CourtList_container_title_wait'>Waiting for results </h2>
+                    :
+                    <></>
+                }
+                <div className='CourtList_cards'>
                 {   
                     isLoading
                     ?
@@ -49,25 +55,21 @@ const CourtList: FC = () => {
                     data?.map(( card : any) => {
                         if (card[1].state === 'wait') {
                         return (
-                            <React.Fragment key={card[1].name}>
-                                <h2 key={card[1].name} className='CourtList_container_title CourtList_container_title_wait'>Waiting for results </h2>
-                                <div className='CourtList_cards'>
                                 <div className='CourtList_card'>
                                     <Link to={`/CourtList/${card[1].name}`} >
                                         <img className='CourtList_avatar' src={card[1].avatar} alt="" />
                                         <h3 className='CourtList_title'>{card[1].name}</h3>
                                         <p className='CourtList_title' >{card[1].cardDescr}</p>
                                     </Link>
-                                </div>
-                                </div>
-                            </React.Fragment>
+                                </div>        
                         )
                         }
                     })
                 }
+            </div>
             
 
-            <h2 className='CourtList_container_title'>Past Judge</h2>
+            <h2 className='CourtList_container_title CourtList_container_title_past'>Past Judge</h2>
             <div className='CourtList_cards'>
                 {   
                     isLoading

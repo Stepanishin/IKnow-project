@@ -32,11 +32,13 @@ const Timer:FC<ITimerProps> = ({Timerclass, dateToShot}) => {
                 const dbRef = ref(getDatabase());
                         get(child(dbRef,  `/Judges/${params.name}`)).then((snapshot) => {
                         if (snapshot.exists()) {
+
                             let arr = snapshot.val()
-    
                             const updates:any = {};
-    
-                            updates[`/Judges/${params.name}/state/`] = 'wait';
+                            if (arr.state === 'active') {
+                                updates[`/Judges/${params.name}/state/`] = 'wait';
+                            }
+                            
                             return update(ref(db), updates);
         
                         } else {
@@ -68,12 +70,11 @@ const Timer:FC<ITimerProps> = ({Timerclass, dateToShot}) => {
     }
 
     return (
-        <div style={{display: 'flex', justifyContent: 'center', gap: '10px'}}>
-
+        // <div style={{display: 'flex', justifyContent: 'center', gap: '10px'}}>
             <div className={Timerclass} id='timer' style={{width: '260px'}}>
             
             </div>
-        </div>
+        
         
     );
 };

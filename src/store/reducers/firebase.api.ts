@@ -15,6 +15,7 @@ export const firebaseApi = createApi({
           await get(child(dbRef, '/Judges')).then((snapshot) => {
             if (snapshot.exists()) {
                 arr = Object.entries(snapshot.val())
+                console.log(arr)
             }
           })
         } catch {
@@ -38,7 +39,23 @@ export const firebaseApi = createApi({
         }
         return {data: arr }
       }
-    })
+    }),
+    // setNewUser: builder.query<ICard, any>({
+    //   async queryFn(params) {
+    //     const dbRef = ref(getDatabase());
+    //     let arr :any 
+    //     try {
+    //       await get(child(dbRef, `/Judges/${params.name}`)).then((snapshot) => {
+    //         if (snapshot.exists()) {
+    //             arr = snapshot.val()
+    //         }
+    //       })
+    //     } catch {
+    //       console.log("No data available");
+    //     }
+    //     return {data: arr }
+    //   }
+    // }),
   })
 })
 

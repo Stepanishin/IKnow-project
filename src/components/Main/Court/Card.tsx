@@ -48,8 +48,16 @@ const Card: FC = () => {
                 <React.Fragment>
                     <ReturnButton />
                     <img className='card_avatar' src={data?.avatar} alt="" />
-                    <div className='card_description'>
-                        <h3 className='card_title'>{data?.name}</h3>
+                    {
+                            data?.website
+                            ?
+                            <div className='card_title_container'>
+                                <a rel='noreferrer' target="_blank" className='card_title_link' href={data?.website}>{data?.name}</a>
+                            </div>
+                            :
+                            <h3 className='card_title'>{data?.name}</h3>
+                        }
+                    <div className='card_description'>                       
                         {
                             data?.price
                             ?
@@ -89,7 +97,7 @@ const Card: FC = () => {
                         }
 
                     <p style={{color: '#00FFFF'}} >100% of our fees will be shared among the Rektville NFT holders.</p>
-                    </div>
+                    {/* </div> */}
                     {
                         data?.dateToShot
                         ?   <Timer Timerclass={'card_timer'} dateToShot={data?.dateToShot} />
@@ -102,6 +110,7 @@ const Card: FC = () => {
                         :
                         <></>
                     }
+                    </div>
                     {
                         data?.state === 'active'
                         ?
@@ -134,16 +143,11 @@ const Card: FC = () => {
                         
                     }
                     
-                    {
-                        data?.state === 'active'
-                        ?
-                        <div className='MoreLess_container'>
-                            <div className='MORE' ></div>
-                            <div className='LESS' style={{width: widthLESS}} >{LESS}</div>
-                        </div>
-                        :
-                        <></>
-                    }
+                    <div className='MoreLess_container'>
+                        <div className='MORE' ></div>
+                        <div className='LESS' style={{width: widthLESS}} >{LESS}</div>
+                    </div>
+                    
                     <div className='card_description_judgeResult'>
                     <p><ShareTwitterBtn name={data?.name} /></p>
                     </div>

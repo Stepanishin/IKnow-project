@@ -1,10 +1,14 @@
 .card  {
     background: #181935;
     border-radius: 30px;
-    height: calc(fit-content + 30px);
+    height: 100%;
     padding: 30px 30px;
     max-width: 390px;
-    margin: 30px auto;   
+    margin: 30px auto;  
+}
+
+.card_title_container {
+    text-align: center; 
 }
 
 .card_avatar {
@@ -22,7 +26,7 @@
     font-size: 18px;
     line-height: 21px;
     color: #9E9E9E;
-    padding: 20px 0 0 50px;
+    padding: 20px 0 0 30px;
 }
 
 .card_description_judgeResult {
@@ -39,7 +43,7 @@
 }
 
 
-.card_description a {
+.card_links {
     text-decoration: none;
     color: #9E9E9E;
     cursor: pointer;
@@ -55,6 +59,26 @@
     font-size: 22px;
     line-height: 26px;
     color: #2AD5F8;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.card_title_link {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26px;
+    color: #2AD5F8;
+    margin: 0 auto;
+    margin-top: 15px;
+    
+}
+
+.card_title_link:hover {
+    background: linear-gradient(90deg, #FF008A -12.91%, #00FFFF 106.45%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .card_links:hover {
@@ -93,19 +117,30 @@
     border-bottom-left-radius: 10px;
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 410px) {
+    .card  {
+        padding: 30px 30px;
+        max-width: 350px;
+        margin: 30px auto;   
+    }
     .card_description {
         padding: 20px 0 0 20px;
     }
-} 
+}
 
 @media screen and (max-width: 360px) {
     .MORE {
         left: 50px;
     }
-    
+
     .LESS {
         left: 50px;
+    }
+
+    .card  {
+        padding: 10px 10px;
+        max-width: 300px;
+        margin: 30px auto;   
     }
 } 
 
@@ -113,7 +148,7 @@
     .MORE {
         left: 40px;
     }
-    
+
     .LESS {
         left: 40px;
     }
