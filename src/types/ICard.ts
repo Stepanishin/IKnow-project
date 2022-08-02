@@ -22,4 +22,5 @@ export interface ICard {
     currency?: string,
     eventDescr?: string,
     website?: string,
+    result?:string,
 };

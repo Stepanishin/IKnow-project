@@ -29,6 +29,7 @@ const Header: FC = () => {
                     <ul className='Header_nav__list'>
                         <Link className='nav__list_link' to={'/'}><li><b>Home</b></li></Link>
                         <Link className='nav__list_link' to={'./CourtList'}><li><b>Court</b></li></Link>
+                        <Link className='nav__list_link' to={'./Flat'}><li><b>Flat</b></li></Link>
                     </ul>
                     <ul className='Header_nav__list_mobile'>
                     <input id="toggle" type="checkbox" className='toggle' ></input>
@@ -42,6 +43,7 @@ const Header: FC = () => {
                                     <nav className='header_nav_mobile'>
                                         <Link test-id='qwerty' onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'/'}><li><b>Home</b></li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./CourtList'}><li><b>Court</b></li></Link>
+                                        <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./Flat'}><li><b>Flat</b></li></Link>
                                         <ConnectWallet className={"WalletMultiButtonMobile"} classNameBorder={'WalletBorderContainerMobile'} />
                                     </nav>
                                 </div>

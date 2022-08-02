@@ -16,6 +16,7 @@ const Footer = () => {
                     <Logo />
                     <Link onClick={goToTop} to="/" className='footer_btn footer_links_dn'><li className='footer_links'>Home</li></Link>
                     <Link to="/CourtList" className='footer_btn footer_links_dn'><li className='footer_links'>Court</li></Link>
+                    <Link to="/Flat" className='footer_btn footer_links_dn'><li className='footer_links'>Flat</li></Link>
                     <a rel='noreferrer' target="_blank" href="https://twitter.com/rektvillenft" className='footer_btn'><li className='footer_links'>Twitter</li></a>
                     <a rel='noreferrer' target="_blank" href="https://magiceden.io/marketplace/rektville" className='footer_btn'><li className='footer_links'>Magiceden</li></a>
                 </ul>
