@@ -31,6 +31,7 @@ const Flat: FC = () => {
                 ?
                 <div>
                     <h2 className='Flat_title'>Your Flat</h2>
+                    {/* <p className='Flat_wallet'>Citizen</p> */}
                     <p className='Flat_wallet'>
                         {"" + publicKey.toBase58().slice(0, 3) +"..."+ publicKey.toBase58().slice(publicKey.toBase58().length - 3, publicKey.toBase58().length)}
                     </p>
