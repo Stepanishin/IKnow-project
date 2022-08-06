@@ -23,4 +23,5 @@ export interface ICard {
     eventDescr?: string,
     website?: string,
     result?:string,
+    wallets?: {},
 };

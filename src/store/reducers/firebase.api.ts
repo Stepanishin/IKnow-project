@@ -39,8 +39,27 @@ export const firebaseApi = createApi({
         return {data: arr }
       }
     }),
+    getUsers: builder.query({
+      async queryFn() {
+        const dbRef = ref(getDatabase());
+        let arr :any 
+        try {
+          await get(child(dbRef, '/users')).then((snapshot) => {
+            if (snapshot.exists()) {
+                // arr = Object.entries(snapshot.val())
+                arr = snapshot.val()
+            }
+          })
+        } catch {
+          console.log("No data available");
+        }
+        // return {data: Object.entries(Object.fromEntries(arr))}
+        // return {data: Object.fromEntries(arr)}
+        return {data: arr}
+      }
+    }),
   })
 })
 
 
-export const { useGetJudgesQuery, useGetJudgeQuery } = firebaseApi
+export const { useGetJudgesQuery, useGetJudgeQuery, useGetUsersQuery } = firebaseApi

@@ -4,6 +4,7 @@ import Roadmap from "../components/Main/Home/Roadmap/Roadmap";
 import Card from "../components/Main/Court/Card";
 import CourtList from "../components/Main/Court/CourtList";
 import Flat from "../components/Main/Flat/Flat";
+import AdminPanel from "../components/Main/AdminPanel/AdminPanel";
 
 export interface IRoute {
     path: string;
@@ -18,4 +19,5 @@ export const MainRoutes: IRoute[] = [
     {path: "/RoadMap", exact: true, component: Roadmap},
     {path: "/CourtList/:name", exact: true, component: Card},
     {path: "/Flat", exact: true, component: Flat},
+    {path: "/AdminPanel", exact: true, component: AdminPanel},
 ]

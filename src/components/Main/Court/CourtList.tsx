@@ -24,7 +24,7 @@ const CourtList: FC = () => {
                     <Spinner />
                     :
                     data?.map(( card : any) => {   
-                        if (card[1].state === 'active') {
+                        if (card[1].state === 'active' || card[1].state === 'test') {
                         return (
                                     <div className='CourtList_card' key={card[1].name} >
                                         <Link to={`/CourtList/${card[1].name}`} >
@@ -55,7 +55,7 @@ const CourtList: FC = () => {
                     data?.map(( card : any) => {
                         if (card[1].state === 'wait') {
                         return (
-                                <div className='CourtList_card'>
+                                <div className='CourtList_card' key={card[1].name}>
                                     <Link to={`/CourtList/${card[1].name}`} >
                                         <img className='CourtList_avatar' src={card[1].avatar} alt="" />
                                         <h3 className='CourtList_title'>{card[1].name}</h3>

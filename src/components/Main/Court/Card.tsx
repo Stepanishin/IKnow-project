@@ -97,14 +97,14 @@ const Card: FC = () => {
                         }
 
                     <p style={{color: '#00FFFF'}} >100% of our fees will be shared among the Rektville NFT holders.</p>
-                    {/* </div> */}
+
                     {
                         data?.dateToShot
                         ?   <Timer Timerclass={'card_timer'} dateToShot={data?.dateToShot} />
                         :   <></>
                     }
                     {
-                        data?.state === 'active'
+                        data?.state === 'active' || data?.state === 'test'
                         ?
                         <TermsAndConditions />
                         :
@@ -112,7 +112,7 @@ const Card: FC = () => {
                     }
                     </div>
                     {
-                        data?.state === 'active'
+                        data?.state === 'active' || data?.state === 'test'
                         ?
                         <div className='card_btn_wrap'>
                             <SendSolanaBtn 

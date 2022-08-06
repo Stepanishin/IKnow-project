@@ -1,0 +1,12 @@
+.AdminPanel {
+    display: flex;
+    justify-content: center;
+}
+
+.AdminPanel_container {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    margin-top: 30px;
+    gap: 30px;
+}
