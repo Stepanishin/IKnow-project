@@ -10,6 +10,8 @@ const AdminPanel = () => {
         SolForMore: 0.001,
         judgeResult: 'Waiting result',
         state: 'test',
+        walletForLess: 'FXSGCKWyi19ZiFsUTEHkaN5kyfJYHM3EH5vw7KYbxgme',
+        walletForMore: 'FXSGCKWyi19ZiFsUTEHkaN5kyfJYHM3EH5vw7KYbxgme',
         wallets: {
             SolForLess: {
                 1: 1
@@ -77,9 +79,9 @@ const AdminPanel = () => {
 
                 <label htmlFor="eventDescr">Описание события внутри карточки  <input type='text' name='eventDescr' id='eventDescr' onChange={handleChange} /></label>
 
-                <label htmlFor="walletForLess">Кошелёк для приёма ставок на МЕНЬШЕ  <input type='text' name='walletForLess' id='walletForLess' onChange={handleChange} /></label>
+                {/* <label htmlFor="walletForLess">Кошелёк для приёма ставок на МЕНЬШЕ  <input type='text' name='walletForLess' id='walletForLess' onChange={handleChange} /></label>
 
-                <label htmlFor="walletForMore">Кошелёк для приёма ставок на БОЛЬШЕ  <input type='text' name='walletForMore' id='walletForMore' onChange={handleChange} /></label>
+                <label htmlFor="walletForMore">Кошелёк для приёма ставок на БОЛЬШЕ  <input type='text' name='walletForMore' id='walletForMore' onChange={handleChange} /></label> */}
 
                 <label htmlFor="twitter">twitter Евента  <input type='text' name='twitter' id='twitter' onChange={handleChange} /></label>
 
