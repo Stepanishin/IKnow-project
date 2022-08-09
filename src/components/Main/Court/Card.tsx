@@ -124,6 +124,7 @@ const Card: FC = () => {
                                 SolForWhat={'SolForMore'}
                                 SolForLess ={data?.SolForLess}
                                 SolForMore = {data?.SolForMore}
+                                id={data?.id}
                             />
                             <SendSolanaBtn 
                                 judgePrice={data?.judgePrice}
@@ -134,6 +135,7 @@ const Card: FC = () => {
                                 SolForWhat={'SolForLess'}
                                 SolForLess ={data?.SolForLess}
                                 SolForMore = {data?.SolForMore}
+                                id={data?.id}
                             />
                         </div> 
                         :

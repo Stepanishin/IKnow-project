@@ -3,12 +3,14 @@ import { setupListeners } from "@reduxjs/toolkit/dist/query";
 import { firebaseApi } from "./reducers/firebase.api";
 import termsAndConditionsSlice from './reducers/getTermsAndConditionsReducer'
 import timerAndDisableBtnSlice from './reducers/getTimerAndDisablebtnReducer'
+import adminAccessSlice from './reducers/getAdminAccess'
 
 
 
 const rootReducer = combineReducers({
     termsAndConditionsSlice,
     timerAndDisableBtnSlice,
+    adminAccessSlice,
     [firebaseApi.reducerPath]: firebaseApi.reducer
 })
 

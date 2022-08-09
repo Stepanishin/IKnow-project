@@ -24,4 +24,5 @@ export interface ICard {
     website?: string,
     result?:string,
     wallets?: {},
+    id?: number,
 };

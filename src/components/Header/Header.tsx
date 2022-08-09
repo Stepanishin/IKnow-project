@@ -5,6 +5,8 @@ import ConnectWallet from '../UI/ConnectWallet/ConnectWallet';
 import './Header.css'
 import { useGetUsersQuery } from '../../store/reducers/firebase.api';
 import { useWallet } from '@solana/wallet-adapter-react';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { adminAccessSlice } from '../../store/reducers/getAdminAccess';
 
 
 const Header: FC = () => {
@@ -12,7 +14,7 @@ const Header: FC = () => {
     const { data } = useGetUsersQuery('')
     const { publicKey, sendTransaction } = useWallet();
     
-    let userWallet = publicKey?.toBase58()!
+    let userWallet = publicKey?.toBase58()!  
 
     let burgerMenu: any
     let toggle: any

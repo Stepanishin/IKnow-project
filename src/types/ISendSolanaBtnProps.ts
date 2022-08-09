@@ -12,4 +12,5 @@ export interface ISendSolanaBtnProps {
     cardDescrLess?: string,
     SolForMore?: number,
     SolForLess?: number,
+    id?: number,
 }

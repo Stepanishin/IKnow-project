@@ -46,15 +46,12 @@ export const firebaseApi = createApi({
         try {
           await get(child(dbRef, '/users')).then((snapshot) => {
             if (snapshot.exists()) {
-                // arr = Object.entries(snapshot.val())
                 arr = snapshot.val()
             }
           })
         } catch {
           console.log("No data available");
         }
-        // return {data: Object.entries(Object.fromEntries(arr))}
-        // return {data: Object.fromEntries(arr)}
         return {data: arr}
       }
     }),

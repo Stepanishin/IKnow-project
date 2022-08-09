@@ -16,7 +16,7 @@ import { ISendSolanaBtnProps } from '../../../types/ISendSolanaBtnProps';
 let thelamports = 0;
 // let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
 
-const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wallet,classN,name,SolForWhat, SolForMore, SolForLess}) => {
+const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wallet,classN,name,SolForWhat, SolForMore, SolForLess, id}) => {
 
     let alarmTerms: any
     let alarm_sendSucces : any
@@ -97,7 +97,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
         
         const updateDb = () => {
             const dbRef = ref(getDatabase());
-                    get(child(dbRef,  `/Judges/${name}`)).then((snapshot) => {
+                    get(child(dbRef,  `/Judges/${name}${id}`)).then((snapshot) => {
                     if (snapshot.exists()) {
                         let arr = snapshot.val()
 
@@ -110,18 +110,18 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                             solQuantity = arr.SolForLess
                         }
 
-                        updates[`/Judges/${name}` + `/${SolForWhat}/`] = judgePrice + solQuantity;
+                        updates[`/Judges/${name}${id}` + `/${SolForWhat}/`] = judgePrice + solQuantity;
         
-                        get(child(dbRef,  `/Judges/${name}/wallets/${SolForWhat}`)).then((snapshot) => {
+                        get(child(dbRef,  `/Judges/${name}${id}/wallets/${SolForWhat}`)).then((snapshot) => {
                             if (snapshot.exists()) {
                                 let userWallet = publicKey.toBase58()
                                 let arr = snapshot.val()
                                 if (arr.hasOwnProperty(`${userWallet}`)) {
                                     let currentBet = arr[userWallet].bet
-                                    updates[`/Judges/${name}/wallets/${SolForWhat}/${userWallet}/bet/`] = currentBet + judgePrice
+                                    updates[`/Judges/${name}${id}/wallets/${SolForWhat}/${userWallet}/bet/`] = currentBet + judgePrice
                                     return update(ref(db), updates);
                                 } else {
-                                    set(ref(db, `/Judges/${name}/wallets/${SolForWhat}/${userWallet}`), {
+                                    set(ref(db, `/Judges/${name}${id}/wallets/${SolForWhat}/${userWallet}`), {
                                         'userWallet': userWallet,
                                         'bet': judgePrice,
                                     });

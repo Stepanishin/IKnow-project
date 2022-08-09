@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 import { MainRoutes } from './router/index';
 
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
-import { ConnectionProvider, WalletProvider} from '@solana/wallet-adapter-react';
+import { ConnectionProvider, useWallet, WalletProvider} from '@solana/wallet-adapter-react';
 import { WalletModalProvider} from '@solana/wallet-adapter-react-ui';
 import {
   GlowWalletAdapter,
@@ -22,6 +22,10 @@ import {
 import { FC, ReactNode, useMemo } from 'react';
 import { clusterApiUrl } from '@solana/web3.js';
 import { initializeApp } from "firebase/app";
+import { useGetUsersQuery } from './store/reducers/firebase.api';
+import { useAppDispatch, useAppSelector } from './hooks/redux';
+import { adminAccessSlice } from './store/reducers/getAdminAccess';
+
 
 function App() {
 
@@ -30,7 +34,7 @@ function App() {
     authDomain: "rectville.firebaseapp.com",
     databaseURL: "https://rectville-default-rtdb.europe-west1.firebasedatabase.app/",
     projectId: "rectville",
-    storageBucket: "rectville.appspot.com",
+    storageBucket: "gs://rectville.appspot.com",
     messagingSenderId: "25488995572",
     appId: "1:25488995572:web:f73ef95b07d495bdf51aa1"
   };
@@ -60,6 +64,10 @@ function App() {
 export default App;
 
 const Context: FC<{ children: ReactNode }> = ({ children }) => {
+
+  
+
+
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Mainnet;
 

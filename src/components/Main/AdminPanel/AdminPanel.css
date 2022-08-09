@@ -1,12 +1,16 @@
 .AdminPanel {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.AdminPanel_container {
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
+.AdminPanel_btn_container {
     margin-top: 30px;
-    gap: 30px;
+}
+
+
+.AdminPanel_btn_container a {
+    padding: 20px;
+    border: 3px solid black;
 }
