@@ -27,6 +27,7 @@ import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { adminAccessSlice } from './store/reducers/getAdminAccess';
 
 
+
 function App() {
 
   const firebaseConfig = {
@@ -39,6 +40,7 @@ function App() {
     appId: "1:25488995572:web:f73ef95b07d495bdf51aa1"
   };
   const app = initializeApp(firebaseConfig);
+
 
   return (
     <Context>
@@ -62,6 +64,7 @@ function App() {
 }
 
 export default App;
+
 
 const Context: FC<{ children: ReactNode }> = ({ children }) => {
 

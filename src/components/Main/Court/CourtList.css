@@ -109,3 +109,13 @@
         margin: 0 auto;
     }
 }
+
+.CourtList_car_admin_changeStateBtn {
+    background-color: black;
+    color: white;
+}
+
+.CourtList_car_admin_changeStateBtn:active {
+    background-color: #fff;
+}
+

@@ -5,3 +5,15 @@
     gap: 30px;
     margin: 30px auto;
 }
+
+.AddNewJudge_container button:hover,
+.AddNewJudge_container input[type='submit']:hover,
+.AddNewJudge_container input[type='file']:hover {
+    transform: scale(1, 1.2);
+}
+
+.AddNewJudge_container button:active,
+.AddNewJudge_container input[type='submit']:active,
+.AddNewJudge_container input[type='file']:active {
+    background-color: black;
+}

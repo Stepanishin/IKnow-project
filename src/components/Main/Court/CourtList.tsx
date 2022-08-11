@@ -104,10 +104,10 @@ const CourtList: FC = () => {
                                             <p className='CourtList_descr' >{card[1].cardDescr}</p>
                                         </Link>
                                         <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-                                            <button name={card[1].name + card[1].id} onClick={getDeleteCard}>Удалить</button>
-                                            <button name={card[1].name + card[1].id} onClick={getWaitCard}>В ожидание</button>
-                                            <button name={card[1].name + card[1].id} onClick={getPastCard}>в прошедшее</button>
-                                            <button name={card[1].name + card[1].id} onClick={getActiveCard}>В Активные</button>
+                                            <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getDeleteCard}>Delete</button>
+                                            <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getWaitCard}>Waiting result</button>
+                                            <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getPastCard}>Past</button>
+                                            <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getActiveCard}>Active</button>
                                         </div>
                                     </div>
                         )
@@ -142,10 +142,10 @@ const CourtList: FC = () => {
                                           isAdmin 
                                           ?
                                           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-                                              <button name={card[1].name + card[1].id} onClick={getDeleteCard}>Удалить</button>
-                                              <button name={card[1].name + card[1].id} onClick={getWaitCard}>В ожидание</button>
-                                              <button name={card[1].name + card[1].id} onClick={getPastCard}>в прошедшее</button>
-                                              <button name={card[1].name + card[1].id} onClick={getActiveCard}>В Активные</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getDeleteCard}>Delete</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getWaitCard}>Waiting result</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getPastCard}>Past</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getActiveCard}>Active</button>
                                           </div> 
                                           :
                                             <></>
@@ -184,10 +184,10 @@ const CourtList: FC = () => {
                                           isAdmin 
                                           ?
                                           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-                                              <button name={card[1].name + card[1].id} onClick={getDeleteCard}>Удалить</button>
-                                              <button name={card[1].name + card[1].id} onClick={getWaitCard}>В ожидание</button>
-                                              <button name={card[1].name + card[1].id} onClick={getPastCard}>в прошедшее</button>
-                                              <button name={card[1].name + card[1].id} onClick={getActiveCard}>В Активные</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getDeleteCard}>Delete</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getWaitCard}>Waiting result</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getPastCard}>Past</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getActiveCard}>Active</button>
                                           </div> 
                                           :
                                             <></>
@@ -220,10 +220,10 @@ const CourtList: FC = () => {
                                           isAdmin 
                                           ?
                                           <div style={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-                                              <button name={card[1].name + card[1].id} onClick={getDeleteCard}>Удалить</button>
-                                              <button name={card[1].name + card[1].id} onClick={getWaitCard}>В ожидание</button>
-                                              <button name={card[1].name + card[1].id} onClick={getPastCard}>в прошедшее</button>
-                                              <button name={card[1].name + card[1].id} onClick={getActiveCard}>В Активные</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getDeleteCard}>Delete</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getWaitCard}>Waiting result</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getPastCard}>Past</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getActiveCard}>Active</button>
                                           </div> 
                                           :
                                             <></>
