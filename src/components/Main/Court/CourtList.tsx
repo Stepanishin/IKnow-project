@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import './CourtList.css'
 import { Link } from 'react-router-dom';
 import { useGetJudgesQuery, useGetUsersQuery } from '../../../store/reducers/firebase.api';
@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { adminAccessSlice } from '../../../store/reducers/getAdminAccess';
 import { child, get, getDatabase, ref, update } from 'firebase/database';
+import { ICard } from '../../../types/ICard';
 
 
 const CourtList: FC = () => {
@@ -20,12 +21,20 @@ const CourtList: FC = () => {
     const {adminAccess} = adminAccessSlice.actions
     const dispatch = useAppDispatch()
 
+    const [result, setResult] = useState('')
+
+    const dataPast = data?.filter((el) => el[1].state === 'past').sort(((a: any,b: any) => a[1].id > b[1].id ? -1 : a[1].id < b[1].id ? 1 : 0))
+
     useEffect(() => {
-        if (publicKey ) {
-            let userWallet = publicKey?.toBase58()!
-            if (userData[userWallet].status === 'admin') {
-                dispatch(adminAccess())
+        try {
+            if (publicKey ) {
+                let userWallet = publicKey?.toBase58()!
+                if (userData[userWallet] && userData[userWallet].status != undefined && userData[userWallet].status === 'admin') {
+                    dispatch(adminAccess())
+                }
             }
+        } catch (error) {
+            console.log(error)
         }
     }, [userIsLoading])
     
@@ -35,14 +44,14 @@ const CourtList: FC = () => {
     }, [])
 
     const db = getDatabase();
-    const updateDb = (name:string, state: string) => {
+    const updateDb = (url:string, state: string, name?: string) => {
                 const dbRef = ref(getDatabase());
                         get(child(dbRef,  `/Judges/${name}`)).then((snapshot) => {
                         if (snapshot.exists()) {
 
                             let arr = snapshot.val()
                             const updates:any = {};
-                            updates[`/Judges/${name}/state/`] = state;
+                            updates[url] = state;
                             return update(ref(db), updates);
         
                         } else {
@@ -51,29 +60,44 @@ const CourtList: FC = () => {
                         }).catch((error) => {
                         console.error(error);
                         });
-    }
-            
+    }          
 
     const getDeleteCard = (e: any) => {
-        updateDb(e.target.name, 'delete')
+        updateDb(`/Judges/${e.target.name}/state/`, 'delete', e.target.name)
         setTimeout(function(){
             window.location.reload();
         }, 1000);
     }
     const getWaitCard = (e: any) => {
-        updateDb(e.target.name, 'wait')
+        updateDb(`/Judges/${e.target.name}/state/`, 'wait',e.target.name)
         setTimeout(function(){
             window.location.reload();
         }, 1000);
     }
     const getPastCard = (e: any) => {
-        updateDb(e.target.name, 'past')
+        updateDb(`/Judges/${e.target.name}/state/`, 'past',e.target.name)
         setTimeout(function(){
             window.location.reload();
         }, 1000);
     }
     const getActiveCard = (e: any) => {
-        updateDb(e.target.name, 'active')
+        updateDb(`/Judges/${e.target.name}/state/`, 'active',e.target.name)
+        setTimeout(function(){
+            window.location.reload();
+        }, 1000);
+    }
+
+    const setResultToDBMore = (e: any) => {
+        updateDb(`/Judges/${e.target.name}/judgeResult/`, result, e.target.name)
+        updateDb(`/Judges/${e.target.name}/result/`, 'more', e.target.name)
+        setTimeout(function(){
+            window.location.reload();
+        }, 1000);
+    }
+
+    const setResultToDBLess = (e: any) => {
+        updateDb(`/Judges/${e.target.name}/judgeResult/`, result, e.target.name)
+        updateDb(`/Judges/${e.target.name}/result/`, 'less', e.target.name)
         setTimeout(function(){
             window.location.reload();
         }, 1000);
@@ -188,6 +212,10 @@ const CourtList: FC = () => {
                                               <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getWaitCard}>Waiting result</button>
                                               <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getPastCard}>Past</button>
                                               <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={getActiveCard}>Active</button>
+
+                                             <label htmlFor="name">Write result and push winResult: <input required type="text" name='name' id='name' onChange={(e) => setResult(e.target.value)} /></label>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={setResultToDBMore}>Win MORE</button>
+                                              <button className='CourtList_car_admin_changeStateBtn' name={card[1].name + card[1].id} onClick={setResultToDBLess}>Win LESS</button>
                                           </div> 
                                           :
                                             <></>
@@ -207,8 +235,8 @@ const CourtList: FC = () => {
                     ?
                     <Spinner />
                     :
-                    data?.map(( card : any) => {
-                        if (card[1].state === 'past') {
+                    dataPast?.map(( card : any, index: number) => {
+                        if (card[1].state === 'past' && index < 6) {
                         return (
                             <div className='CourtList_card' key={card[1].name + card[1].id}>
                                 <Link to={`/CourtList/${card[1].name + card[1].id}`} >
@@ -227,17 +255,13 @@ const CourtList: FC = () => {
                                           </div> 
                                           :
                                             <></>
-                                        }
+                                }
                             </div>
                         )
                         }
                     })
                 }
             </div>
-
-
-
-
 
         </div>
     );

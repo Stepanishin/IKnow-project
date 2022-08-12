@@ -40,7 +40,7 @@ const Header: FC = () => {
                         <Link className='nav__list_link' to={'./CourtList'}><li><b>Court</b></li></Link>
                         <Link className='nav__list_link' to={'./Flat'}><li><b>Flat</b></li></Link>
                         {
-                            data && userWallet && data[userWallet].status === 'admin' 
+                            data && userWallet && data[userWallet] && data[userWallet].status === 'admin' 
                             ?
                             <Link className='nav__list_link' to={'./AdminPanel'}><li><b>AdminPanel</b></li></Link>
                             :
@@ -62,7 +62,7 @@ const Header: FC = () => {
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./CourtList'}><li><b>Court</b></li></Link>
                                         <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./Flat'}><li><b>Flat</b></li></Link>
                                         {
-                                            data && userWallet && data[userWallet].status === 'admin' 
+                                            data && userWallet && data[userWallet] && data[userWallet].status === 'admin'  
                                             ?
                                             <Link onClick={deleteBurgerMenu} className='header_nav_link_mobile' to={'./AdminPanel'}><li><b>AdminPanel</b></li></Link>
                                             :

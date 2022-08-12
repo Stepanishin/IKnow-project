@@ -14,7 +14,7 @@ export const firebaseApi = createApi({
         try {
           await get(child(dbRef, '/Judges')).then((snapshot) => {
             if (snapshot.exists()) {
-                arr = Object.entries(snapshot.val())
+                arr = Object.entries(snapshot.val()).sort((a: any,b: any) => a[1].id > b[1].id ? -1 : a[1].id < b[1].id ? 1 : 0)
             }
           })
         } catch {
