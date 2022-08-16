@@ -21,8 +21,10 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
     let alarmTerms: any
     let alarm_sendSucces : any
     let alarm_sendError : any
+    let customWindow: any
     useEffect(() => {
         alarmTerms = document.querySelector('.alarm_terms')!
+        customWindow = document.querySelector('.SendSolanaBtn__custom_container')!
     }, [])
 
     const db = getDatabase();
@@ -31,6 +33,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
     const {isTimeToDisable} = useAppSelector(state => state.timerAndDisableBtnSlice)
     const {timerAndDisableBtn} = timerAndDisableBtnSlice.actions
     const dispatch = useAppDispatch()
+    const [judgeValue, setJudgeValue] = useState(0)
 
 
     // let [lamports, setLamports] = useState(price);
@@ -158,9 +161,10 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
 
          
     }, [publicKey, sendTransaction, connection ]);
-
     
-    
+    let lala = () => {
+        console.log(SolForWhat)
+    }
 
     return (
         <div className='SendSolanaBtn_container'>
@@ -217,23 +221,51 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                         }
                         </span>
                     </button>
-                    <button value={1}  onClick={onClick} className='btnDEMO'>
-                        1 SOL<br />
-                        <span style={{fontSize: '10px'}}>
-                        {
-                            SolForLess && SolForMore
-                            ?
-                            SolForWhat === 'SolForMore'
-                            ?
-                            "win " + (((SolForMore + (SolForLess * 0.8) + 1)  / ((SolForMore + 1) / 0.1)) * 10).toFixed(2) + " SOL"
-                            :
-                            "win " + (((SolForLess + (SolForMore * 0.8) + 1)  / ((SolForLess + 1) / 0.1)) * 10).toFixed(2) + " SOL"
-                            :
-                            <></>
-                        }
-                        </span>
-                    </button>
-                </div>               
+                    <div className='SendSolanaBtn__custom_container'>
+                        <p>Custom amount:</p>
+                        <input placeholder='SOL' className='SendSolanaBtn__custom_container_input' type="number" onChange={(e: any) => setJudgeValue(e.target.value)} />
+                        <button value={judgeValue}  onClick={onClick} className='btnDEMO'>
+                            Make Judge!<br />
+                                {/* <span style={{fontSize: '10px'}}>
+                                {
+                                    SolForLess && SolForMore
+                                    ?
+                                    SolForWhat === 'SolForMore'
+                                    ?
+                                    "win " + (((SolForMore + (SolForLess * 0.8) + judgeValue)  / ((SolForMore + judgeValue) / 0.1)) * (judgeValue / 0.1)).toFixed(2) + " SOL"
+                                    :
+                                    "win " + (((SolForLess + (SolForMore * 0.8) + judgeValue)  / ((SolForLess + judgeValue) / 0.1)) * (judgeValue / 0.1)).toFixed(2) + " SOL"
+                                    :
+                                    <></>
+                                }
+                                </span> */}
+                            </button>
+                    </div>
+                        
+                </div> 
+
+
+
+
+                {/* <div className='SendSolanaBtn__custom_container'>  
+                            <input type="number" onChange={(e: any) => setJudgeValue(e.target.value)}  style={{width: '100px'}} />
+                            <button value={judgeValue}  onClick={onClick} className='btnDEMO'>
+                            {judgeValue} Sol<br />
+                                <span style={{fontSize: '10px'}}>
+                                {
+                                    SolForLess && SolForMore
+                                    ?
+                                    SolForWhat === 'SolForMore'
+                                    ?
+                                    "win " + (((SolForMore + (SolForLess * 0.8) + judgeValue)  / 100) * ((judgeValue / (SolForMore + (SolForLess * 0.8) + judgeValue)) * 100)).toFixed(2) + " SOL"
+                                    :
+                                    "win " + (((SolForLess + (SolForMore * 0.8) + judgeValue)  / ((SolForLess + judgeValue) / 0.1)) * (judgeValue / 0.1)).toFixed(2) + " SOL"
+                                    :
+                                    <></>
+                                }
+                                </span>
+                            </button>
+                </div>       */}       
             </div>
 
 

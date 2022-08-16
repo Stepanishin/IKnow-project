@@ -10,8 +10,6 @@
     padding: 15px;
     margin-top: 10px;
     min-width: 270px;
-    /* width: fit-content;
-    height: fit-content; */
 }
 
 .SendSolanaBtn_less {
@@ -20,8 +18,6 @@
     padding: 15px;
     margin-top: 10px;
     min-width: 270px;
-    /* width: fit-content;
-    height: fit-content; */
 }
 
 .alarm_terms {
@@ -92,6 +88,21 @@
     height: fit-content;
 }
 
+.SendSolanaBtn__custom_container {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    /* gap: 50px; */
+}
+
+.SendSolanaBtn__custom_container_input {
+    border: 2px solid gray;
+    width: 90px;
+    padding: 18px;
+    margin-left: -50px;
+    margin-right: 10px;
+}
+
 @media screen and (max-width: 389px) {
     .btnDEMO_container {
         justify-content: center;
@@ -104,5 +115,8 @@
         width: 240px;
     }
 }
+
+
+
 
 

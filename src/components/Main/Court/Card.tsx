@@ -14,6 +14,7 @@ import ShareTwitterBtn from '../../UI/ShareTwitterBtn/ShareTwitterBtn';
 
 
 
+
 const Card: FC = () => {
 
     const params = useParams()
@@ -65,7 +66,13 @@ const Card: FC = () => {
                             :
                             <></>
                         }
-                        <p>Date of snapshot: {data?.date}</p>
+                        {
+                            data?.date
+                            ?
+                            <p>Date of snapshot: {new Date(data?.date).toLocaleString()} CET</p>
+                            :
+                            <></>
+                        }
                         {
                             data?.twitter
                             ?
@@ -96,7 +103,7 @@ const Card: FC = () => {
                             <></>
                         }
 
-                    <p style={{color: '#00FFFF'}} >100% of our fees will be shared among the Rektville NFT holders.</p>
+                    <p style={{color: 'white'}} >100% of our fees will be shared among the Rektville NFT holders.</p>
 
                     {
                         data?.dateToShot

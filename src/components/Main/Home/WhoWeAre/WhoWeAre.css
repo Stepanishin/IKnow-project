@@ -57,8 +57,7 @@
     width: 500px;
     height: 500px;
     left: 0;
-    /* top: 1; */
-    bottom: -100%;
+    bottom: -110%;
     pointer-events: none;
 }
 
@@ -67,7 +66,7 @@
     width: 700px;
     height: 700px;
     right: 0;
-    top: 80%;
+    top: 10%;
     pointer-events: none;
 }
 
@@ -130,6 +129,7 @@
     .WhoWeAre_Ellipse2 {
         width: 300px;
         height: 300px;
+        
     } 
 }
 

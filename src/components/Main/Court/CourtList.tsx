@@ -202,7 +202,7 @@ const CourtList: FC = () => {
                                     <Link to={`/CourtList/${card[1].name + card[1].id}`} >
                                         <img className='CourtList_avatar' src={card[1].avatar} alt="" />
                                         <h3 className='CourtList_title'>{card[1].name}</h3>
-                                        <p className='CourtList_title' >{card[1].cardDescr}</p>
+                                        <p className='CourtList_descr' >{card[1].cardDescr}</p>
                                     </Link>
                                     {
                                           isAdmin 
@@ -242,7 +242,7 @@ const CourtList: FC = () => {
                                 <Link to={`/CourtList/${card[1].name + card[1].id}`} >
                                     <img className='CourtList_avatar' src={card[1].avatar} alt="" />
                                     <h3 className='CourtList_title'>{card[1].name}</h3>
-                                    <p className='CourtList_title' >{card[1].cardDescr}</p>
+                                    <p className='CourtList_descr' >{card[1].cardDescr}</p>
                                 </Link>
                                 {
                                           isAdmin 
