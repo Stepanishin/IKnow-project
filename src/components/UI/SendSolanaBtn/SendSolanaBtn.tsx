@@ -13,15 +13,14 @@ import { getDatabase, ref, get, child, push, update, set } from "firebase/databa
 import { timerAndDisableBtnSlice } from '../../../store/reducers/getTimerAndDisablebtnReducer';
 import { ISendSolanaBtnProps } from '../../../types/ISendSolanaBtnProps';
 
-let thelamports = 0;
-// let theWallet = "8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH"
-
 const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wallet,classN,name,SolForWhat, SolForMore, SolForLess, id}) => {
 
     let alarmTerms: any
     let alarm_sendSucces : any
     let alarm_sendError : any
+    let alarm_loading : any
     let customWindow: any
+
     useEffect(() => {
         alarmTerms = document.querySelector('.alarm_terms')!
         customWindow = document.querySelector('.SendSolanaBtn__custom_container')!
@@ -35,10 +34,6 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
     const dispatch = useAppDispatch()
     const [judgeValue, setJudgeValue] = useState(0)
 
-
-    // let [lamports, setLamports] = useState(price);
-    // let lamports: any = judgePrice
-    // let [wallet, setWallet] = useState("8Dx6iP2qLMnaj8uWGLdVwhAhMV4DZ8PvFF6Uy4VCULH");
     let theWallet:any= wallet
 
     const connection = new Connection(clusterApiUrl("mainnet-beta"))
@@ -54,6 +49,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
         
         alarmTerms = document.querySelector('.alarm_terms')!
         alarm_sendSucces = document.querySelector('.alarm_sendSucces')!
+        alarm_loading = document.querySelector('.alarm_loading')!
 
         if (isTimeToDisable) {
             return false
@@ -80,7 +76,8 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
 
         if (!publicKey) throw new WalletNotConnectedError('connect wallet123');
         
-
+        alarm_loading.classList.add('alarm_loading_display')
+        
 
         connection.getBalance(publicKey).then((bal) => {
         });
@@ -99,6 +96,7 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
         await connection.confirmTransaction(signature, 'processed');
         
         const updateDb = () => {
+
             const dbRef = ref(getDatabase());
                     get(child(dbRef,  `/Judges/${name}${id}`)).then((snapshot) => {
                     if (snapshot.exists()) {
@@ -133,7 +131,12 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                         }).catch((error) => {
                             console.error(error);
                         });
-                        
+
+
+                        const closeAlarmLoading =() => {
+                            alarm_loading.classList.remove('alarm_loading_display')
+                        }
+                        setTimeout(closeAlarmLoading, 1000)
 
                         alarm_sendSucces.classList.add('alarm_sendSucces_display')
                         const closeAlarmSucces =() => {
@@ -152,6 +155,10 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
         }
         updateDb()
           } catch (err) {
+            const closeAlarmLoading =() => {
+                alarm_loading.classList.remove('alarm_loading_display')
+            }
+            setTimeout(closeAlarmLoading, 0)
             alarm_sendError.classList.add('alarm_sendError_display')
             const closeAlarmError =() => {
                 alarm_sendError.classList.remove('alarm_sendError_display')
@@ -205,28 +212,18 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                         }
                         </span>
                     </button>
-                    <button value={0.5}  onClick={onClick} className='btnDEMO'>
-                        0.5 SOL<br />
-                        <span style={{fontSize: '10px'}}>
-                        {
-                            SolForLess && SolForMore
-                            ?
-                            SolForWhat === 'SolForMore'
-                            ?
-                            "win " + (((SolForMore + (SolForLess * 0.8) + 0.5)  / ((SolForMore + 0.5) / 0.1)) * 5).toFixed(2) + " SOL"
-                            :
-                            "win " + (((SolForLess + (SolForMore * 0.8) + 0.5)  / ((SolForLess + 0.5) / 0.1)) * 5).toFixed(2) + " SOL"
-                            :
-                            <></>
-                        }
-                        </span>
-                    </button>
+                    <p style={{color:'black'}} >Custom amount:</p>
                     <div className='SendSolanaBtn__custom_container'>
-                        <p>Custom amount:</p>
-                        <input placeholder='SOL' className='SendSolanaBtn__custom_container_input' type="number" onChange={(e: any) => setJudgeValue(e.target.value)} />
-                        <button value={judgeValue}  onClick={onClick} className='btnDEMO'>
+                        
+                        <input placeholder='SOL' className='SendSolanaBtn__custom_container_input' type="number" onChange={(e: any) => {
+                            setJudgeValue(parseFloat(e.target.value))
+                            if (e.target.value === '') {
+                                setJudgeValue(0)
+                            }
+                        }} />
+                        <button value={judgeValue}  onClick={onClick} className='btnDEMO' style={{fontSize:'14px'}}>
                             Make Judge!<br />
-                                {/* <span style={{fontSize: '10px'}}>
+                                <span style={{fontSize: '10px'}}>
                                 {
                                     SolForLess && SolForMore
                                     ?
@@ -238,40 +235,40 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                                     :
                                     <></>
                                 }
-                                </span> */}
+                                </span>
                             </button>
                     </div>
                         
-                </div> 
-
-
-
-
-                {/* <div className='SendSolanaBtn__custom_container'>  
-                            <input type="number" onChange={(e: any) => setJudgeValue(e.target.value)}  style={{width: '100px'}} />
-                            <button value={judgeValue}  onClick={onClick} className='btnDEMO'>
-                            {judgeValue} Sol<br />
-                                <span style={{fontSize: '10px'}}>
-                                {
-                                    SolForLess && SolForMore
-                                    ?
-                                    SolForWhat === 'SolForMore'
-                                    ?
-                                    "win " + (((SolForMore + (SolForLess * 0.8) + judgeValue)  / 100) * ((judgeValue / (SolForMore + (SolForLess * 0.8) + judgeValue)) * 100)).toFixed(2) + " SOL"
-                                    :
-                                    "win " + (((SolForLess + (SolForMore * 0.8) + judgeValue)  / ((SolForLess + judgeValue) / 0.1)) * (judgeValue / 0.1)).toFixed(2) + " SOL"
-                                    :
-                                    <></>
-                                }
-                                </span>
-                            </button>
-                </div>       */}       
+                </div>      
             </div>
 
 
             <div className='alarm_terms'>Accept terms and conditions!</div>
             <div className='alarm_sendSucces'>Sending successful!</div>
             <div className='alarm_sendError'>Something went wrong</div>
+            <div className='alarm_loading'>
+                <div className="loader">
+                    <div className="loader-inner">
+                        <div className="loader-line-wrap">
+                        <div className="loader-line"></div>
+                        
+                        </div>
+                        <div className="loader-line-wrap">
+                        <div className="loader-line"></div>
+                        </div>
+                        <div className="loader-line-wrap">
+                        <div className="loader-line"></div>
+                        </div>
+                        <div className="loader-line-wrap">
+                        <div className="loader-line"></div>
+                        </div>
+                        <div className="loader-line-wrap">
+                        <div className="loader-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     );
 };
