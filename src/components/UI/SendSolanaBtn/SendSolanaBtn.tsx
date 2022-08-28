@@ -214,29 +214,28 @@ const SendSolanaBtn: FC<ISendSolanaBtnProps> = ({cardDescrMore, cardDescrLess,wa
                     </button>
                     <p style={{color:'black'}} >Custom amount:</p>
                     <div className='SendSolanaBtn__custom_container'>
-                        
-                        <input placeholder='SOL' className='SendSolanaBtn__custom_container_input' type="number" onChange={(e: any) => {
+                        <input min="0.01" step="0.01" placeholder='SOL' className='SendSolanaBtn__custom_container_input' type="number" onChange={(e: any) => {
                             setJudgeValue(parseFloat(e.target.value))
                             if (e.target.value === '') {
                                 setJudgeValue(0)
                             }
                         }} />
                         <button value={judgeValue}  onClick={onClick} className='btnDEMO' style={{fontSize:'14px'}}>
-                            Make Judge!<br />
-                                <span style={{fontSize: '10px'}}>
-                                {
-                                    SolForLess && SolForMore
-                                    ?
-                                    SolForWhat === 'SolForMore'
-                                    ?
-                                    "win " + (((SolForMore + (SolForLess * 0.8) + judgeValue)  / ((SolForMore + judgeValue) / 0.1)) * (judgeValue / 0.1)).toFixed(2) + " SOL"
-                                    :
-                                    "win " + (((SolForLess + (SolForMore * 0.8) + judgeValue)  / ((SolForLess + judgeValue) / 0.1)) * (judgeValue / 0.1)).toFixed(2) + " SOL"
-                                    :
-                                    <></>
-                                }
-                                </span>
-                            </button>
+                                Make Judge!<br />
+                                    <span style={{fontSize: '10px'}}>
+                                    {
+                                        SolForLess && SolForMore
+                                        ?
+                                        SolForWhat === 'SolForMore'
+                                        ?
+                                        "win " + (((SolForMore + (SolForLess * 0.8) + judgeValue)  / ((SolForMore + judgeValue) / 0.1)) * (judgeValue / 0.1)).toFixed(2) + " SOL"
+                                        :
+                                        "win " + (((SolForLess + (SolForMore * 0.8) + judgeValue)  / ((SolForLess + judgeValue) / 0.1)) * (judgeValue / 0.1)).toFixed(2) + " SOL"
+                                        :
+                                        <></>
+                                    }
+                                    </span>
+                        </button>
                     </div>
                         
                 </div>      
